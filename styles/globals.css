@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+}
+
+h2 {
+  font-family: "Titillium Web", sans-serif;
+}
+
+h3 {
+  font-family: "League Spartan", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.react-flags-select ul {
+  background-color: white;
+}
+ 
+.dark .react-flags-select ul{
+  background-color: black;
+  border: thin solid rgba(77, 77, 77, 0.3);
+}
+
+.dark .react-flags-select li:hover{
+  color: black;
+}
