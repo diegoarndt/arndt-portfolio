@@ -29,8 +29,8 @@ const customLabels = {
 };
 
 function ArndtPortfolio({ Component, pageProps }) {
-  const { locale, push } = useRouter();
-  pageProps = { ...pageProps, countryCodes, customLabels, translation, locale, push };
+  const { locale, asPath, push } = useRouter();
+  pageProps = { ...pageProps, countryCodes, customLabels, translation, locale, asPath, push };
 
   return <Component {...pageProps} />;
 }

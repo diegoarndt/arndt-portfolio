@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
 }
 
 h2 {
@@ -27,15 +28,19 @@ a {
   box-sizing: border-box;
 }
 
+.da-logo a {
+  width: 3.2rem;
+}
+
 .react-flags-select ul {
   background-color: white;
 }
- 
-.dark .react-flags-select ul{
+
+.dark .react-flags-select ul {
   background-color: black;
   border: thin solid rgba(77, 77, 77, 0.3);
 }
 
-.dark .react-flags-select li:hover{
+.dark .react-flags-select li:hover {
   color: black;
 }
