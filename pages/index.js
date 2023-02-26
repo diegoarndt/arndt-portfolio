@@ -21,6 +21,7 @@ export default function Home(props) {
   const [darkMode, setDarkMode] = useState(true);
   const [isMenuOpened, setMenuOpen] = useState(true);
   const [isLgScreen, setIsLgScreen] = useState(false);
+  const [mainSection, setMainSection] = useState(null);
   const { width } = useWindowSize();
   useEffect(() => setDarkMode(true), []);
   useEffect(() => setMenuOpen(false), []);
@@ -28,10 +29,12 @@ export default function Home(props) {
     setIsLgScreen(width >= 1024);
     setMenuOpen(false);
   }, [width]);
+  useEffect(() => {
+    setMainSection(document.getElementsByClassName('main-section')[0]);
+  }, []);
   const themeIcon = darkMode ? <BsFillSunFill /> : <BsFillMoonStarsFill />;
   const menuIcon = isMenuOpened ? <BsX size={24} /> : <BsList size={24} />;
   const translation = props.translation[props.locale];
-  const mainSection = document.getElementsByClassName('main-section')[0];
 
   const handleChangeLanguage = (countryCode) => {
     const locale = Object.keys(props.countryCodes).find(
@@ -41,11 +44,15 @@ export default function Home(props) {
   };
 
   const handleHover = () => {
-    mainSection.classList.add('landing-section');
+    if (mainSection) {
+      mainSection.classList.add('landing-section');
+    }
   };
 
   const handleLeave = () => {
-    mainSection.classList.remove('landing-section');
+    if (mainSection) {
+      mainSection.classList.remove('landing-section');
+    }
   };
 
   return (
@@ -189,6 +196,9 @@ export default function Home(props) {
 
         <section
           className='min-h-screen pt-28 md:pt-48'
+          style={{
+            background: 'radial-gradient(gray -100%, transparent 50%)',
+          }}
           id='about'
         >
           <div className='mx-auto mt-20 lg:mt-16 border-2 border-orange-500 rounded-full relative overflow-hidden h-80 w-80 lg:h-96 lg:w-96'>
