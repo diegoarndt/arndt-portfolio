@@ -31,12 +31,21 @@ export default function Home(props) {
   const themeIcon = darkMode ? <BsFillSunFill /> : <BsFillMoonStarsFill />;
   const menuIcon = isMenuOpened ? <BsX size={24} /> : <BsList size={24} />;
   const translation = props.translation[props.locale];
+  const mainSection = document.getElementsByClassName('main-section')[0];
 
   const handleChangeLanguage = (countryCode) => {
     const locale = Object.keys(props.countryCodes).find(
       (key) => props.countryCodes[key] === countryCode
     );
     props.push('/', undefined, { locale });
+  };
+
+  const handleHover = () => {
+    mainSection.classList.add('landing-section');
+  };
+
+  const handleLeave = () => {
+    mainSection.classList.remove('landing-section');
   };
 
   return (
@@ -48,16 +57,10 @@ export default function Home(props) {
       </Head>
       <nav className='py-10 px-20 flex justify-between sticky top-0 z-20 bg-gray-200 dark:bg-black dark:text-white'>
         <div className='lg:hidden flex items-center'>
-          <button
-            onClick={() => setMenuOpen(!isMenuOpened)}
-          >
-            {menuIcon}
-          </button>
+          <button onClick={() => setMenuOpen(!isMenuOpened)}>{menuIcon}</button>
         </div>
 
-        <div className={`da-logo ${
-          isLgScreen ? 'lg:contents' : 'hidden'
-        }`}> 
+        <div className={`da-logo ${isLgScreen ? 'lg:contents' : 'hidden'}`}>
           <ScrollLink to='landing'>
             <Image
               src={logo}
@@ -129,32 +132,54 @@ export default function Home(props) {
       >
         <ul className='flex flex-col justify-center items-center'>
           <li className='text-3xl py-5 text-gray-500 hover:text-gray-300 cursor-pointer'>
-            <ScrollLink to='about'><button onClick={() => setMenuOpen(!isMenuOpened)}>About</button></ScrollLink>
+            <ScrollLink to='about'>
+              <button onClick={() => setMenuOpen(!isMenuOpened)}>About</button>
+            </ScrollLink>
           </li>
           <li className='text-3xl py-5 text-gray-500 hover:text-gray-300 cursor-pointer'>
-            <ScrollLink to='career'><button onClick={() => setMenuOpen(!isMenuOpened)}>Career</button></ScrollLink>
+            <ScrollLink to='career'>
+              <button onClick={() => setMenuOpen(!isMenuOpened)}>Career</button>
+            </ScrollLink>
           </li>
           <li className='text-3xl py-5 text-gray-500 hover:text-gray-300 cursor-pointer'>
-            <ScrollLink to='skills'><button onClick={() => setMenuOpen(!isMenuOpened)}>Skills</button></ScrollLink>
+            <ScrollLink to='skills'>
+              <button onClick={() => setMenuOpen(!isMenuOpened)}>Skills</button>
+            </ScrollLink>
           </li>
           <li className='text-3xl py-5 text-gray-500 hover:text-gray-300 cursor-pointer'>
-            <ScrollLink to='contact'><button onClick={() => setMenuOpen(!isMenuOpened)}>Say hello</button></ScrollLink>
+            <ScrollLink to='contact'>
+              <button onClick={() => setMenuOpen(!isMenuOpened)}>
+                Say hello
+              </button>
+            </ScrollLink>
           </li>
         </ul>
       </main>
 
       <main
-        className={`mb-auto bg-gray-200 dark:bg-black px-10 md:px-20 lg:px-20 ${
+        className={`mb-auto bg-gray-200 dark:bg-black ${
           isMenuOpened && !isLgScreen ? 'hidden' : ''
         }`}
       >
-        <section className='min-h-screen bg-purple-600' id='landing'>
+        <section
+          className='main-section min-h-screen bg-purple-600'
+          style={{
+            background: 'radial-gradient(gray 1%, transparent 5%)',
+            backgroundSize: '5vmin 5vmin',
+            transition: 'background-size 0.3s, background-position 0.3s',
+          }}
+          id='landing'
+        >
           <div className='text-center p-10 py-10 absolute inset-0 flex flex-col items-center justify-center'>
             <h2 className='relative py-3 font-bold text-4xl sm:text-7xl md:text-8xl lg:text-9xl group cursor-default mx-auto w-1/2 lg:w-full max-w-lg'>
               <span className='relative z-10 text-orange-500 dark:text-black group-hover:text-black dark:group-hover:text-orange-500 pointer-events-none'>
                 DIEGO ARNDT
               </span>
-              <span className='absolute inset-0 w-full skew-x-12 transition duration-300 ease-in-out origin-right bg-gray-300 dark:bg-orange-500 group-hover:bg-orange-500 dark:group-hover:bg-gray-300'></span>
+              <span
+                className='absolute inset-0 w-full skew-x-12 transition duration-300 ease-in-out origin-right bg-gray-300 dark:bg-orange-500 group-hover:bg-orange-500 dark:group-hover:bg-gray-300'
+                onMouseEnter={handleHover}
+                onMouseLeave={handleLeave}
+              ></span>
             </h2>
             <h3 className='text-lg py-3 dark:text-gray-300 lg:text-xl tracking-widest'>
               {translation.jobTitle}
@@ -163,7 +188,7 @@ export default function Home(props) {
         </section>
 
         <section
-          className='min-h-screen pt-28 md:pt-48 bg-yellow-600'
+          className='min-h-screen pt-28 md:pt-48'
           id='about'
         >
           <div className='mx-auto mt-20 lg:mt-16 border-2 border-orange-500 rounded-full relative overflow-hidden h-80 w-80 lg:h-96 lg:w-96'>
@@ -179,7 +204,7 @@ export default function Home(props) {
           <h3 className='mx-auto py-20 lg:py-16 font-bold text-orange-500 dark:text-white text-3xl lg:text-4xl max-w-sm md:max-w-lg lg:max-w-2xl xl:max-w-4xl'>
             {translation.summary}
           </h3>
-          <p className='mx-auto text-justify tracking-widest text-orange-500 dark:text-white text-xl lg:text-1xl max-w-sm md:max-w-lg lg:max-w-2xl xl:max-w-4xl'>
+          <p className='mx-auto text-justify tracking-widest text-gray-600 dark:text-white text-xl lg:text-1xl max-w-sm md:max-w-lg lg:max-w-2xl xl:max-w-4xl'>
             As a motivated front-end developer with experience in the Angular
             framework and a solid understanding of TypeScript and web
             technologies, I specialize in creating visually appealing and

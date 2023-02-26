@@ -32,6 +32,11 @@ a {
   width: 3.2rem;
 }
 
+.landing-section:hover {
+  background-size: 6vmin 6vmin !important;
+  background-position: 10% 10% !important;
+}
+
 .react-flags-select ul {
   background-color: white;
 }
