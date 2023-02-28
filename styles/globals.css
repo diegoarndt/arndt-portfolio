@@ -32,9 +32,12 @@ a {
   width: 3.2rem;
 }
 
+.section-bg {
+  background: radial-gradient(white -200%, transparent 50%);
+}
+
 .landing-section:hover {
-  background-size: 6vmin 6vmin !important;
-  background-position: 10% 10% !important;
+  background-size: 5vmin 5vmin !important;
 }
 
 .react-flags-select ul {
