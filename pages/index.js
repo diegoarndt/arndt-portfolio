@@ -61,6 +61,7 @@ export default function Home(props) {
         darkMode={darkMode}
         isLgScreen={isLgScreen}
         isMenuOpened={isMenuOpened}
+        setDarkMode={setDarkMode}
       />
 
       <main

@@ -17,6 +17,7 @@ const Nav = ({
   darkMode,
   isLgScreen,
   isMenuOpened,
+  setDarkMode
 }) => {
   const themeIcon = darkMode ? <BsFillSunFill /> : <BsFillMoonStarsFill />;
   const menuIcon = isMenuOpened ? <BsX size={24} /> : <BsList size={24} />;

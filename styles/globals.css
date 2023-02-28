@@ -33,7 +33,7 @@ a {
 }
 
 .section-bg {
-  background: radial-gradient(white -200%, transparent 50%);
+  background: radial-gradient(orange -300%, transparent 50%);
 }
 
 .landing-section:hover {
