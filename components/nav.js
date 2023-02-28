@@ -17,7 +17,8 @@ const Nav = ({
   darkMode,
   isLgScreen,
   isMenuOpened,
-  setDarkMode
+  setDarkMode,
+  setMenuOpen,
 }) => {
   const themeIcon = darkMode ? <BsFillSunFill /> : <BsFillMoonStarsFill />;
   const menuIcon = isMenuOpened ? <BsX size={24} /> : <BsList size={24} />;
@@ -26,7 +27,7 @@ const Nav = ({
     const locale = Object.keys(props.countryCodes).find(
       (key) => props.countryCodes[key] === countryCode
     );
-    props.push('/', undefined, { locale });
+    props.push(props.asPath, undefined, { locale });
   };
 
   return (
