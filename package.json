@@ -1,6 +1,6 @@
 {
-  "name": "rectify",
-  "version": "0.1.0",
+  "name": "diegoarndt",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,20 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "moment": "^2.29.4",
+    "@formspree/react": "2.4.1",
+    "canvas-confetti": "1.6.0",
     "next": "12.3.1",
-    "next-i18next": "^13.1.5",
+    "next-i18next": "13.1.5",
     "react": "18.2.0",
+    "react-confetti": "6.1.0",
     "react-dom": "18.2.0",
-    "react-flags-select": "^2.2.3",
-    "react-icons": "^4.4.0",
-    "react-scroll": "^1.8.9"
+    "react-flags-select": "2.2.3",
+    "react-icons": "4.4.0",
+    "react-scroll": "1.8.9",
+    "react-use": "17.4.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "10.4.12",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
-    "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8"
+    "postcss": "8.4.16",
+    "tailwindcss": "3.1.8"
   }
 }

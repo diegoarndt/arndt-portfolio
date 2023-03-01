@@ -11,26 +11,34 @@ const translation = {
   en,
   br,
   es,
-  de
+  de,
 };
 
 const countryCodes = {
   en: 'CA',
   br: 'BR',
   es: 'ES',
-  de: 'DE'
+  de: 'DE',
 };
 
 const customLabels = {
   CA: 'English',
   BR: 'Português',
   ES: 'Español',
-  DE: 'Deutsch'
+  DE: 'Deutsch',
 };
 
 function ArndtPortfolio({ Component, pageProps }) {
-  const { locale, push } = useRouter();
-  pageProps = { ...pageProps, countryCodes, customLabels, translation, locale, push };
+  const { locale, asPath, push } = useRouter();
+  pageProps = {
+    ...pageProps,
+    countryCodes,
+    customLabels,
+    translation,
+    locale,
+    asPath,
+    push,
+  };
 
   return <Component {...pageProps} />;
 }
