@@ -49,7 +49,7 @@ const Nav = ({
 
         <ul className='flex justify-center items-center'>
           {menuItems.map(({ name, id }) => (
-            <li className='mx-4 text-lg text-gray-500 hover:text-gray-300 cursor-pointer'>
+            <li className='mx-4 text-lg text-gray-500 hover:text-gray-300 cursor-pointer' key={id}>
               <ScrollLink to={`${id}`}>{name}</ScrollLink>
             </li>
           ))}

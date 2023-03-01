@@ -107,21 +107,25 @@ const Career = ({ translation }) => {
         ></div>
 
         {careerTimeline.map(
-          ({
-            link,
-            logo,
-            bgImage,
-            bgColor,
-            title,
-            subtitle,
-            period,
-            location,
-            locationFlag,
-            description,
-            timelineDirection,
-          }) => {
+          (
+            {
+              link,
+              logo,
+              bgImage,
+              bgColor,
+              title,
+              subtitle,
+              period,
+              location,
+              locationFlag,
+              description,
+              timelineDirection,
+            },
+            index
+          ) => {
             return (
               <div
+                key={index}
                 className={`mb-8 flex justify-between items-center w-full ${timelineDirection}`}
               >
                 <div className='order-1 w-5/12'></div>

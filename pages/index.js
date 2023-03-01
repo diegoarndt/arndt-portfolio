@@ -72,7 +72,7 @@ export default function Home(props) {
       >
         <ul className='flex flex-col justify-center items-center'>
           {menuItems.map(({ name, id }) => (
-            <li className='text-3xl py-5 text-gray-500 hover:text-gray-300 cursor-pointer'>
+            <li className='text-3xl py-5 text-gray-500 hover:text-gray-300 cursor-pointer' key={id}>
               <ScrollLink to={`${id}`}>
                 <button onClick={() => setMenuOpen(!isMenuOpened)}>
                   {name}

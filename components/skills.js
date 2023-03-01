@@ -5,7 +5,6 @@ import {
   FaJs,
   FaAngular,
   FaReact,
-  FaGithub,
   FaBootstrap,
   FaComments,
   FaHandsHelping,
