@@ -113,7 +113,7 @@ export default function Home(props) {
         </section>
 
         <section
-          className='min-h-screen pt-20 flex justify-center items-center section-bg'
+          className='min-h-screen pt-10 flex justify-center items-center section-bg'
           id='contact'
         >
           <Contact translation={translation} />
