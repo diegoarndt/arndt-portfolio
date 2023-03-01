@@ -1,6 +1,6 @@
 import { AiFillLinkedin, AiFillGithub, AiFillGitlab } from 'react-icons/ai';
 import Link from 'next/link';
-import YearInWords from '../utils/YearInWords';
+import YearInWords from '../utils/yearInWords';
 
 const Footer = ({props, translation}) => {
   return (
