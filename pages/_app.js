@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { Analytics } from '@vercel/analytics/react';
 
 import en from '../locales/en.json';
 import es from '../locales/es.json';
@@ -40,7 +41,12 @@ function ArndtPortfolio({ Component, pageProps }) {
     push,
   };
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />;
+      <Analytics />
+    </>
+  );
 }
 
 export default ArndtPortfolio;
