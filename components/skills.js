@@ -126,7 +126,7 @@ const Skills = ({ translation }) => {
           <p className='py-6'>{translation.hardSkillsDescription}</p>
         </div>
 
-        <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0'>
+        <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-2 lg:px-12 sm:px-0'>
           {hardSkills.map(({ icon, title, shadow, bgColor }, id) => {
             return (
               <div
@@ -143,7 +143,7 @@ const Skills = ({ translation }) => {
         </div>
       </div>
 
-      <div className='pb-10'>
+      <div>
         <div className='text-gray-500 dark:text-white'>
           <p className='text-2xl lg:text-3xl font-bold border-b-4 border-gray-500 py-2 inline'>
             {translation.softSkills}
@@ -151,7 +151,7 @@ const Skills = ({ translation }) => {
           <p className='py-6'>{translation.softSkillsDescription}</p>
         </div>
 
-        <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0'>
+        <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-2 lg:px-12 sm:px-0'>
           {softSkills.map(({ icon, title, shadow, bgColor }, id) => {
             return (
               <div
