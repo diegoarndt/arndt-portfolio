@@ -34,7 +34,7 @@ const Contact = ({ translation }) => {
   return (
     <div>
       <form
-        className='h-full max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl px-20'
+        className='h-full max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl px-10 lg:px-20'
         onSubmit={onSubmitWithConfetti}
       >
         <h3 className='flex justify-center font-bold text-orange-500 dark:text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>

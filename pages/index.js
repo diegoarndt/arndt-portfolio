@@ -100,7 +100,7 @@ export default function Home(props) {
           <Landing translation={translation} />
         </section>
 
-        <section className='min-h-screen pt-40 section-bg' id='about'>
+        <section className='min-h-screen pt-10 lg:pt-40 section-bg' id='about'>
           <About translation={translation} />
         </section>
 
@@ -109,11 +109,11 @@ export default function Home(props) {
         </section>
 
         <section className='min-h-screen pt-40 section-bg' id='career'>
-          <Career translation={translation} />
+          <Career translation={translation} isLgScreen={isLgScreen} />
         </section>
 
         <section
-          className='min-h-screen flex justify-center items-center section-bg'
+          className='min-h-screen pt-20 flex justify-center items-center section-bg'
           id='contact'
         >
           <Contact translation={translation} />

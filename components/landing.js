@@ -20,7 +20,7 @@ const Landing = ({ translation }) => {
 
   return (
     <div className='text-center p-10 py-10 absolute inset-0 flex flex-col items-center justify-center'>
-      <h2 className='relative py-3 font-bold text-4xl sm:text-7xl md:text-8xl lg:text-9xl group cursor-default mx-auto w-1/2 lg:w-full max-w-lg'>
+      <h2 className='relative py-3 font-bold text-6xl sm:text-8xl lg:text-9xl group cursor-default mx-auto w-9/12 max-w-lg'>
         <span className='relative z-10 text-orange-500 dark:text-black group-hover:text-black dark:group-hover:text-orange-500 pointer-events-none'>
           DIEGO ARNDT
         </span>
