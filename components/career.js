@@ -100,7 +100,7 @@ const Career = ({ translation, isLgScreen }) => {
         </p>
         <p className='py-6'>{translation.careerDescription}</p>
       </div>
-      <div className='relative wrap overflow-hidden h-full py-8'>
+      <div className='relative wrap overflow-hidden h-full pt-8'>
         <div
           className='border-2-2 absolute border-opacity-20 border-gray-600 dark:border-gray-300 h-full border hidden lg:block'
           style={{ left: '50%' }}
