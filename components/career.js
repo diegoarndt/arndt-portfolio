@@ -10,7 +10,7 @@ import vail from '../public/vail-logo.jpeg';
 import veralogica from '../public/veralogica-logo.jpeg';
 import humber from '../public/humber-logo.jpeg';
 
-const Career = ({ translation }) => {
+const Career = ({ translation, isLgScreen }) => {
   const careerTimeline = [
     {
       link: 'https://www.sc.senai.br/',
@@ -93,7 +93,7 @@ const Career = ({ translation }) => {
   ];
 
   return (
-    <div className='container max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-20 w-full h-full'>
+    <div className='container max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-10 lg:px-20 w-full h-full'>
       <div className='text-gray-500 dark:text-white'>
         <p className='text-2xl lg:text-3xl font-bold border-b-4 border-gray-500 py-2 inline'>
           {translation.careerTitle}
@@ -102,7 +102,7 @@ const Career = ({ translation }) => {
       </div>
       <div className='relative wrap overflow-hidden h-full py-8'>
         <div
-          className='border-2-2 absolute border-opacity-20 border-gray-600 dark:border-gray-300 h-full border'
+          className='border-2-2 absolute border-opacity-20 border-gray-600 dark:border-gray-300 h-full border hidden lg:block'
           style={{ left: '50%' }}
         ></div>
 
@@ -126,25 +126,25 @@ const Career = ({ translation }) => {
             return (
               <div
                 key={index}
-                className={`mb-8 flex justify-between items-center w-full ${timelineDirection}`}
+                className={`mb-8 flex justify-between items-center w-full ${isLgScreen && timelineDirection}`}
               >
-                <div className='order-1 w-5/12'></div>
+                <div className='order-1 w-5/12 hidden lg:block'></div>
                 <div className='z-20 flex items-center order-1 w-10 h-10'>
-                  <Link href={`${link}`} passHref={true}>
+                  <Link href={link} passHref={true}>
                     <a
                       target='_blank'
                       rel='noopener noreferrer'
                       className='hover:scale-110'
                     >
-                      <img className='rounded-full' src={`${logo}`} />
+                      <img className='rounded-full' src={logo} alt={title} />
                     </a>
                   </Link>
                 </div>
                 <div
-                  className={`order-1 rounded-lg shadow-xl w-5/12 px-6 py-4 relative ${bgColor}`}
+                  className={`order-1 rounded-lg shadow-xl w-10/12 lg:w-5/12 px-6 py-4 relative ${bgColor}`}
                 >
                   <img
-                    src={`${bgImage}`}
+                    src={bgImage}
                     className='absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-30'
                   />
                   <div className='relative w-fit'>
