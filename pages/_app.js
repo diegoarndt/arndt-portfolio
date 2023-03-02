@@ -29,7 +29,7 @@ const customLabels = {
   DE: 'Deutsch',
 };
 
-function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
+function ArndtPortfolio({ Component, pageProps, initialLanguage, isDarkMode }) {
   const { locale, asPath, push } = useRouter();
   pageProps = {
     ...pageProps,
@@ -37,13 +37,15 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
     customLabels,
     translation,
     locale,
+    initialLanguage,
+    isDarkMode,
     asPath,
     push,
   };
 
   return (
     <>
-      <Component {...pageProps} initialLanguage={initialLanguage} />;
+      <Component {...pageProps} />
       <Analytics />
     </>
   );
@@ -52,11 +54,22 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
 export async function getServerSideProps(context) {
   const { req } = context;
   const acceptLanguage = req.headers['accept-language'] || '';
-  const preferredLanguage = acceptLanguage.split(',')[0].trim().split('-')[0] || 'en';
+  const preferredLanguage =
+    acceptLanguage.split(',')[0].trim().split('-')[0] || 'en';
+
+  let isDarkMode = false;
+  if (typeof window !== 'undefined') {
+    isDarkMode =
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  console.log('getServerSideProps props:', preferredLanguage, isDarkMode);
 
   return {
     props: {
       initialLanguage: preferredLanguage,
+      isDarkMode,
     },
   };
 }
