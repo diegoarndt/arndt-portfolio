@@ -12,6 +12,7 @@ import Contact from '../components/contact';
 import Footer from '../components/footer';
 
 export default function Home(props) {
+  console.log(props);
   const [darkMode, setDarkMode] = useState(true);
   const [isMenuOpened, setMenuOpen] = useState(true);
   const [isLgScreen, setIsLgScreen] = useState(false);
