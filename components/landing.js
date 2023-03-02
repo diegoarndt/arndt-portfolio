@@ -19,7 +19,7 @@ const Landing = ({ translation }) => {
   };
 
   return (
-    <div className='text-center py-10 absolute inset-0 flex flex-col items-center justify-center'>
+    <div className='text-center absolute inset-0 flex flex-col items-center justify-center'>
       <h2 className='relative py-3 font-bold text-6xl sm:text-8xl lg:text-9xl group cursor-default mx-auto w-9/12 max-w-lg'>
         <span className='relative z-10 text-orange-500 dark:text-black group-hover:text-black dark:group-hover:text-orange-500 pointer-events-none'>
           DIEGO ARNDT
@@ -30,7 +30,7 @@ const Landing = ({ translation }) => {
           onMouseLeave={handleLeave}
         ></span>
       </h2>
-      <h3 className='text-lg py-3 dark:text-gray-300 lg:text-xl tracking-widest'>
+      <h3 className='text-lg pt-3 dark:text-gray-300 lg:text-xl tracking-widest'>
         {translation.jobTitle}
       </h3>
     </div>
