@@ -37,15 +37,13 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage, isDarkMode }) {
     customLabels,
     translation,
     locale,
-    initialLanguage,
-    isDarkMode,
     asPath,
     push,
   };
 
   return (
     <>
-      <Component {...pageProps} />
+      <Component {...pageProps} initialLanguage={initialLanguage} isDarkMode={isDarkMode} />
       <Analytics />
     </>
   );
