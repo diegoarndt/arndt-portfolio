@@ -29,7 +29,7 @@ const customLabels = {
   DE: 'Deutsch',
 };
 
-function ArndtPortfolio({ Component, pageProps, initialLanguage, isDarkMode }) {
+function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
   const { locale, asPath, push } = useRouter();
   pageProps = {
     ...pageProps,
@@ -37,13 +37,14 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage, isDarkMode }) {
     customLabels,
     translation,
     locale,
+    initialLanguage,
     asPath,
     push,
   };
 
   return (
     <>
-      <Component {...pageProps} initialLanguage={initialLanguage} isDarkMode={isDarkMode} />
+      <Component {...pageProps} initialLanguage={initialLanguage} />
       <Analytics />
     </>
   );
@@ -52,22 +53,11 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage, isDarkMode }) {
 export async function getServerSideProps(context) {
   const { req } = context;
   const acceptLanguage = req.headers['accept-language'] || '';
-  const preferredLanguage =
-    acceptLanguage.split(',')[0].trim().split('-')[0] || 'en';
-
-  let isDarkMode = false;
-  if (typeof window !== 'undefined') {
-    isDarkMode =
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-
-  console.log('getServerSideProps props:', preferredLanguage, isDarkMode);
+  const preferredLanguage = acceptLanguage.split(',')[0].trim().split('-')[0] || 'en';
 
   return {
     props: {
       initialLanguage: preferredLanguage,
-      isDarkMode,
     },
   };
 }
