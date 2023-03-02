@@ -16,6 +16,7 @@ export default function Home(props) {
   const [isMenuOpened, setMenuOpen] = useState(true);
   const [isLgScreen, setIsLgScreen] = useState(false);
   const { width } = useWindowSize();
+
   useEffect(() => setDarkMode(true), []);
   useEffect(() => setMenuOpen(false), []);
   useEffect(() => {
@@ -89,11 +90,12 @@ export default function Home(props) {
         }`}
       >
         <section
-          className='main-section min-h-screen'
+          className='main-section'
           style={{
             background: 'radial-gradient(gray 1%, transparent 5%)',
             backgroundSize: '4vmin 4vmin',
             transition: 'background-size 0.3s, background-position 0.3s',
+            minHeight: 'calc(100vh - 10vh)',
           }}
           id='landing'
         >

@@ -31,7 +31,7 @@ const Nav = ({
   };
 
   return (
-    <nav className='py-10 px-10 lg:px-20 flex justify-between sticky top-0 z-50 bg-gray-200 dark:bg-black dark:text-white'>
+    <nav className='py-5 lg:py-10 px-10 lg:px-20 flex justify-between sticky top-0 z-50 bg-gray-200 dark:bg-black dark:text-white'>
       <div className='lg:hidden flex items-center'>
         <button onClick={() => setMenuOpen(!isMenuOpened)}>{menuIcon}</button>
       </div>
