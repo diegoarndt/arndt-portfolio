@@ -19,7 +19,7 @@ const Landing = ({ translation }) => {
   };
 
   return (
-    <div className='text-center absolute inset-0 flex flex-col items-center justify-center'>
+    <div className='text-center absolute inset-0 flex flex-col items-center justify-center pt-16 lg:pt-0'>
       <h2 className='relative py-3 font-bold text-6xl sm:text-8xl lg:text-9xl group cursor-default mx-auto w-9/12 max-w-lg'>
         <span class='relative z-10 text-gray-100 pointer-events-none'>
           DIEGO ARNDT
