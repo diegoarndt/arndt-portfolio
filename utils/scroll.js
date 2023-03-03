@@ -2,7 +2,7 @@ import { Link } from 'react-scroll';
 import { useRouter } from 'next/router';
 import { useState, useRef } from 'react';
 
-export default function ScrollLink({ to, children }) {
+export default function ScrollLink({ to, isLgScreen, children }) {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
   const targetRef = useRef(null);
@@ -20,7 +20,7 @@ export default function ScrollLink({ to, children }) {
   return (
     <Link
       to={to}
-      offset={isLanding ? -500 : 0}
+      offset={isLanding ? -500 : isLgScreen ? -150 : 0}
       smooth={true}
       duration={1000}
       spy={true}

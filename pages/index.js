@@ -74,7 +74,7 @@ export default function Home(props) {
         <ul className='flex flex-col justify-center items-center'>
           {menuItems.map(({ name, id }) => (
             <li className='text-3xl py-5 text-gray-500 hover:text-gray-300 cursor-pointer' key={id}>
-              <ScrollLink to={id}>
+              <ScrollLink to={id} isLgScreen={isLgScreen}>
                 <button onClick={() => setMenuOpen(!isMenuOpened)}>
                   {name}
                 </button>
@@ -95,27 +95,27 @@ export default function Home(props) {
             background: 'radial-gradient(gray 1%, transparent 5%)',
             backgroundSize: '4vmin 4vmin',
             transition: 'background-size 0.3s, background-position 0.3s',
-            minHeight: 'calc(100vh - 10vh)',
+            minHeight: 'calc(100vh - 7vh)',
           }}
           id='landing'
         >
           <Landing translation={translation} />
         </section>
 
-        <section className='min-h-screen pt-10 lg:pt-40 section-bg' id='about'>
+        <section className='min-h-screen section-bg' id='about'>
           <About translation={translation} />
         </section>
 
-        <section className='min-h-screen pt-40 section-bg' id='skills'>
+        <section className='min-h-screen section-bg' id='skills'>
           <Skills translation={translation} />
         </section>
 
-        <section className='min-h-screen pt-40 section-bg' id='career'>
+        <section className='min-h-screen section-bg' id='career'>
           <Career translation={translation} isLgScreen={isLgScreen} />
         </section>
 
         <section
-          className='min-h-screen pt-20 flex justify-center items-center section-bg'
+          className='min-h-screen flex justify-center items-center section-bg'
           id='contact'
         >
           <Contact translation={translation} />

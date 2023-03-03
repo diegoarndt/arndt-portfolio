@@ -4,9 +4,9 @@ import YearInWords from '../utils/yearInWords';
 
 const Footer = ({props, translation}) => {
   return (
-    <footer className='border-t-2 border-orange-600 text-center py-10 text-gray-600 bg-gray-200 dark:bg-black dark:text-gray-400'>
+    <footer className='border-t-2 border-green-600 text-center py-10 text-gray-600 bg-gray-200 dark:bg-black dark:text-gray-400'>
       <div className='mx-auto max-w-3xl'>
-        <blockquote className='text-lg text-gray-600 italic my-1 mx-6 pl-4 px-4 border-l-4 border-orange-500'>
+        <blockquote className='text-lg text-gray-600 italic my-1 mx-6 pl-4 px-4 border-l-4 border-green-500'>
           &quot;{translation.quote}&quot; &ndash; Cory House
         </blockquote>
       </div>
@@ -15,7 +15,7 @@ const Footer = ({props, translation}) => {
           <a
             target='_blank'
             rel='noopener noreferrer'
-            className='hover:scale-110 hover:text-orange-600'
+            className='hover:scale-110 hover:text-green-600'
           >
             <AiFillGitlab />
           </a>

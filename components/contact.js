@@ -26,32 +26,32 @@ const Contact = ({ translation }) => {
 
   if (state.succeeded) {
     return (
-      <h3 className='flex justify-center font-bold text-orange-500 dark:text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
+      <h3 className='flex justify-center font-bold text-green-500 dark:text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
         {translation.thanksForContacting}
       </h3>
     );
   }
   return (
-    <div>
+    <>
       <form
-        className='h-full max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl px-10 lg:px-20'
+        className='min-h-screen flex flex-col justify-center items-center pb-0 lg:pb-52 py-10 px-10 lg:px-20'
         onSubmit={onSubmitWithConfetti}
       >
-        <h3 className='flex justify-center font-bold text-orange-500 dark:text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
+        <h3 className='flex justify-center font-bold text-green-500 dark:text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
           {translation.contactMe}
         </h3>
-        <div className='flex justify-center items-center pt-4 px-10 pb-16 lg:pb-12 mx-auto'>
+        <div className='flex justify-center items-center w-full pt-4 px-10 pb-16 lg:pb-12 mx-auto'>
           <span
             className='text-gray-500 dark:text-white px-1 cursor-pointer'
             onClick={() => (window.location = 'mailto:diegoarndt@outlook.com')}
           >
             <BsFillEnvelopeFill />
           </span>
-          <span className='flex items-center text-gray-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-600'>
+          <span className='flex items-center text-gray-500 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-600'>
             diegoarndt@outlook.com
           </span>
         </div>
-        <div className='flex flex-wrap -mx-3 mb-6'>
+        <div className='flex flex-wrap w-full -mx-3 mb-6'>
           <div className='w-full px-3'>
             <label
               className='block uppercase tracking-wide text-gray-500 dark:text-gray-300 text-xs font-bold mb-2'
@@ -70,7 +70,7 @@ const Contact = ({ translation }) => {
             <ValidationError prefix='Name' field='name' errors={state.errors} />
           </div>
         </div>
-        <div className='flex flex-wrap -mx-3 mb-6'>
+        <div className='flex flex-wrap w-full -mx-3 mb-6'>
           <div className='w-full px-3'>
             <label
               className='block uppercase tracking-wide text-gray-500 dark:text-gray-300 text-xs font-bold mb-2'
@@ -93,7 +93,7 @@ const Contact = ({ translation }) => {
             />
           </div>
         </div>
-        <div className='flex flex-wrap -mx-3 mb-6'>
+        <div className='flex flex-wrap w-full -mx-3 mb-6'>
           <div className='w-full px-3'>
             <label
               className='block uppercase tracking-wide text-gray-500 dark:text-gray-300 text-xs font-bold mb-2'
@@ -115,9 +115,9 @@ const Contact = ({ translation }) => {
             />
           </div>
         </div>
-        <div className='flex items-center justify-end'>
+        <div className='flex items-center justify-end w-full px-3'>
           <button
-            className='shadow bg-orange-600 hover:bg-orange-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-32'
+            className='shadow bg-green-600 hover:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-32'
             type='submit'
             disabled={state.submitting}
           >
@@ -131,7 +131,7 @@ const Contact = ({ translation }) => {
           onConfettiComplete={() => setShowConfetti(false)}
         />
       )}
-    </div>
+    </>
   );
 };
 
