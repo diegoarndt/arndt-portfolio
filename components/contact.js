@@ -34,7 +34,7 @@ const Contact = ({ translation }) => {
   return (
     <>
       <form
-        className='min-h-screen flex flex-col justify-center items-center pb-0 lg:pb-52 py-10 px-10 lg:px-20'
+        className='min-h-screen flex flex-col justify-center items-center pb-0 lg:pb-52 py-16 px-10 lg:px-20'
         onSubmit={onSubmitWithConfetti}
       >
         <h3 className='flex justify-center font-bold text-green-500 dark:text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
