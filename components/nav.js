@@ -83,7 +83,7 @@ const Nav = ({
         <li>
           <div className='pl-4 py-2'>
             <a
-              className='cursor-pointer bg-gradient-to-r from-green-500 to-green-900 dark:from-blue-900 dark:to-blue-500 hover:to-green-500 hover:dark:to-blue-900 text-white px-4 py-2 border-none rounded-md'
+              className='cursor-pointer bg-gradient-to-r from-blue-500 to-blue-900 dark:from-green-900 dark:to-green-500 hover:to-blue-500 hover:dark:to-green-900 text-white px-4 py-2 border-none rounded-md'
               onClick={HandleDownload}
               tooltip='Download resume'
             >

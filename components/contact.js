@@ -26,7 +26,7 @@ const Contact = ({ translation }) => {
 
   if (state.succeeded) {
     return (
-      <h3 className='flex justify-center font-bold text-green-500 dark:text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
+      <h3 className='flex justify-center font-bold text-green-500 dark:text-gray-100 text-xl md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
         {translation.thanksForContacting}
       </h3>
     );
@@ -37,7 +37,7 @@ const Contact = ({ translation }) => {
         className='min-h-screen flex flex-col justify-center items-center pb-24 lg:pb-52 pt-24 lg:pt-0 px-10 lg:px-20'
         onSubmit={onSubmitWithConfetti}
       >
-        <h3 className='flex justify-center font-bold text-green-500 dark:text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
+        <h3 className='flex justify-center font-bold text-blue-500 dark:text-green-500 text-xl md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
           {translation.contactMe}
         </h3>
         <div className='flex justify-center items-center w-full pt-4 px-10 pb-16 lg:pb-12 mx-auto'>
@@ -117,7 +117,7 @@ const Contact = ({ translation }) => {
         </div>
         <div className='flex items-center justify-end w-full px-3'>
           <button
-            className='shadow bg-green-600 hover:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-32'
+            className='shadow bg-blue-600 dark:bg-green-600 hover:bg-blue-500 hover:dark:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-32'
             type='submit'
             disabled={state.submitting}
           >
