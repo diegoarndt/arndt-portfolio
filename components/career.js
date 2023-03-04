@@ -46,7 +46,7 @@ const Career = ({ translation, isLgScreen }) => {
       bgColor: 'bg-blue-900',
       title: 'FURB',
       subtitle: `(${translation.furbTitle})`,
-      period: '2015 - 2018',
+      period: '2015 - 2020',
       location: `Blumenau, SC, ${translation.brazil}`,
       locationFlag: '🇧🇷',
       description: `${translation.furbDescription}`,
