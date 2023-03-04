@@ -33,7 +33,7 @@ const Career = ({ translation, isLgScreen }) => {
       bgColor: 'bg-pink-700',
       title: 'T-Systems',
       subtitle: `(${translation.telekomTitle})`,
-      period: '2014 - 2015',
+      period: '2014 - 2020',
       location: `Blumenau, SC, ${translation.brazil}`,
       locationFlag: '🇧🇷',
       description: `${translation.telekomDescription}`,
