@@ -24,55 +24,64 @@ const Skills = ({ translation }) => {
     {
       icon: FaHtml5,
       title: 'HTML',
-      bgColor: 'bg-orange-500',
+      fromBgColor: 'from-orange-400',
+      toBgColor: 'to-orange-600',
       shadow: 'shadow-orange-500',
     },
     {
       icon: FaCss3,
       title: 'CSS',
-      bgColor: 'bg-blue-500',
+      fromBgColor: 'from-blue-400',
+      toBgColor: 'to-blue-600',
       shadow: 'shadow-blue-500',
     },
     {
       icon: FaJs,
       title: 'JavaScript',
-      bgColor: 'bg-yellow-500',
+      fromBgColor: 'from-yellow-400',
+      toBgColor: 'to-yellow-600',
       shadow: 'shadow-yellow-500',
     },
     {
       icon: SiTypescript,
       title: 'TypeScript',
-      bgColor: 'bg-blue-500',
+      fromBgColor: 'from-blue-400',
+      toBgColor: 'to-blue-600',
       shadow: 'shadow-blue-500',
     },
     {
       icon: FaAngular,
       title: 'Angular',
-      bgColor: 'bg-red-500',
+      fromBgColor: 'from-red-400',
+      toBgColor: 'to-red-600',
       shadow: 'shadow-red-500',
     },
     {
       icon: FaBootstrap,
       title: 'Bootstrap',
-      bgColor: 'bg-purple-500',
+      fromBgColor: 'from-purple-400',
+      toBgColor: 'to-purple-600',
       shadow: 'shadow-purple-500',
     },
     {
       icon: FaReact,
       title: 'Next JS',
-      bgColor: 'bg-blue-500',
+      fromBgColor: 'from-blue-400',
+      toBgColor: 'to-blue-600',
       shadow: 'shadow-blue-500',
     },
     {
       icon: SiTailwindcss,
       title: 'Tailwind',
-      bgColor: 'bg-sky-400',
+      fromBgColor: 'from-sky-400',
+      toBgColor: 'to-sky-600',
       shadow: 'shadow-sky-400',
     },
     {
       icon: SiMicrosoftsqlserver,
       title: 'SQL',
-      bgColor: 'bg-red-400',
+      fromBgColor: 'from-red-400',
+      toBgColor: 'to-red-600',
       shadow: 'shadow-red-400',
     },
   ];
@@ -81,37 +90,43 @@ const Skills = ({ translation }) => {
     {
       icon: FaLightbulb,
       title: `${translation.creativity}`,
-      bgColor: 'bg-yellow-500',
+      fromBgColor: 'from-yellow-400',
+      toBgColor: 'to-yellow-600',
       shadow: 'shadow-yellow-500',
     },
     {
       icon: FaHandsHelping,
       title: `${translation.teamwork}`,
-      bgColor: 'bg-blue-500',
+      fromBgColor: 'from-blue-400',
+      toBgColor: 'to-blue-600',
       shadow: 'shadow-blue-500',
     },
     {
       icon: FaComments,
       title: `${translation.communication}`,
-      bgColor: 'bg-orange-500',
+      fromBgColor: 'from-orange-400',
+      toBgColor: 'to-orange-600',
       shadow: 'shadow-orange-500',
     },
     {
       icon: FaExchangeAlt,
       title: `${translation.adaptability}`,
-      bgColor: 'bg-purple-500',
+      fromBgColor: 'from-purple-400',
+      toBgColor: 'to-purple-600',
       shadow: 'shadow-purple-500',
     },
     {
       icon: FaTools,
       title: `${translation.problemSolving}`,
-      bgColor: 'bg-red-500',
+      fromBgColor: 'from-red-400',
+      toBgColor: 'to-red-600',
       shadow: 'shadow-red-500',
     },
     {
       icon: FaRegClock,
       title: `${translation.timeManagement}`,
-      bgColor: 'bg-gray-400',
+      fromBgColor: 'from-gray-400',
+      toBgColor: 'to-gray-600',
       shadow: 'shadow-gray-400',
     },
   ];
@@ -123,23 +138,27 @@ const Skills = ({ translation }) => {
           <p className='text-2xl lg:text-3xl font-bold border-b-4 border-gray-500 py-2 inline'>
             {translation.hardSkills}
           </p>
-          <p className='text-xl lg:text-1xl py-6'>{translation.hardSkillsDescription}</p>
+          <p className='text-xl lg:text-1xl py-6'>
+            {translation.hardSkillsDescription}
+          </p>
         </div>
 
         <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-2 lg:px-12 sm:px-0'>
-          {hardSkills.map(({ icon, title, shadow, bgColor }, id) => {
-            return (
-              <div
-                key={id}
-                className={`flex flex-col items-center shadow-sm hover:scale-105 hover:shadow-2xl hover:bg-black duration-500 py-2 rounded-lg ${bgColor} ${shadow} `}
-              >
-                <span className='mx-auto'>
-                  {React.createElement(icon, { className: 'text-5xl' })}
-                </span>
-                <p className='mt-4'>{title}</p>
-              </div>
-            );
-          })}
+          {hardSkills.map(
+            ({ icon, title, shadow, fromBgColor, toBgColor }, id) => {
+              return (
+                <div
+                  key={id}
+                  className={`flex flex-col items-center shadow-sm hover:scale-105 hover:shadow-2xl duration-500 py-2 rounded-lg hover:to-black bg-gradient-to-b ${fromBgColor} ${toBgColor} ${shadow} `}
+                >
+                  <span className='mx-auto'>
+                    {React.createElement(icon, { className: 'text-5xl' })}
+                  </span>
+                  <p className='mt-4 font-bold'>{title}</p>
+                </div>
+              );
+            }
+          )}
         </div>
       </div>
 
@@ -148,23 +167,27 @@ const Skills = ({ translation }) => {
           <p className='text-2xl lg:text-3xl font-bold border-b-4 border-gray-500 py-2 inline'>
             {translation.softSkills}
           </p>
-          <p className='text-xl lg:text-1xl py-6'>{translation.softSkillsDescription}</p>
+          <p className='text-xl lg:text-1xl py-6'>
+            {translation.softSkillsDescription}
+          </p>
         </div>
 
         <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-2 lg:px-12 sm:px-0'>
-          {softSkills.map(({ icon, title, shadow, bgColor }, id) => {
-            return (
-              <div
-                key={id}
-                className={`flex flex-col items-center shadow-md hover:scale-105 hover:shadow-2xl hover:bg-black duration-500 py-2 rounded-lg ${bgColor} ${shadow}`}
-              >
-                <span className='mx-auto'>
-                  {React.createElement(icon, { className: 'text-5xl' })}
-                </span>
-                <p className='mt-4'>{title}</p>
-              </div>
-            );
-          })}
+          {softSkills.map(
+            ({ icon, title, shadow, fromBgColor, toBgColor }, id) => {
+              return (
+                <div
+                  key={id}
+                  className={`flex flex-col items-center shadow-md hover:scale-105 hover:shadow-2xl duration-500 py-2 rounded-lg hover:to-black  bg-gradient-to-b ${fromBgColor} ${toBgColor} ${shadow}`}
+                >
+                  <span className='mx-auto'>
+                    {React.createElement(icon, { className: 'text-5xl' })}
+                  </span>
+                  <p className='mt-4 font-bold'>{title}</p>
+                </div>
+              );
+            }
+          )}
         </div>
       </div>
     </div>
