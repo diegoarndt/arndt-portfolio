@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import study from '../public/bg-study.jpg';
 import work from '../public/bg-work.jpg';
@@ -94,15 +95,15 @@ const Career = ({ translation, isLgScreen }) => {
 
   return (
     <div className='container max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto pt-24 lg:pt-0 px-10 lg:px-20 w-full h-full'>
-      <div className='text-gray-500 dark:text-gray-100'>
+      <div className='text-gray-500 dark:text-gray-200'>
         <p className='text-2xl lg:text-3xl font-bold border-b-4 border-gray-500 py-2 inline'>
           {translation.careerTitle}
         </p>
-        <p className='py-6'>{translation.careerDescription}</p>
+        <p className='text-xl lg:text-1xl py-6'>{translation.careerDescription}</p>
       </div>
       <div className='relative wrap overflow-hidden h-full pt-8'>
         <div
-          className='border-2-2 absolute border-opacity-20 border-gray-600 dark:border-gray-300 h-full border hidden lg:block'
+          className='border-2-2 absolute border-opacity-20 border-gray-500 dark:border-gray-300 h-full border hidden lg:block'
           style={{ left: '50%' }}
         ></div>
 
@@ -126,7 +127,9 @@ const Career = ({ translation, isLgScreen }) => {
             return (
               <div
                 key={index}
-                className={`mb-8 flex justify-between items-center w-full ${isLgScreen && timelineDirection}`}
+                className={`mb-8 flex justify-between items-center w-full ${
+                  isLgScreen && timelineDirection
+                }`}
               >
                 <div className='order-1 w-5/12 hidden lg:block'></div>
                 <div className='z-20 flex items-center order-1 w-10 h-10'>
@@ -136,16 +139,24 @@ const Career = ({ translation, isLgScreen }) => {
                       rel='noopener noreferrer'
                       className='hover:scale-110'
                     >
-                      <img className='rounded-full' src={logo} alt={title} />
+                      <Image
+                        className='rounded-full'
+                        src={logo}
+                        alt={title}
+                        width={100}
+                        height={100}
+                      />
                     </a>
                   </Link>
                 </div>
                 <div
                   className={`order-1 rounded-lg shadow-xl w-10/12 lg:w-5/12 px-6 py-4 relative ${bgColor}`}
                 >
-                  <img
-                    src={bgImage}
+                  <Image
                     className='absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-30'
+                    src={bgImage}
+                    alt={title}
+                    layout='fill'
                   />
                   <div className='relative w-fit'>
                     <h3 className='font-bold text-white text-xl'>

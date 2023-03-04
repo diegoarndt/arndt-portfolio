@@ -49,9 +49,10 @@ export default function Home(props) {
     <div className={`flex flex-col min-h-screen ${darkMode ? 'dark' : ''}`}>
       <Head>
         <title>Diego Arndt</title>
+        <meta name='description' content={`${translation.content}`} />
         <meta
-          name='description'
-          content={`${translation.content}`}
+          name='keywords'
+          content='diego arndt, portfolio, resume, developer, design, typescript, angular, tailwind'
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
@@ -73,7 +74,10 @@ export default function Home(props) {
       >
         <ul className='flex flex-col justify-center items-center'>
           {menuItems.map(({ name, id }) => (
-            <li className='text-3xl py-5 text-gray-500 hover:text-gray-300 cursor-pointer' key={id}>
+            <li
+              className='text-3xl py-5 text-gray-500 hover:text-gray-300 cursor-pointer'
+              key={id}
+            >
               <ScrollLink to={id} isLgScreen={isLgScreen}>
                 <button onClick={() => setMenuOpen(!isMenuOpened)}>
                   {name}

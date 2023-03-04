@@ -49,8 +49,14 @@ const Nav = ({
 
         <ul className='flex justify-center items-center'>
           {menuItems.map(({ name, id }) => (
-            <li className='mx-4 text-lg text-gray-500 hover:text-gray-300 cursor-pointer' key={id}>
-              <ScrollLink to={id} isLgScreen={isLgScreen}>{name}</ScrollLink>
+            <li
+              className='menu-item relative mx-4 text-lg text-gray-500 hover:text-gray-700 hover:dark:text-gray-300 cursor-pointer'
+              key={id}
+            >
+              <ScrollLink to={id} isLgScreen={isLgScreen}>
+                {name}
+              </ScrollLink>
+              <div className='absolute left-0 bottom-0 w-full'></div>
             </li>
           ))}
         </ul>
@@ -82,13 +88,13 @@ const Nav = ({
         </li>
         <li>
           <div className='pl-4 py-2'>
-            <a
-              className='cursor-pointer bg-gradient-to-r from-blue-500 to-blue-900 dark:from-green-900 dark:to-green-500 hover:to-blue-500 hover:dark:to-green-900 text-white px-4 py-2 border-none rounded-md'
+            <button
+              className='cursor-pointer bg-gradient-to-r from-blue-500 to-blue-900 dark:from-cyan-600 dark:to-green-600 hover:to-blue-500 hover:dark:to-blue-500 text-white px-4 py-1 border-none rounded-md'
               onClick={HandleDownload}
-              tooltip='Download resume'
+              title='Download Diego Arndt Resume (54 KB)'
             >
               {translation.resume}
-            </a>
+            </button>
           </div>
         </li>
       </ul>
