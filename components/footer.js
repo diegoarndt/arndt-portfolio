@@ -16,6 +16,7 @@ const Footer = ({props, translation}) => {
             target='_blank'
             rel='noopener noreferrer'
             className='hover:scale-110 hover:text-green-600'
+            aria-label="Gitlab profile"
           >
             <AiFillGitlab />
           </a>
@@ -25,6 +26,7 @@ const Footer = ({props, translation}) => {
             target='_blank'
             rel='noopener noreferrer'
             className='hover:scale-110 hover:text-purple-600'
+            aria-label="Github profile"
           >
             <AiFillGithub />
           </a>
@@ -34,6 +36,7 @@ const Footer = ({props, translation}) => {
             target='_blank'
             rel='noopener noreferrer'
             className='hover:scale-110 hover:text-blue-600'
+            aria-label="LinkedIn profile"
           >
             <AiFillLinkedin />
           </a>

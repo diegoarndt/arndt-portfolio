@@ -31,7 +31,7 @@ const Landing = ({ translation }) => {
           onMouseLeave={handleLeave}
         ></span>
       </h2>
-      <h3 className='text-lg pt-3 dark:text-gray-300 lg:text-xl tracking-widest cursor-default'>
+      <h3 className='text-lg pt-3 text-gray-500 dark:text-gray-300 lg:text-xl tracking-widest cursor-default'>
         {translation.jobTitle}
       </h3>
     </div>

@@ -138,6 +138,7 @@ const Career = ({ translation, isLgScreen }) => {
                       target='_blank'
                       rel='noopener noreferrer'
                       className='hover:scale-110'
+                      aria-label="Organization's website"
                     >
                       <Image
                         className='rounded-full'
@@ -163,12 +164,12 @@ const Career = ({ translation, isLgScreen }) => {
                       {title}
                       <small className='px-1'>{subtitle}</small>
                     </h3>
-                    <h6 className='mb-3'>
+                    <h4 className='mb-3'>
                       <small className='flex items-center text-white'>
                         {period} | {location}
                         <span className='text-2xl px-1'>{locationFlag}</span>
                       </small>
-                    </h6>
+                    </h4>
                     <p className='text-sm leading-snug tracking-wide text-white'>
                       {description}
                     </p>

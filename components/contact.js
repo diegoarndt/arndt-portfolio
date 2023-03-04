@@ -37,7 +37,7 @@ const Contact = ({ translation }) => {
         className='min-h-screen flex flex-col justify-center items-center pb-24 lg:pb-52 pt-24 lg:pt-0 px-10 lg:px-20'
         onSubmit={onSubmitWithConfetti}
       >
-        <h3 className='flex justify-center font-bold text-blue-500 dark:text-green-500 text-xl px-10 pb-16 lg:pb-12 md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
+        <h3 className='flex justify-center font-bold text-blue-500 dark:text-green-500 text-xl px-10 pb-16 lg:pb-12 md:text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl cursor-default'>
           {translation.contactMe}
         </h3>
         <div className='flex flex-wrap w-full -mx-3 mb-6'>
@@ -108,6 +108,7 @@ const Contact = ({ translation }) => {
           <button
             className='bg-gradient-to-r from-blue-500 to-blue-900 dark:from-green-500 dark:to-cyan-600 hover:to-blue-500 hover:dark:to-blue-500 text-white font-bold py-2 px-4 rounded w-32'
             type='submit'
+            aria-label="Send message"
             disabled={state.submitting}
           >
             {translation.send}

@@ -33,7 +33,7 @@ const Nav = ({
   return (
     <nav className='py-5 lg:py-10 px-10 lg:px-20 flex justify-between sticky top-0 z-50 bg-gray-200 dark:bg-black dark:text-white'>
       <div className='lg:hidden flex items-center'>
-        <button onClick={() => setMenuOpen(!isMenuOpened)}>{menuIcon}</button>
+        <button onClick={() => setMenuOpen(!isMenuOpened)} aria-label="Toggle menu">{menuIcon}</button>
       </div>
 
       <div className={`da-logo ${isLgScreen ? 'lg:contents' : 'hidden'}`}>
@@ -74,6 +74,7 @@ const Nav = ({
             fullWidth={false}
             placeholder='Language'
             className='react-flags-select px-4 py-2'
+            aria-label="Change language"
           />
         </li>
         <li>
@@ -91,6 +92,7 @@ const Nav = ({
             <button
               className='cursor-pointer bg-gradient-to-r from-blue-500 to-blue-900 dark:from-cyan-600 dark:to-green-600 hover:to-blue-500 hover:dark:to-blue-500 text-white px-4 py-1 border-none rounded-md'
               onClick={HandleDownload}
+              aria-label="Download resume"
               title='Download Diego Arndt Resume (54 KB)'
             >
               {translation.resume}
