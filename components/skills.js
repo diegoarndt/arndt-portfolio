@@ -12,6 +12,10 @@ import {
   FaExchangeAlt,
   FaRegClock,
   FaTools,
+  FaCode,
+  FaTachometerAlt,
+  FaGraduationCap,
+  FaBolt
 } from 'react-icons/fa';
 import {
   SiTypescript,
@@ -88,46 +92,46 @@ const Skills = ({ translation }) => {
 
   const softSkills = [
     {
+      icon: FaCode,
+      title: `${translation.softSkillOne}`,
+      fromBgColor: 'from-green-400',
+      toBgColor: 'to-green-600',
+      shadow: 'shadow-green-500',
+    },
+    {
+      icon: FaTachometerAlt,
+      title: `${translation.softSkillTwo}`,
+      fromBgColor: 'from-purple-400',
+      toBgColor: 'to-purple-600',
+      shadow: 'shadow-purple-500',
+    },
+    {
       icon: FaLightbulb,
-      title: `${translation.creativity}`,
+      title: `${translation.softSkillThree}`,
       fromBgColor: 'from-yellow-400',
       toBgColor: 'to-yellow-600',
       shadow: 'shadow-yellow-500',
     },
     {
       icon: FaHandsHelping,
-      title: `${translation.teamwork}`,
+      title: `${translation.softSkillFour}`,
       fromBgColor: 'from-blue-400',
       toBgColor: 'to-blue-600',
       shadow: 'shadow-blue-500',
     },
     {
-      icon: FaComments,
-      title: `${translation.communication}`,
-      fromBgColor: 'from-orange-400',
-      toBgColor: 'to-orange-600',
-      shadow: 'shadow-orange-500',
-    },
-    {
-      icon: FaExchangeAlt,
-      title: `${translation.adaptability}`,
-      fromBgColor: 'from-purple-400',
-      toBgColor: 'to-purple-600',
-      shadow: 'shadow-purple-500',
-    },
-    {
-      icon: FaTools,
-      title: `${translation.problemSolving}`,
+      icon: FaBolt,
+      title: `${translation.softSkillFive}`,
       fromBgColor: 'from-red-400',
       toBgColor: 'to-red-600',
       shadow: 'shadow-red-500',
     },
     {
-      icon: FaRegClock,
-      title: `${translation.timeManagement}`,
-      fromBgColor: 'from-gray-400',
-      toBgColor: 'to-gray-600',
-      shadow: 'shadow-gray-400',
+      icon: FaGraduationCap,
+      title: `${translation.softSkillSix}`,
+      fromBgColor: 'from-cyan-400',
+      toBgColor: 'to-cyan-600',
+      shadow: 'shadow-cyan-400',
     },
   ];
 
