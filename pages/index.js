@@ -13,7 +13,7 @@ import Footer from '../components/footer';
 
 export default function Home(props) {
   const [darkMode, setDarkMode] = useState(true);
-  const [isMenuOpened, setMenuOpen] = useState(true);
+  const [isMenuOpened, setMenuOpen] = useState(false);
   const [isLgScreen, setIsLgScreen] = useState(false);
   const { width } = useWindowSize();
 
