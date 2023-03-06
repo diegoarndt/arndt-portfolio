@@ -32,7 +32,7 @@ const Nav = ({
 
   return (
     <nav className='py-5 lg:py-10 px-10 lg:px-20 flex justify-between sticky top-0 z-50 bg-gray-200 dark:bg-black dark:text-white'>
-      <div className='lg:hidden flex items-center'>
+      <div className='lg:hidden flex items-center pr-3 lg:pr-4 py-2'>
         <button
           onClick={() => setMenuOpen(!isMenuOpened)}
           aria-label='Toggle menu'
@@ -79,13 +79,13 @@ const Nav = ({
             showSecondarySelectedLabel={false}
             fullWidth={false}
             placeholder='Language'
-            className='react-flags-select px-4 py-2'
+            className='react-flags-select px-3 lg:px-4 py-2'
             id='language-select'
             aria-label='Select language'
           />
         </li>
         <li>
-          <div className='transform hover:scale-110 px-4 py-2'>
+          <div className='transform hover:scale-110 px-3 lg:px-4 py-2'>
             <span
               onClick={() => setDarkMode(!darkMode)}
               className='cursor-pointer text-2xl hover:text-blue-600 dark:hover:text-yellow-400'
@@ -95,7 +95,7 @@ const Nav = ({
           </div>
         </li>
         <li>
-          <div className='pl-4 py-2'>
+          <div className='pl-3 lg:pl-4 py-2'>
             <button
               className='cursor-pointer bg-gradient-to-r from-blue-500 to-blue-900 dark:from-cyan-600 dark:to-green-600 hover:to-blue-500 hover:dark:to-blue-500 text-white px-4 py-1 border-none rounded-md'
               onClick={HandleDownload}

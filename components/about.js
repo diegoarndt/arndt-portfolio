@@ -17,7 +17,7 @@ const About = ({ translation }) => {
       <h3 className='mx-auto py-20 lg:py-16 font-bold text-blue-500 dark:text-green-500 text-3xl lg:text-4xl'>
         {translation.summary}
       </h3>
-      <p className='mx-auto text-justify tracking-widest text-gray-600 dark:text-gray-100 text-xl lg:text-1xl'>
+      <p className='mx-auto text-justify text-gray-600 dark:text-gray-100 text-xl lg:text-1xl'>
         {translation.summaryDescription}
       </p>
     </div>

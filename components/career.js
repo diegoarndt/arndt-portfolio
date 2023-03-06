@@ -59,7 +59,7 @@ const Career = ({ translation, isLgScreen }) => {
       bgColor: 'bg-gray-800',
       title: 'Vail Resorts',
       subtitle: `(${translation.vailTitle})`,
-      period: '2018 - 2019',
+      period: '2017 - 2018',
       location: `South Lake Tahoe, CA, ${translation.usa}`,
       locationFlag: '🇺🇸',
       description: `${translation.vailDescription}`,
@@ -170,7 +170,7 @@ const Career = ({ translation, isLgScreen }) => {
                         <span className='text-2xl px-1'>{locationFlag}</span>
                       </small>
                     </h4>
-                    <p className='text-sm leading-snug tracking-wide text-white'>
+                    <p className='leading-snug tracking-wide text-white'>
                       {description}
                     </p>
                   </div>
