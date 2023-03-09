@@ -166,7 +166,7 @@ const Skills = ({ translation }) => {
         </div>
       </div>
 
-      <div>
+      <div className='lg:pb-10'>
         <div className='text-gray-500 dark:text-gray-200'>
           <p className='text-2xl lg:text-3xl leading-loose font-bold border-b-4 border-gray-500 py-2 inline'>
             {translation.softSkills}
