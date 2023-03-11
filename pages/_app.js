@@ -24,7 +24,7 @@ const countryCodes = {
 
 const customLabels = {
   CA: 'English',
-  PT: 'Português',
+  BR: 'Português',
   ES: 'Español',
   DE: 'Deutsch',
 };
