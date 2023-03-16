@@ -100,7 +100,7 @@ const Nav = ({
               className='cursor-pointer bg-gradient-to-r from-blue-500 to-blue-900 dark:from-cyan-600 dark:to-green-600 hover:to-blue-500 hover:dark:to-blue-500 text-white px-4 py-1 border-none rounded-md'
               onClick={HandleDownload}
               aria-label='Download resume'
-              title='Download Diego Arndt Resume (54 KB)'
+              title={translation.resumeTitle}
             >
               {translation.resume}
             </button>
