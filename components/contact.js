@@ -108,7 +108,7 @@ const Contact = ({ translation }) => {
           <button
             className='bg-gradient-to-r from-blue-500 to-blue-900 dark:from-green-500 dark:to-cyan-600 hover:to-blue-500 hover:dark:to-blue-500 text-white font-bold py-2 px-4 rounded w-32'
             type='submit'
-            aria-label="Send message"
+            aria-label='Send message'
             disabled={state.submitting}
           >
             {translation.send}

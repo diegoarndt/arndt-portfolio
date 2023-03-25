@@ -79,7 +79,10 @@ export default function Home(props) {
               key={id}
             >
               <ScrollLink to={id} isLgScreen={isLgScreen}>
-                <button onClick={() => setMenuOpen(!isMenuOpened)} aria-label="Menu item">
+                <button
+                  onClick={() => setMenuOpen(!isMenuOpened)}
+                  aria-label='Menu item'
+                >
                   {name}
                 </button>
               </ScrollLink>

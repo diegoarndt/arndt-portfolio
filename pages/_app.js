@@ -53,7 +53,8 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
 export async function getServerSideProps(context) {
   const { req } = context;
   const acceptLanguage = req.headers['accept-language'] || '';
-  const preferredLanguage = acceptLanguage.split(',')[0].trim().split('-')[0] || 'en';
+  const preferredLanguage =
+    acceptLanguage.split(',')[0].trim().split('-')[0] || 'en';
 
   return {
     props: {

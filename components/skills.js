@@ -6,16 +6,12 @@ import {
   FaAngular,
   FaReact,
   FaBootstrap,
-  FaComments,
   FaHandsHelping,
   FaLightbulb,
-  FaExchangeAlt,
-  FaRegClock,
-  FaTools,
   FaCode,
   FaTachometerAlt,
   FaGraduationCap,
-  FaBolt
+  FaBolt,
 } from 'react-icons/fa';
 import {
   SiTypescript,

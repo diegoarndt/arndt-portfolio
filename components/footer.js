@@ -2,7 +2,7 @@ import { AiFillLinkedin, AiFillGithub, AiFillGitlab } from 'react-icons/ai';
 import Link from 'next/link';
 import YearInWords from '../utils/yearInWords';
 
-const Footer = ({props, translation}) => {
+const Footer = ({ props, translation }) => {
   return (
     <footer className='border-t-2 border-cyan-600 text-center py-5 lg:py-10 text-gray-600 bg-gray-200 dark:bg-black dark:text-gray-400'>
       <div className='mx-auto max-w-3xl'>
@@ -16,7 +16,7 @@ const Footer = ({props, translation}) => {
             target='_blank'
             rel='noopener noreferrer'
             className='hover:scale-110 hover:text-green-600'
-            aria-label="Gitlab profile"
+            aria-label='Gitlab profile'
           >
             <AiFillGitlab />
           </a>
@@ -26,7 +26,7 @@ const Footer = ({props, translation}) => {
             target='_blank'
             rel='noopener noreferrer'
             className='hover:scale-110 hover:text-purple-600'
-            aria-label="Github profile"
+            aria-label='Github profile'
           >
             <AiFillGithub />
           </a>
@@ -36,7 +36,7 @@ const Footer = ({props, translation}) => {
             target='_blank'
             rel='noopener noreferrer'
             className='hover:scale-110 hover:text-blue-600'
-            aria-label="LinkedIn profile"
+            aria-label='LinkedIn profile'
           >
             <AiFillLinkedin />
           </a>

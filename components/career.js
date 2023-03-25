@@ -99,7 +99,9 @@ const Career = ({ translation, isLgScreen }) => {
         <p className='text-2xl lg:text-3xl font-bold border-b-4 border-gray-500 py-2 inline'>
           {translation.careerTitle}
         </p>
-        <p className='text-xl lg:text-1xl py-6'>{translation.careerDescription}</p>
+        <p className='text-xl lg:text-1xl py-6'>
+          {translation.careerDescription}
+        </p>
       </div>
       <div className='relative wrap overflow-hidden h-full pt-8'>
         <div
