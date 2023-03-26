@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -44,6 +45,9 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
 
   return (
     <>
+      <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+      </Head>
       <Component {...pageProps} initialLanguage={initialLanguage} />
       <Analytics />
     </>
