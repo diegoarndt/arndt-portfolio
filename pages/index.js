@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useWindowSize } from 'react-use/';
 import ScrollLink from '../utils/scroll';
-
 import Nav from '../components/nav';
 import Landing from '../components/landing';
 import About from '../components/about';

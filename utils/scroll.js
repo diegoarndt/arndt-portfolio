@@ -1,21 +1,51 @@
 import { Link } from 'react-scroll';
-import { useRouter } from 'next/router';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function ScrollLink({ to, isLgScreen, children }) {
-  const router = useRouter();
   const [isActive, setIsActive] = useState(false);
   const targetRef = useRef(null);
   const isLanding = to === 'landing';
 
-  const handleClick = () => {
+  const handleClickOrSetActive = () => {
     setIsActive(true);
-
-    router.push(`${isLanding ? '' : '/#' + to}`, undefined, {
-      scroll: false,
-      shallow: true,
-    });
+    const currentPath = window.location.pathname;
+    window.history.replaceState(
+      null,
+      '',
+      isLanding ? currentPath : `${currentPath}#${to}`
+    );
   };
+
+  const handleSetInactive = () => {
+    setIsActive(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const targetOffsetTop = targetRef.current.offsetTop;
+      const targetHeight = targetRef.current.offsetHeight;
+
+      if (
+        currentScrollPos >= targetOffsetTop &&
+        currentScrollPos < targetOffsetTop + targetHeight
+      ) {
+        if (!isActive) {
+          setIsActive(true);
+        }
+      } else {
+        if (isActive) {
+          setIsActive(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isActive, to, isLanding]);
 
   return (
     <Link
@@ -26,9 +56,9 @@ export default function ScrollLink({ to, isLgScreen, children }) {
       spy={true}
       exact='true'
       activeClass='active'
-      onSetActive={() => setIsActive(true)}
-      onSetInactive={() => setIsActive(false)}
-      onClick={handleClick}
+      onSetActive={handleClickOrSetActive}
+      onSetInactive={handleSetInactive}
+      onClick={handleClickOrSetActive}
       className='relative sm:h-16 sm:w-16 cursor-pointer'
     >
       <span className={isActive ? 'active' : ''} ref={targetRef}>

@@ -27,7 +27,9 @@ const Nav = ({
     const locale = Object.keys(props.countryCodes).find(
       (key) => props.countryCodes[key] === countryCode
     );
-    props.push(props.asPath, undefined, { locale });
+    const currentHash = window.location.hash;
+    const newPath = props.asPath.split('#')[0] + currentHash;
+    props.push(newPath, undefined, { locale });
   };
 
   return (
