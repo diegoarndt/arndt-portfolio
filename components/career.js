@@ -10,6 +10,7 @@ import furb from '../public/furb-logo.jpeg';
 import vail from '../public/vail-logo.jpeg';
 import veralogica from '../public/veralogica-logo.jpeg';
 import humber from '../public/humber-logo.jpeg';
+import Reveal from '../utils/reveal';
 
 const Career = ({ translation, isLgScreen }) => {
   const careerTimeline = [
@@ -96,12 +97,16 @@ const Career = ({ translation, isLgScreen }) => {
   return (
     <div className='container max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto pt-24 lg:pt-0 lg:pb-10 px-10 lg:px-20 w-full h-full'>
       <div className='text-gray-500 dark:text-gray-200'>
-        <p className='text-2xl lg:text-3xl font-bold border-b-4 border-gray-500 py-2 inline'>
-          {translation.careerTitle}
-        </p>
-        <p className='text-xl lg:text-1xl py-6'>
-          {translation.careerDescription}
-        </p>
+        <Reveal>
+          <p className='text-2xl lg:text-3xl font-bold border-b-4 border-gray-500 py-2 inline'>
+            {translation.careerTitle}
+          </p>
+        </Reveal>
+        <Reveal>
+          <p className='text-xl lg:text-1xl py-6'>
+            {translation.careerDescription}
+          </p>
+        </Reveal>
       </div>
       <div className='relative wrap overflow-hidden h-full pt-8'>
         <div
@@ -162,19 +167,25 @@ const Career = ({ translation, isLgScreen }) => {
                     layout='fill'
                   />
                   <div className='relative w-fit'>
-                    <h3 className='font-bold text-white text-xl'>
-                      {title}
-                      <small className='px-1'>{subtitle}</small>
-                    </h3>
-                    <h4 className='mb-3'>
-                      <small className='flex items-center text-white'>
-                        {period} | {location}
-                        <span className='text-2xl px-1'>{locationFlag}</span>
-                      </small>
-                    </h4>
-                    <p className='leading-snug tracking-wide text-white'>
-                      {description}
-                    </p>
+                    <Reveal>
+                      <h3 className='font-bold text-white text-xl'>
+                        {title}
+                        <small className='px-1'>{subtitle}</small>
+                      </h3>
+                    </Reveal>
+                    <Reveal>
+                      <h4 className='mb-3'>
+                        <small className='flex items-center text-white'>
+                          {period} | {location}
+                          <span className='text-2xl px-1'>{locationFlag}</span>
+                        </small>
+                      </h4>
+                    </Reveal>
+                    <Reveal>
+                      <p className='leading-snug tracking-wide text-white'>
+                        {description}
+                      </p>
+                    </Reveal>
                   </div>
                 </div>
               </div>

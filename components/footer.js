@@ -15,7 +15,7 @@ const Footer = ({ props, translation }) => {
           <a
             target='_blank'
             rel='noopener noreferrer'
-            className='hover:scale-110 hover:text-green-600'
+            className='hover:scale-110 hover:text-orange-600'
             aria-label='Gitlab profile'
           >
             <AiFillGitlab />

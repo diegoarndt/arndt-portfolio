@@ -18,6 +18,7 @@ import {
   SiTailwindcss,
   SiMicrosoftsqlserver,
 } from 'react-icons/si';
+import Reveal from '../utils/reveal';
 
 const Skills = ({ translation }) => {
   const hardSkills = [
@@ -135,12 +136,16 @@ const Skills = ({ translation }) => {
     <div className='flex flex-col justify-center w-full h-full max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto pt-24 lg:pt-0 px-10 lg:px-20'>
       <div className='pb-10'>
         <div className='text-gray-500 dark:text-gray-200'>
-          <p className='text-2xl lg:text-3xl leading-loose font-bold border-b-4 border-gray-500 py-2 inline'>
-            {translation.hardSkills}
-          </p>
-          <p className='text-xl lg:text-1xl py-6'>
-            {translation.hardSkillsDescription}
-          </p>
+          <Reveal>
+            <p className='text-2xl lg:text-3xl leading-loose font-bold border-b-4 border-gray-500 py-2 inline'>
+              {translation.hardSkills}
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className='text-xl lg:text-1xl py-6'>
+              {translation.hardSkillsDescription}
+            </p>
+          </Reveal>
         </div>
 
         <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 lg:px-12 sm:px-0 text-white'>
@@ -154,7 +159,9 @@ const Skills = ({ translation }) => {
                   <span className='mx-auto'>
                     {React.createElement(icon, { className: 'text-5xl' })}
                   </span>
-                  <p className='mt-4 font-bold'>{title}</p>
+                  <Reveal>
+                    <p className='mt-4 font-bold'>{title}</p>
+                  </Reveal>
                 </div>
               );
             }
@@ -164,12 +171,16 @@ const Skills = ({ translation }) => {
 
       <div className='lg:pb-10'>
         <div className='text-gray-500 dark:text-gray-200'>
-          <p className='text-2xl lg:text-3xl leading-loose font-bold border-b-4 border-gray-500 py-2 inline'>
-            {translation.softSkills}
-          </p>
-          <p className='text-xl lg:text-1xl py-6'>
-            {translation.softSkillsDescription}
-          </p>
+          <Reveal>
+            <p className='text-2xl lg:text-3xl leading-loose font-bold border-b-4 border-gray-500 py-2 inline'>
+              {translation.softSkills}
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className='text-xl lg:text-1xl py-6'>
+              {translation.softSkillsDescription}
+            </p>
+          </Reveal>
         </div>
 
         <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 lg:px-12 sm:px-0 text-white'>
@@ -183,7 +194,9 @@ const Skills = ({ translation }) => {
                   <span className='mx-auto'>
                     {React.createElement(icon, { className: 'text-5xl' })}
                   </span>
-                  <p className='mt-4 font-bold'>{title}</p>
+                  <Reveal>
+                    <p className='mt-4 font-bold'>{title}</p>
+                  </Reveal>
                 </div>
               );
             }

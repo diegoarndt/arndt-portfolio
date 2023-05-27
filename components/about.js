@@ -1,5 +1,6 @@
 import myself from '../public/myself.jpg';
 import Image from 'next/image';
+import Reveal from '../utils/reveal';
 
 const About = ({ translation }) => {
   return (
@@ -14,12 +15,16 @@ const About = ({ translation }) => {
           className='border-t-8-4 border-black pointer-events-none'
         />
       </div>
-      <h3 className='mx-auto py-20 lg:py-16 font-bold text-blue-500 dark:text-green-500 text-3xl lg:text-4xl'>
-        {translation.summary}
-      </h3>
-      <p className='mx-auto text-justify text-gray-600 dark:text-gray-100 text-xl lg:text-1xl'>
-        {translation.summaryDescription}
-      </p>
+      <Reveal>
+        <h3 className='mx-auto py-20 lg:py-16 font-bold text-blue-500 dark:text-green-500 text-3xl lg:text-4xl'>
+          {translation.summary}
+        </h3>
+      </Reveal>
+      <Reveal>
+        <p className='mx-auto text-justify text-gray-600 dark:text-gray-100 text-xl lg:text-1xl'>
+          {translation.summaryDescription}
+        </p>
+      </Reveal>
     </div>
   );
 };

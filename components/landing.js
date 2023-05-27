@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import TypeIt from 'typeit-react';
+import Reveal from '../utils/reveal';
 
 const Landing = ({ translation }) => {
   const [mainSection, setMainSection] = useState(null);
@@ -24,7 +25,7 @@ const Landing = ({ translation }) => {
     <div className='text-center absolute inset-0 flex flex-col items-center justify-center pt-16 lg:pt-0'>
       <h2 className='relative py-3 font-bold text-7xl sm:text-8xl lg:text-9xl group cursor-default mx-auto w-9/12 max-w-lg'>
         <span className='relative z-10 text-gray-100 pointer-events-none'>
-          DIEGO ARNDT
+          <Reveal>DIEGO ARNDT</Reveal>
         </span>
 
         <span
