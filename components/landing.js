@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import TypeIt from 'typeit-react';
-import Reveal from '../utils/reveal';
+import { motion, useInView, useAnimation } from 'framer-motion';
 
 const Landing = ({ translation }) => {
   const [mainSection, setMainSection] = useState(null);
@@ -23,9 +23,18 @@ const Landing = ({ translation }) => {
 
   return (
     <div className='text-center absolute inset-0 flex flex-col items-center justify-center pt-16 lg:pt-0'>
-      <h2 className='relative py-3 font-bold text-7xl sm:text-8xl lg:text-9xl group cursor-default mx-auto w-9/12 max-w-lg'>
+      <motion.h2
+        className='relative py-3 font-bold text-7xl sm:text-8xl lg:text-9xl group cursor-default mx-auto w-9/12 max-w-lg'
+        variants={{
+          hidden: { opacity: 0, y: -100 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial='hidden'
+        animate='visible'
+        transition={{ duration: 0.75, delay: 0.25 }}
+      >
         <span className='relative z-10 text-gray-100 pointer-events-none'>
-          <Reveal>DIEGO ARNDT</Reveal>
+          DIEGO ARNDT
         </span>
 
         <span
@@ -33,7 +42,8 @@ const Landing = ({ translation }) => {
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}
         ></span>
-      </h2>
+      </motion.h2>
+
       <h3 className='pt-3 text-gray-500 dark:text-gray-300 text-lg lg:text-xl tracking-widest cursor-default'>
         <TypeIt
           key={JSON.stringify(translation)}
