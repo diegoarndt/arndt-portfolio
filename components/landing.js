@@ -36,6 +36,7 @@ const Landing = ({ translation }) => {
       </h2>
       <h3 className='pt-3 text-gray-500 dark:text-gray-300 text-lg lg:text-xl tracking-widest cursor-default'>
         <TypeIt
+          key={JSON.stringify(translation)}
           options={{ loop: true }}
           getBeforeInit={(instance) => {
             const tobeDeleted = translation.jobTitle2.split(' ')[1].length;
@@ -52,7 +53,6 @@ const Landing = ({ translation }) => {
               .pause(1000);
           }}
         />
-        ;
       </h3>
     </div>
   );
