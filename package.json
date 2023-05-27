@@ -20,7 +20,8 @@
     "react-flags-select": "2.2.3",
     "react-icons": "4.4.0",
     "react-scroll": "1.8.9",
-    "react-use": "17.4.0"
+    "react-use": "17.4.0",
+    "typeit-react": "^2.6.4"
   },
   "devDependencies": {
     "autoprefixer": "10.4.12",
