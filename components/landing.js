@@ -49,7 +49,7 @@ const Landing = ({ translation }) => {
           key={JSON.stringify(translation)}
           options={{ loop: true }}
           getBeforeInit={(instance) => {
-            const tobeDeleted = translation.jobTitle2.split(' ')[1].length;
+            const tobeDeleted = translation.jobTitle3.split(' ')[1].length;
             return instance
               .type(translation.jobTitle)
               .pause(1000)
@@ -57,9 +57,13 @@ const Landing = ({ translation }) => {
               .pause(500)
               .type(translation.jobTitle2)
               .pause(1000)
-              .delete(tobeDeleted)
+              .delete()
               .pause(500)
               .type(translation.jobTitle3)
+              .pause(1000)
+              .delete(tobeDeleted)
+              .pause(500)
+              .type(translation.jobTitle4)
               .pause(1000);
           }}
         />
