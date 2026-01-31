@@ -2,7 +2,6 @@ import Image from 'next/image';
 import logo from '../public/da-logo.png';
 import HandleDownload from '../utils/handleDownload';
 import ScrollLink from '../utils/scroll';
-import ReactFlagsSelect from 'react-flags-select';
 import { BsFillMoonStarsFill, BsFillSunFill, BsList, BsX } from 'react-icons/bs';
 
 const Nav = ({
@@ -17,15 +16,6 @@ const Nav = ({
 }) => {
   const themeIcon = darkMode ? <BsFillSunFill /> : <BsFillMoonStarsFill />;
   const menuIcon = isMenuOpened ? <BsX size={24} /> : <BsList size={24} />;
-
-  const handleChangeLanguage = (countryCode) => {
-    const locale = Object.keys(props.countryCodes).find(
-      (key) => props.countryCodes[key] === countryCode
-    );
-    const currentHash = window.location.hash;
-    const newPath = props.asPath.split('#')[0] + currentHash;
-    props.push(newPath, undefined, { locale });
-  };
 
   return (
     <nav className='sticky top-0 z-50 flex justify-between bg-gray-200 px-10 py-5 dark:bg-black dark:text-white lg:px-20 lg:py-10'>
@@ -62,22 +52,6 @@ const Nav = ({
       </div>
 
       <ul className='flex items-center'>
-        <li>
-          <label htmlFor='language-select'></label>
-          <ReactFlagsSelect
-            countries={Object.values(props.countryCodes)}
-            customLabels={props.customLabels}
-            selected={props.countryCodes[props.locale]}
-            onSelect={handleChangeLanguage}
-            showSelectedLabel={false}
-            showSecondarySelectedLabel={false}
-            fullWidth={false}
-            placeholder='Language'
-            className='react-flags-select px-3 py-2 lg:px-4'
-            id='language-select'
-            aria-label='Select language'
-          />
-        </li>
         <li>
           <div className='transform px-3 py-2 hover:scale-110 lg:px-4'>
             <span
