@@ -130,7 +130,7 @@ const Skills = ({ translation }) => {
   ];
 
   return (
-    <div className='mx-auto flex h-full w-full max-w-screen-md flex-col justify-center px-10 pt-24 lg:max-w-screen-lg lg:px-20 lg:pt-0 xl:max-w-screen-xl'>
+    <div className='mx-auto flex h-full w-full max-w-screen-md flex-col justify-center px-10 lg:max-w-screen-lg lg:px-20 xl:max-w-screen-xl'>
       <div className='pb-10'>
         <div className='text-gray-500 dark:text-gray-200'>
           <Reveal>

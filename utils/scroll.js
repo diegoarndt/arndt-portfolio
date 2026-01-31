@@ -14,7 +14,8 @@ export default function ScrollLink({ to, isLgScreen, onClickCallback, children }
       if (!target) {
         return;
       }
-      const offset = isLanding ? -500 : isLgScreen ? -150 : 0;
+      const navHeight = 80;
+      const offset = isLanding ? -500 : -navHeight;
       const top = target.getBoundingClientRect().top + window.pageYOffset + offset;
       window.scrollTo({ top, behavior: 'smooth' });
     };

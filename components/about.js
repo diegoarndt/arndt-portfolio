@@ -4,8 +4,8 @@ import Reveal from '../utils/reveal';
 
 const About = ({ translation }) => {
   return (
-    <div className='mx-auto max-w-screen-md px-10 pt-10 lg:max-w-screen-lg lg:px-20 lg:pt-20 xl:max-w-screen-xl'>
-      <div className='relative mx-auto mt-20 h-72 w-72 overflow-hidden rounded-full border-2 border-green-500 transition-all hover:border-8 hover:border-blue-500 md:h-96 md:w-96 lg:mt-16'>
+    <div className='mx-auto max-w-screen-md px-10 lg:max-w-screen-lg lg:px-20 xl:max-w-screen-xl'>
+      <div className='relative mx-auto h-72 w-72 overflow-hidden rounded-full border-2 border-green-500 transition-all hover:border-8 hover:border-blue-500 md:h-96 md:w-96'>
         <Image
           src={myself}
           alt='profile-picture'

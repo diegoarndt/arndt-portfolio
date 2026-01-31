@@ -104,19 +104,22 @@ export default function Home(props) {
           <Landing translation={translation} />
         </section>
 
-        <section className='section-bg min-h-screen' id='about'>
+        <section className='section-bg py-16 lg:py-24' id='about'>
           <About translation={translation} />
         </section>
 
-        <section className='section-bg min-h-screen' id='skills'>
+        <section className='section-bg py-16 lg:py-24' id='skills'>
           <Skills translation={translation} />
         </section>
 
-        <section className='section-bg min-h-screen' id='career'>
+        <section className='section-bg py-16 lg:py-24' id='career'>
           <Career translation={translation} isLgScreen={isLgScreen} />
         </section>
 
-        <section className='section-bg flex min-h-screen items-center justify-center' id='contact'>
+        <section
+          className='section-bg flex min-h-screen items-center justify-center py-16 lg:py-24'
+          id='contact'
+        >
           <Contact translation={translation} />
         </section>
       </main>

@@ -34,7 +34,7 @@ const Contact = ({ translation }) => {
   return (
     <>
       <form
-        className='flex min-h-screen flex-col items-center justify-center px-10 pb-12 pt-24 lg:px-20 lg:pb-52 lg:pt-0'
+        className='flex flex-col items-center justify-center px-10 pb-12 lg:px-20 lg:pb-24'
         onSubmit={onSubmitWithConfetti}
       >
         <Reveal>
