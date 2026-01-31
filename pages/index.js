@@ -74,10 +74,12 @@ export default function Home(props) {
         <ul className='flex flex-col items-center justify-center'>
           {menuItems.map(({ name, id }) => (
             <li className='cursor-pointer py-5 text-3xl text-gray-500 hover:text-gray-300' key={id}>
-              <ScrollLink to={id} isLgScreen={isLgScreen}>
-                <button onClick={() => setMenuOpen(!isMenuOpened)} aria-label='Menu item'>
-                  {name}
-                </button>
+              <ScrollLink
+                to={id}
+                isLgScreen={isLgScreen}
+                onClickCallback={() => setMenuOpen(false)}
+              >
+                {name}
               </ScrollLink>
             </li>
           ))}

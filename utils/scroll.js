@@ -1,65 +1,70 @@
-import { Link } from 'react-scroll';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function ScrollLink({ to, isLgScreen, children }) {
+export default function ScrollLink({ to, isLgScreen, onClickCallback, children }) {
   const [isActive, setIsActive] = useState(false);
-  const targetRef = useRef(null);
   const isLanding = to === 'landing';
 
-  const handleClickOrSetActive = () => {
-    setIsActive(true);
+  const handleClick = (event) => {
+    event.preventDefault();
     const currentPath = window.location.pathname;
     window.history.replaceState(null, '', isLanding ? currentPath : `${currentPath}#${to}`);
-  };
 
-  const handleSetInactive = () => {
-    setIsActive(false);
+    const performScroll = () => {
+      const target = document.getElementById(to);
+      if (!target) {
+        return;
+      }
+      const offset = isLanding ? -500 : isLgScreen ? -150 : 0;
+      const top = target.getBoundingClientRect().top + window.pageYOffset + offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    };
+
+    if (onClickCallback) {
+      onClickCallback();
+      setTimeout(performScroll, 200);
+      return;
+    }
+
+    performScroll();
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      const targetOffsetTop = targetRef.current.offsetTop;
-      const targetHeight = targetRef.current.offsetHeight;
+      const target = document.getElementById(to);
+      if (!target) {
+        return;
+      }
 
-      if (
-        currentScrollPos >= targetOffsetTop &&
-        currentScrollPos < targetOffsetTop + targetHeight
-      ) {
-        if (!isActive) {
-          setIsActive(true);
-        }
-      } else {
-        if (isActive) {
-          setIsActive(false);
-        }
+      const currentScrollPos = window.pageYOffset;
+      const targetOffsetTop = target.offsetTop;
+      const targetHeight = target.offsetHeight;
+      const isWithinTarget =
+        currentScrollPos >= targetOffsetTop && currentScrollPos < targetOffsetTop + targetHeight;
+
+      if (isWithinTarget && !isActive) {
+        setIsActive(true);
+      }
+
+      if (!isWithinTarget && isActive) {
+        setIsActive(false);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isActive, to, isLanding]);
+  }, [isActive, to]);
 
   return (
-    <Link
-      to={to}
-      offset={isLanding ? -500 : isLgScreen ? -150 : 0}
-      smooth={true}
-      duration={1000}
-      spy={true}
-      exact='true'
-      activeClass='active'
-      onSetActive={handleClickOrSetActive}
-      onSetInactive={handleSetInactive}
-      onClick={handleClickOrSetActive}
-      className='relative cursor-pointer sm:h-16 sm:w-16'
+    <button
+      type='button'
+      onClick={handleClick}
+      className='relative cursor-pointer bg-transparent p-0 sm:h-16 sm:w-16'
     >
-      <span className={isActive ? 'active' : ''} ref={targetRef}>
-        {children}
-      </span>
-    </Link>
+      <span className={isActive ? 'active' : ''}>{children}</span>
+    </button>
   );
 }
