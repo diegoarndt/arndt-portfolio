@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import TypeIt from 'typeit-react';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Landing = ({ translation }) => {
   const [mainSection, setMainSection] = useState(null);
@@ -42,31 +41,10 @@ const Landing = ({ translation }) => {
         ></span>
       </motion.h2>
 
-      <h3 className='cursor-default pt-10 text-lg tracking-widest text-gray-500 dark:text-gray-300 lg:text-xl'>
-        <TypeIt
-          key={JSON.stringify(translation)}
-          options={{ loop: true }}
-          getBeforeInit={(instance) => {
-            const tobeDeleted = translation.jobTitle3.split(' ')[1].length;
-            return instance
-              .type(translation.jobTitle)
-              .pause(1000)
-              .delete()
-              .pause(500)
-              .type(translation.jobTitle2)
-              .pause(1000)
-              .delete()
-              .pause(500)
-              .type(translation.jobTitle3)
-              .pause(1000)
-              .delete(tobeDeleted)
-              .pause(500)
-              .type(translation.jobTitle4)
-              .pause(1000);
-          }}
-        />
+      <h3 className='cursor-default pt-8 text-lg font-medium tracking-widest text-gray-500 dark:text-gray-300 lg:text-xl'>
+        Frontend Engineer (Angular) — Product-Focused
       </h3>
-      <p className='pt-3 text-sm text-gray-400 dark:text-gray-400 lg:text-base'>
+      <p className='pt-2 text-sm text-gray-400 dark:text-gray-500 lg:text-sm'>
         Exploring long-term fully remote opportunities aligned with US &amp; Canada time zones
       </p>
     </div>

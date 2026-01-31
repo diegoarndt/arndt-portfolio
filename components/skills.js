@@ -1,196 +1,73 @@
-import React from 'react';
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaAngular,
-  FaReact,
-  FaBootstrap,
-  FaHandsHelping,
-  FaLightbulb,
-  FaCode,
-  FaTachometerAlt,
-  FaGraduationCap,
-  FaBolt,
-  FaDatabase,
-} from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss } from 'react-icons/si';
-import Reveal from '../utils/reveal';
-
 const Skills = ({ translation }) => {
-  const hardSkills = [
+  const skillGroups = [
     {
-      icon: FaHtml5,
-      title: 'HTML',
-      fromBgColor: 'from-orange-400',
-      toBgColor: 'to-orange-600',
-      shadow: 'shadow-orange-500',
+      title: 'Core',
+      items: ['Angular', 'TypeScript', 'RxJS'],
     },
     {
-      icon: FaCss3,
-      title: 'CSS',
-      fromBgColor: 'from-blue-400',
-      toBgColor: 'to-blue-600',
-      shadow: 'shadow-blue-500',
+      title: 'Frontend',
+      items: ['HTML & CSS (SCSS)', 'Tailwind', 'Accessibility (a11y)'],
     },
     {
-      icon: FaJs,
-      title: 'JavaScript',
-      fromBgColor: 'from-yellow-400',
-      toBgColor: 'to-yellow-600',
-      shadow: 'shadow-yellow-500',
+      title: 'Testing',
+      items: ['Unit testing', 'Integration testing', 'E2E testing'],
     },
     {
-      icon: SiTypescript,
-      title: 'TypeScript',
-      fromBgColor: 'from-blue-400',
-      toBgColor: 'to-blue-600',
-      shadow: 'shadow-blue-500',
+      title: 'Product & Collaboration',
+      items: [
+        'Requirement analysis',
+        'Client-facing communication',
+        'Feature scoping & validation',
+        'UX collaboration',
+      ],
     },
     {
-      icon: FaAngular,
-      title: 'Angular',
-      fromBgColor: 'from-red-400',
-      toBgColor: 'to-red-600',
-      shadow: 'shadow-red-500',
+      title: 'Backend & Infra (working knowledge)',
+      items: [
+        'REST APIs (consumption & integration)',
+        'AWS (Cloud Practitioner certified)',
+        'CI/CD (usage & troubleshooting)',
+        'Docker (daily usage)',
+      ],
     },
     {
-      icon: FaBootstrap,
-      title: 'Bootstrap',
-      fromBgColor: 'from-purple-400',
-      toBgColor: 'to-purple-600',
-      shadow: 'shadow-purple-500',
-    },
-    {
-      icon: FaReact,
-      title: 'Next JS',
-      fromBgColor: 'from-blue-400',
-      toBgColor: 'to-blue-600',
-      shadow: 'shadow-blue-500',
-    },
-    {
-      icon: SiTailwindcss,
-      title: 'Tailwind',
-      fromBgColor: 'from-sky-400',
-      toBgColor: 'to-sky-600',
-      shadow: 'shadow-sky-400',
-    },
-    {
-      icon: FaDatabase,
-      title: 'SQL',
-      fromBgColor: 'from-red-400',
-      toBgColor: 'to-red-600',
-      shadow: 'shadow-red-400',
-    },
-  ];
-
-  const softSkills = [
-    {
-      icon: FaCode,
-      title: `${translation.softSkillOne}`,
-      fromBgColor: 'from-green-400',
-      toBgColor: 'to-green-600',
-      shadow: 'shadow-green-500',
-    },
-    {
-      icon: FaTachometerAlt,
-      title: `${translation.softSkillTwo}`,
-      fromBgColor: 'from-purple-400',
-      toBgColor: 'to-purple-600',
-      shadow: 'shadow-purple-500',
-    },
-    {
-      icon: FaLightbulb,
-      title: `${translation.softSkillThree}`,
-      fromBgColor: 'from-yellow-400',
-      toBgColor: 'to-yellow-600',
-      shadow: 'shadow-yellow-500',
-    },
-    {
-      icon: FaHandsHelping,
-      title: `${translation.softSkillFour}`,
-      fromBgColor: 'from-blue-400',
-      toBgColor: 'to-blue-600',
-      shadow: 'shadow-blue-500',
-    },
-    {
-      icon: FaBolt,
-      title: `${translation.softSkillFive}`,
-      fromBgColor: 'from-red-400',
-      toBgColor: 'to-red-600',
-      shadow: 'shadow-red-500',
-    },
-    {
-      icon: FaGraduationCap,
-      title: `${translation.softSkillSix}`,
-      fromBgColor: 'from-cyan-400',
-      toBgColor: 'to-cyan-600',
-      shadow: 'shadow-cyan-400',
+      title: 'Tooling & Workflow',
+      items: [
+        'Git & GitHub',
+        'Jira & Confluence',
+        'VS Code',
+        'Draw.io',
+        'AI-assisted development (human-validated)',
+      ],
     },
   ];
 
   return (
     <div className='mx-auto flex h-full w-full max-w-screen-md flex-col justify-center px-10 lg:max-w-screen-lg lg:px-20 xl:max-w-screen-xl'>
-      <div className='pb-10'>
-        <div className='text-gray-500 dark:text-gray-200'>
-          <Reveal>
-            <p className='inline py-2 text-2xl font-bold leading-loose lg:text-3xl'>
-              {translation.hardSkills}
-            </p>
-          </Reveal>
-          <Reveal>
-            <p className='lg:text-1xl py-6 text-xl'>{translation.hardSkillsDescription}</p>
-          </Reveal>
-        </div>
-
-        <div className='grid w-full grid-cols-2 gap-8 py-8 text-center text-white sm:grid-cols-3 sm:px-0 lg:px-12'>
-          {hardSkills.map(({ icon, title, shadow, fromBgColor, toBgColor }, id) => {
-            return (
-              <div
-                key={id}
-                className={`flex flex-col items-center rounded-lg bg-gradient-to-b py-2 shadow-sm duration-500 hover:scale-105 hover:to-black hover:shadow-2xl ${fromBgColor} ${toBgColor} ${shadow} `}
-              >
-                <span className='mx-auto'>
-                  {React.createElement(icon, { className: 'text-5xl' })}
-                </span>
-                <Reveal>
-                  <p className='mt-4 font-bold'>{title}</p>
-                </Reveal>
-              </div>
-            );
-          })}
-        </div>
+      <div className='text-gray-500 dark:text-gray-200'>
+        <p className='inline py-2 text-2xl font-bold leading-loose lg:text-3xl'>
+          {translation.hardSkills}
+        </p>
       </div>
 
-      <div className='lg:pb-10'>
-        <div className='text-gray-500 dark:text-gray-200'>
-          <Reveal>
-            <p className='inline py-2 text-2xl font-bold leading-loose lg:text-3xl'>
-              {translation.softSkills}
+      <div className='mt-6 grid gap-6 sm:grid-cols-2 lg:gap-8'>
+        {skillGroups.map((group) => (
+          <div
+            key={group.title}
+            className='rounded-lg border border-gray-200 bg-white/60 p-5 text-left shadow-sm dark:border-gray-800 dark:bg-black/30'
+          >
+            <p className='text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500'>
+              {group.title}
             </p>
-          </Reveal>
-          <Reveal>
-            <p className='lg:text-1xl py-6 text-xl'>{translation.softSkillsDescription}</p>
-          </Reveal>
-        </div>
-
-        <div className='grid w-full grid-cols-2 gap-8 py-8 text-center text-white sm:grid-cols-3 sm:px-0 lg:px-12'>
-          {softSkills.map(({ icon, title, shadow, fromBgColor, toBgColor }, id) => {
-            return (
-              <div
-                key={id}
-                className={`flex flex-col items-center rounded-lg bg-gradient-to-b py-2 shadow-md duration-500 hover:scale-105 hover:to-black hover:shadow-2xl ${fromBgColor} ${toBgColor} ${shadow}`}
-              >
-                <span className='mx-auto'>
-                  {React.createElement(icon, { className: 'text-5xl' })}
-                </span>
-                <Reveal>
-                  <p className='mt-4 font-bold'>{title}</p>
-                </Reveal>
-              </div>
-            );
-          })}
-        </div>
+            <ul className='mt-3 space-y-2 text-base text-gray-600 dark:text-gray-200 lg:text-lg'>
+              {group.items.map((item) => (
+                <li key={item} className='leading-snug'>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -23,6 +23,28 @@ export default function Home(props) {
     setMenuOpen(false);
   }, [width]);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const hash = window.location.hash;
+    if (!hash) {
+      return;
+    }
+
+    const targetId = hash.replace('#', '');
+    const target = document.getElementById(targetId);
+    if (!target) {
+      return;
+    }
+
+    const navHeight = 80;
+    const offset = targetId === 'landing' ? -500 : -navHeight;
+    const top = target.getBoundingClientRect().top + window.pageYOffset + offset;
+    window.scrollTo({ top, behavior: 'auto' });
+  }, [width]);
+
   const translation = props.translation[props.locale];
 
   const menuItems = [
