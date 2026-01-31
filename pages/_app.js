@@ -6,6 +6,7 @@ import en from '../locales/en.json';
 import es from '../locales/es.json';
 import pt from '../locales/pt.json';
 import de from '../locales/de.json';
+import fr from '../locales/fr.json';
 
 import '../styles/globals.css';
 
@@ -14,20 +15,23 @@ const translation = {
   pt,
   es,
   de,
+  fr,
 };
 
 const countryCodes = {
-  en: 'CA',
+  en: 'US',
   pt: 'BR',
   es: 'ES',
   de: 'DE',
+  fr: 'FR',
 };
 
 const customLabels = {
-  CA: 'English',
+  US: 'English',
   BR: 'Português',
   ES: 'Español',
   DE: 'Deutsch',
+  FR: 'Français',
 };
 
 function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
