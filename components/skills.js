@@ -14,10 +14,7 @@ import {
   FaBolt,
   FaDatabase,
 } from 'react-icons/fa';
-import {
-  SiTypescript,
-  SiTailwindcss,
-} from 'react-icons/si';
+import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 import Reveal from '../utils/reveal';
 
 const Skills = ({ translation }) => {
@@ -164,7 +161,7 @@ const Skills = ({ translation }) => {
                   </Reveal>
                 </div>
               );
-            }
+            },
           )}
         </div>
       </div>
@@ -199,7 +196,7 @@ const Skills = ({ translation }) => {
                   </Reveal>
                 </div>
               );
-            }
+            },
           )}
         </div>
       </div>
