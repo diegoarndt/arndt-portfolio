@@ -15,27 +15,25 @@ const About = ({ translation }) => {
           className='border-t-8-4 pointer-events-none border-black'
         />
       </div>
-      <h3 className='mx-auto mb-6 mt-8 text-3xl font-bold text-blue-500 dark:text-green-500 lg:mb-8 lg:mt-10 lg:text-4xl'>
+      <h2 className='mx-auto mb-4 mt-12 text-2xl font-normal text-gray-600 dark:text-gray-300 lg:mb-6 lg:mt-14 lg:text-3xl'>
         How I Work
-      </h3>
+      </h2>
       <div className='lg:text-1xl mx-auto space-y-5 text-justify text-xl text-gray-600 dark:text-gray-100'>
         <p>
           <strong className='font-semibold text-gray-700 dark:text-gray-100'>
-            Frontend Engineer specialized in Angular, TypeScript, and RxJS
+            Frontend Engineer focused on Angular, TypeScript, and RxJS
           </strong>
-          , with strong experience building and maintaining scalable, user-focused web applications.
+          , building product-focused, user-centered web applications.
         </p>
         <p>
-          I work closely with product and stakeholders, translating business requirements and user
-          feedback into clear, actionable frontend solutions. I regularly participate in
-          client-facing discussions, help scope features, and collaborate with backend and
-          infrastructure teams to deliver reliable, high-quality results.
+          I partner with product and stakeholders to translate requirements into clear frontend
+          solutions, collaborate with backend and infrastructure teams, and support delivery for
+          Angular developer roadmaps.
         </p>
         <p>
-          I have solid experience consuming REST APIs, working within CI/CD pipelines, and using AWS
-          in production environments (Cloud Practitioner certified). I value clean code,
-          accessibility, and pragmatic testing, and I use AI-assisted tools responsibly to improve
-          productivity while maintaining full ownership of quality and decisions.
+          Open to remote frontend engineer roles aligned with US &amp; Canada time zones.
+          Experienced with REST APIs, CI/CD, and AWS in production (Cloud Practitioner certified),
+          with a focus on clean code, accessibility, and pragmatic testing.
         </p>
       </div>
     </div>

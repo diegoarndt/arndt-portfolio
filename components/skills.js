@@ -44,10 +44,10 @@ const Skills = ({ translation }) => {
 
   return (
     <div className='mx-auto flex h-full w-full max-w-screen-md flex-col justify-center px-10 lg:max-w-screen-lg lg:px-20 xl:max-w-screen-xl'>
-      <div className='text-gray-500 dark:text-gray-200'>
-        <p className='inline py-2 text-2xl font-bold leading-loose lg:text-3xl'>
+      <div className='text-gray-500 dark:text-gray-300'>
+        <h2 className='mt-10 block text-2xl font-normal text-gray-600 dark:text-gray-300 lg:mt-12 lg:text-3xl'>
           {translation.hardSkills}
-        </p>
+        </h2>
       </div>
 
       <div className='mt-6 grid gap-6 sm:grid-cols-2 lg:gap-8'>

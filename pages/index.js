@@ -15,6 +15,28 @@ export default function Home(props) {
   const [isMenuOpened, setMenuOpen] = useState(false);
   const [isLgScreen, setIsLgScreen] = useState(false);
   const { width } = useWindowSize();
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://diegoarndt.com';
+  const metaTitle = 'Frontend Engineer (Angular) | Remote US & Canada';
+  const metaDescription =
+    'Frontend Engineer specialized in Angular, TypeScript, and RxJS. Building scalable, product-focused web applications. Open to remote roles in US & Canada.';
+  const ogImage = `${siteUrl}/myself.jpg`;
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Person',
+        name: 'Diego Arndt',
+        jobTitle: 'Frontend Engineer (Angular)',
+        url: siteUrl,
+        sameAs: ['https://www.linkedin.com/in/diegoarndt', 'https://github.com/diegoarndt'],
+      },
+      {
+        '@type': 'WebSite',
+        name: 'Diego Arndt — Frontend Engineer (Angular)',
+        url: siteUrl,
+      },
+    ],
+  };
 
   useEffect(() => setDarkMode(false), []);
   useEffect(() => setMenuOpen(false), []);
@@ -69,11 +91,24 @@ export default function Home(props) {
   return (
     <div className={`flex min-h-screen flex-col ${darkMode ? 'dark' : ''}`}>
       <Head>
-        <title>Diego Arndt</title>
-        <meta name='description' content={`${translation.content}`} />
+        <title>{metaTitle}</title>
+        <meta name='description' content={metaDescription} />
         <meta
           name='keywords'
-          content='diego arndt, portfolio, resume, developer, design, typescript, angular, tailwind'
+          content='frontend engineer, angular developer, frontend engineer angular, remote frontend engineer, typescript, rxjs, product-focused frontend, user-centered web applications, remote software engineer, US time zones, Canada time zones'
+        />
+        <meta property='og:title' content={metaTitle} />
+        <meta property='og:description' content={metaDescription} />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content={siteUrl} />
+        <meta property='og:image' content={ogImage} />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:title' content={metaTitle} />
+        <meta name='twitter:description' content={metaDescription} />
+        <meta name='twitter:image' content={ogImage} />
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>

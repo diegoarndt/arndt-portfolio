@@ -95,9 +95,11 @@ const Career = ({ translation, isLgScreen }) => {
 
   return (
     <div className='container mx-auto h-full w-full max-w-screen-md px-10 pt-24 lg:max-w-screen-lg lg:px-20 lg:pb-10 lg:pt-0 xl:max-w-screen-xl'>
-      <div className='text-gray-500 dark:text-gray-200'>
+      <div className='text-gray-500 dark:text-gray-300'>
         <Reveal>
-          <p className='inline py-2 text-2xl font-bold lg:text-3xl'>{translation.careerTitle}</p>
+          <h2 className='mt-10 inline text-2xl font-normal text-gray-600 dark:text-gray-300 lg:mt-12 lg:text-3xl'>
+            {translation.careerTitle}
+          </h2>
         </Reveal>
       </div>
       <div className='wrap relative h-full overflow-hidden pt-8'>

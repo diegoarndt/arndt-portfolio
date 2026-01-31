@@ -38,9 +38,9 @@ const Contact = ({ translation }) => {
         onSubmit={onSubmitWithConfetti}
       >
         <Reveal>
-          <h3 className='flex max-w-lg cursor-default justify-center pb-4 text-2xl font-bold text-blue-500 dark:text-green-500 lg:max-w-2xl lg:text-3xl xl:max-w-4xl xl:text-4xl'>
+          <h2 className='flex max-w-lg cursor-default justify-center pb-4 pt-10 text-2xl font-normal text-gray-600 dark:text-gray-300 lg:max-w-2xl lg:pt-12 lg:text-3xl xl:max-w-4xl'>
             Let’s talk
-          </h3>
+          </h2>
           <p className='mb-10 text-center text-base text-gray-500 dark:text-gray-300 lg:text-lg'>
             Open to frontend roles, remote opportunities, and collaborations.
           </p>
