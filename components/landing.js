@@ -41,10 +41,10 @@ const Landing = ({ translation }) => {
         ></span>
       </motion.h2>
 
-      <h3 className='cursor-default pt-8 text-lg font-medium tracking-widest text-gray-500 dark:text-gray-300 lg:text-xl'>
-        Frontend Engineer (Angular) — Product-Focused
+      <h3 className='cursor-default pt-7 text-xl font-semibold tracking-widest text-gray-600 dark:text-gray-200 lg:text-2xl'>
+        Frontend Engineer (Angular)
       </h3>
-      <p className='pt-2 text-sm text-gray-400 dark:text-gray-500 lg:text-sm'>
+      <p className='pt-3 text-sm text-gray-400 dark:text-gray-500 lg:text-sm'>
         Exploring long-term fully remote opportunities aligned with US &amp; Canada time zones
       </p>
     </div>
