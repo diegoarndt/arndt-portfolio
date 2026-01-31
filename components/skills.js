@@ -130,74 +130,66 @@ const Skills = ({ translation }) => {
   ];
 
   return (
-    <div className='flex flex-col justify-center w-full h-full max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto pt-24 lg:pt-0 px-10 lg:px-20'>
+    <div className='mx-auto flex h-full w-full max-w-screen-md flex-col justify-center px-10 pt-24 lg:max-w-screen-lg lg:px-20 lg:pt-0 xl:max-w-screen-xl'>
       <div className='pb-10'>
         <div className='text-gray-500 dark:text-gray-200'>
           <Reveal>
-            <p className='text-2xl lg:text-3xl leading-loose font-bold py-2 inline'>
+            <p className='inline py-2 text-2xl font-bold leading-loose lg:text-3xl'>
               {translation.hardSkills}
             </p>
           </Reveal>
           <Reveal>
-            <p className='text-xl lg:text-1xl py-6'>
-              {translation.hardSkillsDescription}
-            </p>
+            <p className='lg:text-1xl py-6 text-xl'>{translation.hardSkillsDescription}</p>
           </Reveal>
         </div>
 
-        <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 lg:px-12 sm:px-0 text-white'>
-          {hardSkills.map(
-            ({ icon, title, shadow, fromBgColor, toBgColor }, id) => {
-              return (
-                <div
-                  key={id}
-                  className={`flex flex-col items-center shadow-sm hover:scale-105 hover:shadow-2xl duration-500 py-2 rounded-lg hover:to-black bg-gradient-to-b ${fromBgColor} ${toBgColor} ${shadow} `}
-                >
-                  <span className='mx-auto'>
-                    {React.createElement(icon, { className: 'text-5xl' })}
-                  </span>
-                  <Reveal>
-                    <p className='mt-4 font-bold'>{title}</p>
-                  </Reveal>
-                </div>
-              );
-            },
-          )}
+        <div className='grid w-full grid-cols-2 gap-8 py-8 text-center text-white sm:grid-cols-3 sm:px-0 lg:px-12'>
+          {hardSkills.map(({ icon, title, shadow, fromBgColor, toBgColor }, id) => {
+            return (
+              <div
+                key={id}
+                className={`flex flex-col items-center rounded-lg bg-gradient-to-b py-2 shadow-sm duration-500 hover:scale-105 hover:to-black hover:shadow-2xl ${fromBgColor} ${toBgColor} ${shadow} `}
+              >
+                <span className='mx-auto'>
+                  {React.createElement(icon, { className: 'text-5xl' })}
+                </span>
+                <Reveal>
+                  <p className='mt-4 font-bold'>{title}</p>
+                </Reveal>
+              </div>
+            );
+          })}
         </div>
       </div>
 
       <div className='lg:pb-10'>
         <div className='text-gray-500 dark:text-gray-200'>
           <Reveal>
-            <p className='text-2xl lg:text-3xl leading-loose font-bold py-2 inline'>
+            <p className='inline py-2 text-2xl font-bold leading-loose lg:text-3xl'>
               {translation.softSkills}
             </p>
           </Reveal>
           <Reveal>
-            <p className='text-xl lg:text-1xl py-6'>
-              {translation.softSkillsDescription}
-            </p>
+            <p className='lg:text-1xl py-6 text-xl'>{translation.softSkillsDescription}</p>
           </Reveal>
         </div>
 
-        <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 lg:px-12 sm:px-0 text-white'>
-          {softSkills.map(
-            ({ icon, title, shadow, fromBgColor, toBgColor }, id) => {
-              return (
-                <div
-                  key={id}
-                  className={`flex flex-col items-center shadow-md hover:scale-105 hover:shadow-2xl duration-500 py-2 rounded-lg hover:to-black  bg-gradient-to-b ${fromBgColor} ${toBgColor} ${shadow}`}
-                >
-                  <span className='mx-auto'>
-                    {React.createElement(icon, { className: 'text-5xl' })}
-                  </span>
-                  <Reveal>
-                    <p className='mt-4 font-bold'>{title}</p>
-                  </Reveal>
-                </div>
-              );
-            },
-          )}
+        <div className='grid w-full grid-cols-2 gap-8 py-8 text-center text-white sm:grid-cols-3 sm:px-0 lg:px-12'>
+          {softSkills.map(({ icon, title, shadow, fromBgColor, toBgColor }, id) => {
+            return (
+              <div
+                key={id}
+                className={`flex flex-col items-center rounded-lg bg-gradient-to-b py-2 shadow-md duration-500 hover:scale-105 hover:to-black hover:shadow-2xl ${fromBgColor} ${toBgColor} ${shadow}`}
+              >
+                <span className='mx-auto'>
+                  {React.createElement(icon, { className: 'text-5xl' })}
+                </span>
+                <Reveal>
+                  <p className='mt-4 font-bold'>{title}</p>
+                </Reveal>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

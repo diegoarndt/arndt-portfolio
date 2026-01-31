@@ -50,8 +50,7 @@ function YearInWords({ language }) {
     return englishWordMap[tens] + (ones ? '-' + englishWordMap[ones] : '');
   };
 
-  const yearInWords =
-    getWord(Math.floor(year / 100)) + ' ' + getWord(year % 100);
+  const yearInWords = getWord(Math.floor(year / 100)) + ' ' + getWord(year % 100);
   return <span>{yearInWords}</span>;
 }
 

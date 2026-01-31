@@ -26,7 +26,7 @@ const Contact = ({ translation }) => {
 
   if (state.succeeded) {
     return (
-      <h3 className='flex justify-center font-bold text-green-500 dark:text-gray-100 px-10 text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl'>
+      <h3 className='flex max-w-lg justify-center px-10 text-2xl font-bold text-green-500 dark:text-gray-100 lg:max-w-2xl lg:text-3xl xl:max-w-4xl xl:text-4xl'>
         {translation.thanksForContacting}
       </h3>
     );
@@ -34,84 +34,72 @@ const Contact = ({ translation }) => {
   return (
     <>
       <form
-        className='min-h-screen flex flex-col justify-center items-center pt-24 lg:pt-0 pb-12 lg:pb-52 px-10 lg:px-20'
+        className='flex min-h-screen flex-col items-center justify-center px-10 pb-12 pt-24 lg:px-20 lg:pb-52 lg:pt-0'
         onSubmit={onSubmitWithConfetti}
       >
         <Reveal>
-          <h3 className='flex justify-center font-bold text-blue-500 dark:text-green-500 pb-16 lg:pb-12 text-2xl lg:text-3xl xl:text-4xl max-w-lg lg:max-w-2xl xl:max-w-4xl cursor-default'>
+          <h3 className='flex max-w-lg cursor-default justify-center pb-16 text-2xl font-bold text-blue-500 dark:text-green-500 lg:max-w-2xl lg:pb-12 lg:text-3xl xl:max-w-4xl xl:text-4xl'>
             {translation.contactMe}
           </h3>
-          <div className='flex flex-wrap w-full mb-6'>
+          <div className='mb-6 flex w-full flex-wrap'>
             <div className='w-full px-3'>
               <label
-                className='block uppercase tracking-wide text-gray-500 dark:text-gray-300 text-xs font-bold mb-2'
+                className='mb-2 block text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-300'
                 htmlFor='name'
               >
                 {translation.name}
               </label>
               <input
-                className='appearance-none block w-full bg-gray-300 dark:bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'
+                className='mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-300 px-4 py-3 leading-tight text-gray-500 focus:bg-white focus:outline-none dark:bg-gray-200'
                 id='name'
                 name='name'
                 type='text'
                 placeholder={`${translation.namePlaceholder}`}
                 autoComplete='off'
               ></input>
-              <ValidationError
-                prefix='Name'
-                field='name'
-                errors={state.errors}
-              />
+              <ValidationError prefix='Name' field='name' errors={state.errors} />
             </div>
           </div>
-          <div className='flex flex-wrap w-full mb-6'>
+          <div className='mb-6 flex w-full flex-wrap'>
             <div className='w-full px-3'>
               <label
-                className='block uppercase tracking-wide text-gray-500 dark:text-gray-300 text-xs font-bold mb-2'
+                className='mb-2 block text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-300'
                 htmlFor='email'
               >
                 {translation.email}
               </label>
               <input
-                className='appearance-none block w-full bg-gray-300 dark:bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'
+                className='mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-300 px-4 py-3 leading-tight text-gray-500 focus:bg-white focus:outline-none dark:bg-gray-200'
                 id='email'
                 name='email'
                 type='email'
                 placeholder={`${translation.emailPlaceholder}`}
                 autoComplete='off'
               ></input>
-              <ValidationError
-                prefix='Email'
-                field='email'
-                errors={state.errors}
-              />
+              <ValidationError prefix='Email' field='email' errors={state.errors} />
             </div>
           </div>
-          <div className='flex flex-wrap w-full mb-6'>
+          <div className='mb-6 flex w-full flex-wrap'>
             <div className='w-full px-3'>
               <label
-                className='block uppercase tracking-wide text-gray-500 dark:text-gray-300 text-xs font-bold mb-2'
+                className='mb-2 block text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-300'
                 htmlFor='message'
               >
                 {translation.message}
               </label>
               <textarea
-                className='appearance-none block w-full bg-gray-300 dark:bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'
+                className='mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-300 px-4 py-3 leading-tight text-gray-500 focus:bg-white focus:outline-none dark:bg-gray-200'
                 id='message'
                 name='message'
                 rows='8'
                 placeholder={`${translation.messagePlaceholder}`}
               ></textarea>
-              <ValidationError
-                prefix='Message'
-                field='message'
-                errors={state.errors}
-              />
+              <ValidationError prefix='Message' field='message' errors={state.errors} />
             </div>
           </div>
-          <div className='flex items-center justify-end w-full px-3'>
+          <div className='flex w-full items-center justify-end px-3'>
             <button
-              className='bg-gradient-to-r from-blue-500 to-blue-900 dark:from-green-500 dark:to-cyan-600 hover:to-blue-500 hover:dark:to-blue-500 text-white font-bold py-2 px-4 rounded w-32'
+              className='w-32 rounded bg-gradient-to-r from-blue-500 to-blue-900 px-4 py-2 font-bold text-white hover:to-blue-500 dark:from-green-500 dark:to-cyan-600 hover:dark:to-blue-500'
               type='submit'
               aria-label='Send message'
               disabled={state.submitting}
@@ -122,10 +110,7 @@ const Contact = ({ translation }) => {
         </Reveal>
       </form>
       {showConfetti && (
-        <Confetti
-          recycle={false}
-          onConfettiComplete={() => setShowConfetti(false)}
-        />
+        <Confetti recycle={false} onConfettiComplete={() => setShowConfetti(false)} />
       )}
     </>
   );

@@ -3,12 +3,7 @@ import logo from '../public/da-logo.png';
 import HandleDownload from '../utils/handleDownload';
 import ScrollLink from '../utils/scroll';
 import ReactFlagsSelect from 'react-flags-select';
-import {
-  BsFillMoonStarsFill,
-  BsFillSunFill,
-  BsList,
-  BsX,
-} from 'react-icons/bs';
+import { BsFillMoonStarsFill, BsFillSunFill, BsList, BsX } from 'react-icons/bs';
 
 const Nav = ({
   props,
@@ -33,12 +28,9 @@ const Nav = ({
   };
 
   return (
-    <nav className='py-5 lg:py-10 px-10 lg:px-20 flex justify-between sticky top-0 z-50 bg-gray-200 dark:bg-black dark:text-white'>
-      <div className='lg:hidden flex items-center pr-3 lg:pr-4 py-2'>
-        <button
-          onClick={() => setMenuOpen(!isMenuOpened)}
-          aria-label='Toggle menu'
-        >
+    <nav className='sticky top-0 z-50 flex justify-between bg-gray-200 px-10 py-5 dark:bg-black dark:text-white lg:px-20 lg:py-10'>
+      <div className='flex items-center py-2 pr-3 lg:hidden lg:pr-4'>
+        <button onClick={() => setMenuOpen(!isMenuOpened)} aria-label='Toggle menu'>
           {menuIcon}
         </button>
       </div>
@@ -54,16 +46,16 @@ const Nav = ({
           />
         </ScrollLink>
 
-        <ul className='flex justify-center items-center'>
+        <ul className='flex items-center justify-center'>
           {menuItems.map(({ name, id }) => (
             <li
-              className='menu-item relative mx-4 text-lg text-gray-500 hover:text-gray-700 hover:dark:text-gray-300 cursor-pointer'
+              className='menu-item relative mx-4 cursor-pointer text-lg text-gray-500 hover:text-gray-700 hover:dark:text-gray-300'
               key={id}
             >
               <ScrollLink to={id} isLgScreen={isLgScreen}>
                 {name}
               </ScrollLink>
-              <div className='absolute left-0 bottom-0 w-full'></div>
+              <div className='absolute bottom-0 left-0 w-full'></div>
             </li>
           ))}
         </ul>
@@ -81,13 +73,13 @@ const Nav = ({
             showSecondarySelectedLabel={false}
             fullWidth={false}
             placeholder='Language'
-            className='react-flags-select px-3 lg:px-4 py-2'
+            className='react-flags-select px-3 py-2 lg:px-4'
             id='language-select'
             aria-label='Select language'
           />
         </li>
         <li>
-          <div className='transform hover:scale-110 px-3 lg:px-4 py-2'>
+          <div className='transform px-3 py-2 hover:scale-110 lg:px-4'>
             <span
               onClick={() => setDarkMode(!darkMode)}
               className='cursor-pointer text-2xl hover:text-blue-600 dark:hover:text-yellow-400'

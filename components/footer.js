@@ -3,13 +3,13 @@ import YearInWords from '../utils/yearInWords';
 
 const Footer = ({ props, translation }) => {
   return (
-    <footer className='border-t-2 border-cyan-600 text-center py-5 lg:py-10 text-gray-600 bg-gray-200 dark:bg-black dark:text-gray-400'>
+    <footer className='border-t-2 border-cyan-600 bg-gray-200 py-5 text-center text-gray-600 dark:bg-black dark:text-gray-400 lg:py-10'>
       <div className='mx-auto max-w-3xl'>
-        <blockquote className='text-lg text-gray-600 italic my-1 mx-6 pl-4 px-4 border-l-4 border-cyan-500'>
+        <blockquote className='mx-6 my-1 border-l-4 border-cyan-500 px-4 pl-4 text-lg italic text-gray-600'>
           &quot;{translation.quote}&quot; &ndash; Cory House
         </blockquote>
       </div>
-      <div className='text-5xl py-5 flex justify-center gap-16 text-gray-600 dark:text-gray-400'>
+      <div className='flex justify-center gap-16 py-5 text-5xl text-gray-600 dark:text-gray-400'>
         <a
           href='https://gitlab.com/diegoarndt'
           target='_blank'

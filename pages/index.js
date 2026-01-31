@@ -45,7 +45,7 @@ export default function Home(props) {
   ];
 
   return (
-    <div className={`flex flex-col min-h-screen ${darkMode ? 'dark' : ''}`}>
+    <div className={`flex min-h-screen flex-col ${darkMode ? 'dark' : ''}`}>
       <Head>
         <title>Diego Arndt</title>
         <meta name='description' content={`${translation.content}`} />
@@ -67,21 +67,15 @@ export default function Home(props) {
       />
 
       <main
-        className={`flex-grow bg-gray-200 dark:bg-black px-10 md:px-20 lg:px-20 flex flex-col justify-center ${
+        className={`flex flex-grow flex-col justify-center bg-gray-200 px-10 dark:bg-black md:px-20 lg:px-20 ${
           isMenuOpened && !isLgScreen ? '' : 'hidden'
         }`}
       >
-        <ul className='flex flex-col justify-center items-center'>
+        <ul className='flex flex-col items-center justify-center'>
           {menuItems.map(({ name, id }) => (
-            <li
-              className='text-3xl py-5 text-gray-500 hover:text-gray-300 cursor-pointer'
-              key={id}
-            >
+            <li className='cursor-pointer py-5 text-3xl text-gray-500 hover:text-gray-300' key={id}>
               <ScrollLink to={id} isLgScreen={isLgScreen}>
-                <button
-                  onClick={() => setMenuOpen(!isMenuOpened)}
-                  aria-label='Menu item'
-                >
+                <button onClick={() => setMenuOpen(!isMenuOpened)} aria-label='Menu item'>
                   {name}
                 </button>
               </ScrollLink>
@@ -108,22 +102,19 @@ export default function Home(props) {
           <Landing translation={translation} />
         </section>
 
-        <section className='min-h-screen section-bg' id='about'>
+        <section className='section-bg min-h-screen' id='about'>
           <About translation={translation} />
         </section>
 
-        <section className='min-h-screen section-bg' id='skills'>
+        <section className='section-bg min-h-screen' id='skills'>
           <Skills translation={translation} />
         </section>
 
-        <section className='min-h-screen section-bg' id='career'>
+        <section className='section-bg min-h-screen' id='career'>
           <Career translation={translation} isLgScreen={isLgScreen} />
         </section>
 
-        <section
-          className='min-h-screen flex justify-center items-center section-bg'
-          id='contact'
-        >
+        <section className='section-bg flex min-h-screen items-center justify-center' id='contact'>
           <Contact translation={translation} />
         </section>
       </main>

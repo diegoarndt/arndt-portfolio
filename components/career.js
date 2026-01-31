@@ -94,22 +94,18 @@ const Career = ({ translation, isLgScreen }) => {
   ];
 
   return (
-    <div className='container max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto pt-24 lg:pt-0 lg:pb-10 px-10 lg:px-20 w-full h-full'>
+    <div className='container mx-auto h-full w-full max-w-screen-md px-10 pt-24 lg:max-w-screen-lg lg:px-20 lg:pb-10 lg:pt-0 xl:max-w-screen-xl'>
       <div className='text-gray-500 dark:text-gray-200'>
         <Reveal>
-          <p className='text-2xl lg:text-3xl font-bold py-2 inline'>
-            {translation.careerTitle}
-          </p>
+          <p className='inline py-2 text-2xl font-bold lg:text-3xl'>{translation.careerTitle}</p>
         </Reveal>
         <Reveal>
-          <p className='text-xl lg:text-1xl py-6'>
-            {translation.careerDescription}
-          </p>
+          <p className='lg:text-1xl py-6 text-xl'>{translation.careerDescription}</p>
         </Reveal>
       </div>
-      <div className='relative wrap overflow-hidden h-full pt-8'>
+      <div className='wrap relative h-full overflow-hidden pt-8'>
         <div
-          className='border-2-2 absolute border-opacity-20 border-gray-500 dark:border-gray-300 h-full border hidden lg:block'
+          className='border-2-2 absolute hidden h-full border border-gray-500 border-opacity-20 dark:border-gray-300 lg:block'
           style={{ left: '50%' }}
         ></div>
 
@@ -133,12 +129,12 @@ const Career = ({ translation, isLgScreen }) => {
             return (
               <div
                 key={index}
-                className={`mb-8 flex justify-between items-center w-full ${
+                className={`mb-8 flex w-full items-center justify-between ${
                   isLgScreen && timelineDirection
                 }`}
               >
-                <div className='order-1 w-5/12 hidden lg:block'></div>
-                <div className='z-20 flex items-center order-1 w-10 h-10'>
+                <div className='order-1 hidden w-5/12 lg:block'></div>
+                <div className='z-20 order-1 flex h-10 w-10 items-center'>
                   <a
                     href={link}
                     target='_blank'
@@ -156,17 +152,17 @@ const Career = ({ translation, isLgScreen }) => {
                   </a>
                 </div>
                 <div
-                  className={`order-1 rounded-lg shadow-xl w-10/12 lg:w-5/12 px-6 py-4 relative ${bgColor}`}
+                  className={`relative order-1 w-10/12 rounded-lg px-6 py-4 shadow-xl lg:w-5/12 ${bgColor}`}
                 >
                   <Image
-                    className='absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-30'
+                    className='absolute inset-0 h-full w-full object-cover opacity-10 hover:opacity-30'
                     src={bgImage}
                     alt={title}
                     fill
                   />
                   <div className='relative w-fit'>
                     <Reveal>
-                      <h3 className='font-bold text-white text-xl'>
+                      <h3 className='text-xl font-bold text-white'>
                         {title}
                         <small className='px-1'>{subtitle}</small>
                       </h3>
@@ -175,14 +171,12 @@ const Career = ({ translation, isLgScreen }) => {
                       <h4 className='mb-3'>
                         <small className='flex items-center text-white'>
                           {period} | {location}
-                          <span className='text-2xl px-1'>{locationFlag}</span>
+                          <span className='px-1 text-2xl'>{locationFlag}</span>
                         </small>
                       </h4>
                     </Reveal>
                     <Reveal>
-                      <p className='leading-snug tracking-wide text-white'>
-                        {description}
-                      </p>
+                      <p className='leading-snug tracking-wide text-white'>{description}</p>
                     </Reveal>
                   </div>
                 </div>

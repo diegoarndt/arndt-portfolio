@@ -9,11 +9,7 @@ export default function ScrollLink({ to, isLgScreen, children }) {
   const handleClickOrSetActive = () => {
     setIsActive(true);
     const currentPath = window.location.pathname;
-    window.history.replaceState(
-      null,
-      '',
-      isLanding ? currentPath : `${currentPath}#${to}`
-    );
+    window.history.replaceState(null, '', isLanding ? currentPath : `${currentPath}#${to}`);
   };
 
   const handleSetInactive = () => {
@@ -59,7 +55,7 @@ export default function ScrollLink({ to, isLgScreen, children }) {
       onSetActive={handleClickOrSetActive}
       onSetInactive={handleSetInactive}
       onClick={handleClickOrSetActive}
-      className='relative sm:h-16 sm:w-16 cursor-pointer'
+      className='relative cursor-pointer sm:h-16 sm:w-16'
     >
       <span className={isActive ? 'active' : ''} ref={targetRef}>
         {children}
