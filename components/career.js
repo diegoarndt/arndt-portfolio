@@ -14,42 +14,29 @@ import Reveal from '../utils/reveal';
 const Career = ({ translation, isLgScreen }) => {
   const careerTimeline = [
     {
-      link: 'https://www.sc.senai.br/',
-      logo: senai.src,
+      link: 'https://www.humber.ca/',
+      logo: humber.src,
       bgImage: study.src,
-      bgColor: 'bg-blue-500',
-      title: 'SENAI',
-      subtitle: `(${translation.senaiTitle})`,
-      period: '2013 - 2014',
-      location: `Blumenau, SC, ${translation.brazil}`,
-      locationFlag: '🇧🇷',
-      description: `${translation.senaiDescription}`,
-      timelineDirection: '',
-    },
-    {
-      link: 'https://www.t-systems.com/',
-      logo: telekom.src,
-      bgImage: work.src,
-      bgColor: 'bg-pink-700',
-      title: 'T-Systems',
-      subtitle: `(${translation.telekomTitle})`,
-      period: '2014 - 2020',
-      location: `Blumenau, SC, ${translation.brazil}`,
-      locationFlag: '🇧🇷',
-      description: `${translation.telekomDescription}`,
+      bgColor: 'bg-yellow-600',
+      title: 'Humber College',
+      subtitle: `(${translation.humberTitle})`,
+      period: `2022 - ${translation.current}`,
+      location: `Toronto, ON, ${translation.canada}`,
+      locationFlag: '🇨🇦',
+      description: `${translation.humberDescription}`,
       timelineDirection: 'flex-row-reverse',
     },
     {
-      link: 'https://www.furb.br/',
-      logo: furb.src,
-      bgImage: study.src,
-      bgColor: 'bg-blue-900',
-      title: 'FURB',
-      subtitle: `(${translation.furbTitle})`,
-      period: '2015 - 2020',
-      location: `Blumenau, SC, ${translation.brazil}`,
-      locationFlag: '🇧🇷',
-      description: `${translation.furbDescription}`,
+      link: 'https://www.veralogica.com/',
+      logo: veralogica.src,
+      bgImage: work.src,
+      bgColor: 'bg-green-600',
+      title: 'Veralogica GmbH',
+      subtitle: '(Frontend Engineer (Angular))',
+      period: `2020 - ${translation.current}`,
+      location: `Frankfurt, HE, ${translation.germany}`,
+      locationFlag: '🇩🇪',
+      description: `${translation.veralogicaDescription}`,
       timelineDirection: '',
     },
     {
@@ -66,30 +53,43 @@ const Career = ({ translation, isLgScreen }) => {
       timelineDirection: 'flex-row-reverse',
     },
     {
-      link: 'https://www.veralogica.com/',
-      logo: veralogica.src,
-      bgImage: work.src,
-      bgColor: 'bg-green-600',
-      title: 'Veralogica GmbH',
-      subtitle: `(${translation.veralogicaTitle})`,
-      period: `2020 - ${translation.current}`,
-      location: `Frankfurt, HE, ${translation.germany}`,
-      locationFlag: '🇩🇪',
-      description: `${translation.veralogicaDescription}`,
+      link: 'https://www.furb.br/',
+      logo: furb.src,
+      bgImage: study.src,
+      bgColor: 'bg-blue-900',
+      title: 'FURB',
+      subtitle: `(${translation.furbTitle})`,
+      period: '2015 - 2020',
+      location: `Blumenau, SC, ${translation.brazil}`,
+      locationFlag: '🇧🇷',
+      description: `${translation.furbDescription}`,
       timelineDirection: '',
     },
     {
-      link: 'https://www.humber.ca/',
-      logo: humber.src,
-      bgImage: study.src,
-      bgColor: 'bg-yellow-600',
-      title: 'Humber College',
-      subtitle: `(${translation.humberTitle})`,
-      period: `2022 - ${translation.current}`,
-      location: `Toronto, ON, ${translation.canada}`,
-      locationFlag: '🇨🇦',
-      description: `${translation.humberDescription}`,
+      link: 'https://www.t-systems.com/',
+      logo: telekom.src,
+      bgImage: work.src,
+      bgColor: 'bg-pink-700',
+      title: 'T-Systems',
+      subtitle: `(${translation.telekomTitle})`,
+      period: '2014 - 2020',
+      location: `Blumenau, SC, ${translation.brazil}`,
+      locationFlag: '🇧🇷',
+      description: `${translation.telekomDescription}`,
       timelineDirection: 'flex-row-reverse',
+    },
+    {
+      link: 'https://www.sc.senai.br/',
+      logo: senai.src,
+      bgImage: study.src,
+      bgColor: 'bg-blue-500',
+      title: 'SENAI',
+      subtitle: `(${translation.senaiTitle})`,
+      period: '2013 - 2014',
+      location: `Blumenau, SC, ${translation.brazil}`,
+      locationFlag: '🇧🇷',
+      description: `${translation.senaiDescription}`,
+      timelineDirection: '',
     },
   ];
 
@@ -98,9 +98,6 @@ const Career = ({ translation, isLgScreen }) => {
       <div className='text-gray-500 dark:text-gray-200'>
         <Reveal>
           <p className='inline py-2 text-2xl font-bold lg:text-3xl'>{translation.careerTitle}</p>
-        </Reveal>
-        <Reveal>
-          <p className='lg:text-1xl py-6 text-xl'>{translation.careerDescription}</p>
         </Reveal>
       </div>
       <div className='wrap relative h-full overflow-hidden pt-8'>
@@ -134,7 +131,7 @@ const Career = ({ translation, isLgScreen }) => {
                 }`}
               >
                 <div className='order-1 hidden w-5/12 lg:block'></div>
-                <div className='z-20 order-1 flex h-10 w-10 items-center'>
+                <div className='z-20 order-1 flex h-12 w-12 items-center'>
                   <a
                     href={link}
                     target='_blank'
@@ -146,8 +143,8 @@ const Career = ({ translation, isLgScreen }) => {
                       className='rounded-full'
                       src={logo}
                       alt={title}
-                      width={100}
-                      height={100}
+                      width={120}
+                      height={120}
                     />
                   </a>
                 </div>
@@ -164,12 +161,14 @@ const Career = ({ translation, isLgScreen }) => {
                     <Reveal>
                       <h3 className='text-xl font-bold text-white'>
                         {title}
-                        <small className='px-1'>{subtitle}</small>
+                        <small className='block text-sm font-medium text-white/80'>
+                          {subtitle}
+                        </small>
                       </h3>
                     </Reveal>
                     <Reveal>
                       <h4 className='mb-3'>
-                        <small className='flex items-center text-white'>
+                        <small className='flex items-center text-sm text-white/70'>
                           {period} | {location}
                           <span className='px-1 text-2xl'>{locationFlag}</span>
                         </small>
