@@ -42,7 +42,7 @@ const Landing = ({ translation }) => {
         ></span>
       </motion.h2>
 
-      <h3 className='cursor-default pt-3 text-lg tracking-widest text-gray-500 dark:text-gray-300 lg:text-xl'>
+      <h3 className='cursor-default pt-10 text-lg tracking-widest text-gray-500 dark:text-gray-300 lg:text-xl'>
         <TypeIt
           key={JSON.stringify(translation)}
           options={{ loop: true }}
@@ -66,6 +66,9 @@ const Landing = ({ translation }) => {
           }}
         />
       </h3>
+      <p className='pt-3 text-sm text-gray-400 dark:text-gray-400 lg:text-base'>
+        Exploring long-term fully remote opportunities aligned with US &amp; Canada time zones
+      </p>
     </div>
   );
 };
