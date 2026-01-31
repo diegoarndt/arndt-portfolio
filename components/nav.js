@@ -48,8 +48,8 @@ const Nav = ({
           <Image
             src={logo}
             alt='profile-picture'
-            layout='fill'
-            objectFit='cover'
+            fill
+            style={{ objectFit: 'cover' }}
             className='h-12 w-12'
           />
         </ScrollLink>

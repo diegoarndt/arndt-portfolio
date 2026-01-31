@@ -162,7 +162,7 @@ const Career = ({ translation, isLgScreen }) => {
                     className='absolute inset-0 w-full h-full object-cover opacity-10 hover:opacity-30'
                     src={bgImage}
                     alt={title}
-                    layout='fill'
+                    fill
                   />
                   <div className='relative w-fit'>
                     <Reveal>

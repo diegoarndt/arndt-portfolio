@@ -9,8 +9,8 @@ const About = ({ translation }) => {
         <Image
           src={myself}
           alt='profile-picture'
-          layout='fill'
-          objectFit='cover'
+          fill
+          style={{ objectFit: 'cover' }}
           priority={true}
           className='border-t-8-4 border-black pointer-events-none'
         />
