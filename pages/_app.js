@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 
 import en from '../locales/en.json';
 import es from '../locales/es.json';
@@ -52,19 +52,6 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
       <Analytics />
     </>
   );
-}
-
-export async function getServerSideProps(context) {
-  const { req } = context;
-  const acceptLanguage = req.headers['accept-language'] || '';
-  const preferredLanguage =
-    acceptLanguage.split(',')[0].trim().split('-')[0] || 'en';
-
-  return {
-    props: {
-      initialLanguage: preferredLanguage,
-    },
-  };
 }
 
 export default ArndtPortfolio;

@@ -12,11 +12,11 @@ import {
   FaTachometerAlt,
   FaGraduationCap,
   FaBolt,
+  FaDatabase,
 } from 'react-icons/fa';
 import {
   SiTypescript,
   SiTailwindcss,
-  SiMicrosoftsqlserver,
 } from 'react-icons/si';
 import Reveal from '../utils/reveal';
 
@@ -79,7 +79,7 @@ const Skills = ({ translation }) => {
       shadow: 'shadow-sky-400',
     },
     {
-      icon: SiMicrosoftsqlserver,
+      icon: FaDatabase,
       title: 'SQL',
       fromBgColor: 'from-red-400',
       toBgColor: 'to-red-600',
