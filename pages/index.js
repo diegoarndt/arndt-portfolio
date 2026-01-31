@@ -11,12 +11,12 @@ import Contact from '../components/contact';
 import Footer from '../components/footer';
 
 export default function Home(props) {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [isMenuOpened, setMenuOpen] = useState(false);
   const [isLgScreen, setIsLgScreen] = useState(false);
   const { width } = useWindowSize();
 
-  useEffect(() => setDarkMode(true), []);
+  useEffect(() => setDarkMode(false), []);
   useEffect(() => setMenuOpen(false), []);
   useEffect(() => {
     setIsLgScreen(width >= 1024);
