@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import study from '../public/bg-study.jpg';
 import work from '../public/bg-work.jpg';
 import wxp from '../public/bg-wxp.jpg';
@@ -140,22 +139,21 @@ const Career = ({ translation, isLgScreen }) => {
               >
                 <div className='order-1 w-5/12 hidden lg:block'></div>
                 <div className='z-20 flex items-center order-1 w-10 h-10'>
-                  <Link href={link} passHref={true}>
-                    <a
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='hover:scale-110'
-                      aria-label="Organization's website"
-                    >
-                      <Image
-                        className='rounded-full'
-                        src={logo}
-                        alt={title}
-                        width={100}
-                        height={100}
-                      />
-                    </a>
-                  </Link>
+                  <a
+                    href={link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='hover:scale-110'
+                    aria-label="Organization's website"
+                  >
+                    <Image
+                      className='rounded-full'
+                      src={logo}
+                      alt={title}
+                      width={100}
+                      height={100}
+                    />
+                  </a>
                 </div>
                 <div
                   className={`order-1 rounded-lg shadow-xl w-10/12 lg:w-5/12 px-6 py-4 relative ${bgColor}`}

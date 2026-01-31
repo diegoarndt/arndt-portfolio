@@ -1,5 +1,4 @@
 import { AiFillLinkedin, AiFillGithub, AiFillGitlab } from 'react-icons/ai';
-import Link from 'next/link';
 import YearInWords from '../utils/yearInWords';
 
 const Footer = ({ props, translation }) => {
@@ -11,36 +10,33 @@ const Footer = ({ props, translation }) => {
         </blockquote>
       </div>
       <div className='text-5xl py-5 flex justify-center gap-16 text-gray-600 dark:text-gray-400'>
-        <Link href='https://gitlab.com/diegoarndt' passHref={true}>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            className='hover:scale-110 hover:text-orange-600'
-            aria-label='Gitlab profile'
-          >
-            <AiFillGitlab />
-          </a>
-        </Link>
-        <Link href='https://github.com/diegoarndt' passHref={true}>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            className='hover:scale-110 hover:text-purple-600'
-            aria-label='Github profile'
-          >
-            <AiFillGithub />
-          </a>
-        </Link>
-        <Link href='https://www.linkedin.com/in/diegoarndt' passHref={true}>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            className='hover:scale-110 hover:text-blue-600'
-            aria-label='LinkedIn profile'
-          >
-            <AiFillLinkedin />
-          </a>
-        </Link>
+        <a
+          href='https://gitlab.com/diegoarndt'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='hover:scale-110 hover:text-orange-600'
+          aria-label='Gitlab profile'
+        >
+          <AiFillGitlab />
+        </a>
+        <a
+          href='https://github.com/diegoarndt'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='hover:scale-110 hover:text-purple-600'
+          aria-label='Github profile'
+        >
+          <AiFillGithub />
+        </a>
+        <a
+          href='https://www.linkedin.com/in/diegoarndt'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='hover:scale-110 hover:text-blue-600'
+          aria-label='LinkedIn profile'
+        >
+          <AiFillLinkedin />
+        </a>
       </div>
       <p>
         {translation.handcrafted}&nbsp;©&nbsp;
