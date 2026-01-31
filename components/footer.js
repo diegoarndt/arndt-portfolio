@@ -1,5 +1,5 @@
 import TypeIt from 'typeit-react';
-import { AiFillLinkedin, AiFillGithub, AiFillGitlab } from 'react-icons/ai';
+import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import YearInWords from '../utils/yearInWords';
 
 const Footer = ({ props, translation }) => {
@@ -31,15 +31,6 @@ const Footer = ({ props, translation }) => {
         </blockquote>
       </div>
       <div className='flex justify-center gap-16 py-5 text-5xl text-gray-600 dark:text-gray-400'>
-        <a
-          href='https://gitlab.com/diegoarndt'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='hover:scale-110 hover:text-orange-600'
-          aria-label='Gitlab profile'
-        >
-          <AiFillGitlab />
-        </a>
         <a
           href='https://github.com/diegoarndt'
           target='_blank'

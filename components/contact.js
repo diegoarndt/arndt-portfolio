@@ -38,9 +38,12 @@ const Contact = ({ translation }) => {
         onSubmit={onSubmitWithConfetti}
       >
         <Reveal>
-          <h3 className='flex max-w-lg cursor-default justify-center pb-16 text-2xl font-bold text-blue-500 dark:text-green-500 lg:max-w-2xl lg:pb-12 lg:text-3xl xl:max-w-4xl xl:text-4xl'>
-            {translation.contactMe}
+          <h3 className='flex max-w-lg cursor-default justify-center pb-4 text-2xl font-bold text-blue-500 dark:text-green-500 lg:max-w-2xl lg:text-3xl xl:max-w-4xl xl:text-4xl'>
+            Let’s talk
           </h3>
+          <p className='mb-10 text-center text-base text-gray-500 dark:text-gray-300 lg:text-lg'>
+            Open to frontend roles, remote opportunities, and collaborations.
+          </p>
           <div className='mb-6 flex w-full flex-wrap'>
             <div className='w-full px-3'>
               <label
@@ -54,7 +57,7 @@ const Contact = ({ translation }) => {
                 id='name'
                 name='name'
                 type='text'
-                placeholder={`${translation.namePlaceholder}`}
+                placeholder='Full name'
                 autoComplete='off'
               ></input>
               <ValidationError prefix='Name' field='name' errors={state.errors} />
@@ -73,7 +76,7 @@ const Contact = ({ translation }) => {
                 id='email'
                 name='email'
                 type='email'
-                placeholder={`${translation.emailPlaceholder}`}
+                placeholder='Email address'
                 autoComplete='off'
               ></input>
               <ValidationError prefix='Email' field='email' errors={state.errors} />
@@ -92,20 +95,29 @@ const Contact = ({ translation }) => {
                 id='message'
                 name='message'
                 rows='8'
-                placeholder={`${translation.messagePlaceholder}`}
+                placeholder='How can I help?'
               ></textarea>
               <ValidationError prefix='Message' field='message' errors={state.errors} />
             </div>
           </div>
-          <div className='flex w-full items-center justify-end px-3'>
+          <div className='mt-6 flex w-full items-center justify-center px-3 lg:mt-8'>
             <button
-              className='w-32 rounded bg-gradient-to-r from-blue-500 to-blue-900 px-4 py-2 font-bold text-white hover:to-blue-500 dark:from-green-500 dark:to-cyan-600 hover:dark:to-blue-500'
+              className='w-56 rounded bg-gradient-to-r from-blue-500 to-blue-900 px-4 py-2 font-bold text-white hover:to-blue-500 dark:from-green-500 dark:to-cyan-600 hover:dark:to-blue-500'
               type='submit'
               aria-label='Send message'
               disabled={state.submitting}
             >
-              {translation.send}
+              Send message
             </button>
+          </div>
+          <div className='mt-6 text-center text-sm text-gray-500 dark:text-gray-300'>
+            Prefer email?{' '}
+            <a
+              href='mailto:diegoarndt@outlook.com'
+              className='text-gray-600 underline-offset-4 hover:underline dark:text-gray-200'
+            >
+              Email me directly
+            </a>
           </div>
         </Reveal>
       </form>
