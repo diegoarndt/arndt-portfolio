@@ -44,8 +44,12 @@ const Landing = ({ translation }) => {
       <h1 className='cursor-default pt-7 text-xl font-semibold tracking-widest text-gray-600 dark:text-gray-200 lg:text-2xl'>
         Frontend Engineer (Angular)
       </h1>
-      <p className='pt-3 text-sm text-gray-400 dark:text-gray-500 lg:text-sm'>
-        Exploring long-term fully remote opportunities aligned with US &amp; Canada time zones
+      <p className='flex items-center justify-center gap-2 pt-3 text-sm text-gray-500 dark:text-gray-400 lg:text-sm'>
+        <span className='relative flex h-2.5 w-2.5'>
+          <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75'></span>
+          <span className='relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500'></span>
+        </span>
+        Open to remote frontend engineer roles aligned with US & Canada time zones.
       </p>
     </div>
   );

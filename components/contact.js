@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import { InlineWidget } from 'react-calendly';
 import Confetti from 'react-confetti';
 import confetti from 'canvas-confetti';
 import Reveal from '../utils/reveal';
@@ -34,7 +35,7 @@ const Contact = ({ translation }) => {
   return (
     <>
       <form
-        className='flex flex-col items-center justify-center px-10 pb-12 lg:px-20 lg:pb-24'
+        className='flex flex-col items-center justify-center px-10 pb-6 lg:px-20 lg:pb-8'
         onSubmit={onSubmitWithConfetti}
       >
         <Reveal>
@@ -118,6 +119,24 @@ const Contact = ({ translation }) => {
             >
               Email me directly
             </a>
+          </div>
+
+          <div className='my-10 flex w-full items-center'>
+            <div className='flex-grow border-t border-gray-300 dark:border-gray-600'></div>
+            <span className='mx-4 text-sm text-gray-400 dark:text-gray-500'>or</span>
+            <div className='flex-grow border-t border-gray-300 dark:border-gray-600'></div>
+          </div>
+
+          <div className='w-full'>
+            <h3 className='mb-4 text-center text-xl font-normal text-gray-600 dark:text-gray-300'>
+              Schedule a call
+            </h3>
+            <div className='overflow-hidden rounded-lg'>
+              <InlineWidget
+                url='https://calendly.com/diegoarndt'
+                styles={{ height: '480px', minWidth: '320px' }}
+              />
+            </div>
           </div>
         </Reveal>
       </form>

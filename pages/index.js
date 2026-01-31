@@ -29,6 +29,31 @@ export default function Home(props) {
         jobTitle: 'Frontend Engineer (Angular)',
         url: siteUrl,
         sameAs: ['https://www.linkedin.com/in/diegoarndt', 'https://github.com/diegoarndt'],
+        knowsAbout: [
+          'Angular',
+          'TypeScript',
+          'RxJS',
+          'JavaScript',
+          'HTML',
+          'CSS',
+          'SCSS',
+          'REST APIs',
+          'CI/CD',
+          'AWS',
+          'Git',
+          'Agile',
+          'Unit Testing',
+          'E2E Testing',
+        ],
+        hasCredential: {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'certification',
+          name: 'AWS Certified Cloud Practitioner',
+        },
+        workLocation: {
+          '@type': 'VirtualLocation',
+          description: 'Remote - US & Canada Time Zones',
+        },
       },
       {
         '@type': 'WebSite',
@@ -174,7 +199,7 @@ export default function Home(props) {
         </section>
 
         <section
-          className='section-bg flex min-h-screen items-center justify-center py-16 lg:py-24'
+          className='section-bg flex items-center justify-center py-16 lg:py-24'
           id='contact'
         >
           <Contact translation={translation} />

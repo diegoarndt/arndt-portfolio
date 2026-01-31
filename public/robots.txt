@@ -1,0 +1,6 @@
+# robots.txt for diegoarndt.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://diegoarndt.com/sitemap.xml

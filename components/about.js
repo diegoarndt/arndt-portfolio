@@ -21,9 +21,10 @@ const About = ({ translation }) => {
       <div className='lg:text-1xl mx-auto space-y-5 text-justify text-xl text-gray-600 dark:text-gray-100'>
         <p>
           <strong className='font-semibold text-gray-700 dark:text-gray-100'>
-            Frontend Engineer focused on Angular, TypeScript, and RxJS
+            Frontend Engineer with 5+ years of experience
           </strong>
-          , building product-focused, user-centered web applications.
+          , focused on Angular, TypeScript, and RxJS — building product-focused, user-centered web
+          applications.
         </p>
         <p>
           I partner with product and stakeholders, and collaborate with backend and infrastructure
@@ -32,9 +33,6 @@ const About = ({ translation }) => {
         <p>
           Experienced with REST APIs, CI/CD, and AWS in production (Cloud Practitioner certified),
           with a focus on clean code, accessibility, and pragmatic testing.
-        </p>
-        <p className='pt-2 text-base text-gray-500 dark:text-gray-300 lg:text-lg'>
-          Available for remote frontend engineer roles aligned with US &amp; Canada time zones.
         </p>
       </div>
     </div>
