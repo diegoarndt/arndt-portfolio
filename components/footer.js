@@ -51,10 +51,11 @@ const Footer = ({ props, translation }) => {
         </a>
       </div>
       <p>
-        {translation.handcrafted}&nbsp;©&nbsp;
+        ©&nbsp;Updated in&nbsp;
         <span>
           <YearInWords language={props.locale} />
         </span>
+        &nbsp;·&nbsp;{translation.handcrafted}
       </p>
     </footer>
   );
