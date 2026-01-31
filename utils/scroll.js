@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getScrollOffset } from './scrollOffsets';
 
 export default function ScrollLink({ to, isLgScreen, onClickCallback, children }) {
   const [isActive, setIsActive] = useState(false);
@@ -14,8 +15,7 @@ export default function ScrollLink({ to, isLgScreen, onClickCallback, children }
       if (!target) {
         return;
       }
-      const navHeight = 80;
-      const offset = isLanding ? -500 : -navHeight;
+      const offset = getScrollOffset(to);
       const top = target.getBoundingClientRect().top + window.pageYOffset + offset;
       window.scrollTo({ top, behavior: 'smooth' });
     };

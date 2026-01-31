@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useWindowSize } from 'react-use/';
 import ScrollLink from '../utils/scroll';
+import { getScrollOffset } from '../utils/scrollOffsets';
 import Nav from '../components/nav';
 import Landing from '../components/landing';
 import About from '../components/about';
@@ -86,8 +87,7 @@ export default function Home(props) {
       return;
     }
 
-    const navHeight = 80;
-    const offset = targetId === 'landing' ? -500 : -navHeight;
+    const offset = getScrollOffset(targetId);
     const top = target.getBoundingClientRect().top + window.pageYOffset + offset;
     window.scrollTo({ top, behavior: 'auto' });
   }, [width]);

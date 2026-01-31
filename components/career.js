@@ -94,10 +94,10 @@ const Career = ({ translation, isLgScreen }) => {
   ];
 
   return (
-    <div className='container mx-auto h-full w-full max-w-screen-md px-10 pt-24 lg:max-w-screen-lg lg:px-20 lg:pb-10 lg:pt-0 xl:max-w-screen-xl'>
+    <div className='container mx-auto h-full w-full max-w-screen-md px-10 pt-10 lg:max-w-screen-lg lg:px-20 lg:pb-10 lg:pt-12 xl:max-w-screen-xl'>
       <div className='text-gray-500 dark:text-gray-300'>
         <Reveal>
-          <h2 className='mt-10 inline text-2xl font-normal text-gray-600 dark:text-gray-300 lg:mt-12 lg:text-3xl'>
+          <h2 className='inline text-2xl font-normal text-gray-600 dark:text-gray-300 lg:text-3xl'>
             {translation.careerTitle}
           </h2>
         </Reveal>
