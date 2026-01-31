@@ -26,14 +26,15 @@ const About = ({ translation }) => {
           , building product-focused, user-centered web applications.
         </p>
         <p>
-          I partner with product and stakeholders to translate requirements into clear frontend
-          solutions, collaborate with backend and infrastructure teams, and support delivery for
-          Angular developer roadmaps.
+          I partner with product and stakeholders, and collaborate with backend and infrastructure
+          teams to translate requirements into clear frontend solutions.
         </p>
         <p>
-          Open to remote frontend engineer roles aligned with US &amp; Canada time zones.
           Experienced with REST APIs, CI/CD, and AWS in production (Cloud Practitioner certified),
           with a focus on clean code, accessibility, and pragmatic testing.
+        </p>
+        <p className='pt-2 text-base text-gray-500 dark:text-gray-300 lg:text-lg'>
+          Available for remote frontend engineer roles aligned with US &amp; Canada time zones.
         </p>
       </div>
     </div>
