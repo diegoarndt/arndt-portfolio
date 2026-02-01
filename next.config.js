@@ -4,6 +4,7 @@ const nextConfig = {
   i18n: {
     locales: ['en', 'pt', 'es', 'de', 'fr'],
     defaultLocale: 'en',
+    localeDetection: false,
   },
   images: {
     formats: ['image/avif', 'image/webp'],
