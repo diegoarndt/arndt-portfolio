@@ -3,12 +3,25 @@ import Reveal from '../utils/reveal';
 const Skills = ({ translation }) => {
   const skillGroups = [
     {
-      title: 'Core',
-      items: ['Angular', 'TypeScript', 'RxJS'],
+      title: 'Frontend Core',
+      items: [
+        'Angular',
+        'JavaScript (ES6+) & TypeScript',
+        'RxJS (observable patterns and async data flows)',
+      ],
     },
     {
-      title: 'Frontend',
-      items: ['HTML & CSS (SCSS)', 'Tailwind & responsive design', 'Accessibility (a11y)'],
+      title: 'UI Engineering',
+      items: ['HTML & CSS (SCSS)', 'Tailwind CSS & responsive design', 'Accessibility (a11y)'],
+    },
+    {
+      title: 'Backend & Infra (working knowledge)',
+      items: [
+        'REST APIs (consumption & integration)',
+        'AWS (Cloud Practitioner certified)',
+        'CI/CD pipelines (usage & troubleshooting)',
+        'Docker (daily usage)',
+      ],
     },
     {
       title: 'Testing',
@@ -26,22 +39,13 @@ const Skills = ({ translation }) => {
       ],
     },
     {
-      title: 'Backend & Infra (working knowledge)',
-      items: [
-        'REST APIs (consumption & integration)',
-        'AWS (Cloud Practitioner certified)',
-        'CI/CD (usage & troubleshooting)',
-        'Docker (daily usage)',
-      ],
-    },
-    {
       title: 'Tooling & Workflow',
       items: [
         'Git & GitHub',
         'Jira & Confluence',
         'VS Code',
         'Draw.io',
-        'AI-assisted development (human-validated)',
+        'AI-assisted development (human-reviewed & validated)',
       ],
     },
   ];
