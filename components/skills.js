@@ -1,3 +1,5 @@
+import Reveal from '../utils/reveal';
+
 const Skills = ({ translation }) => {
   const skillGroups = [
     {
@@ -6,7 +8,7 @@ const Skills = ({ translation }) => {
     },
     {
       title: 'Frontend',
-      items: ['HTML & CSS (SCSS)', 'Tailwind', 'Accessibility (a11y)'],
+      items: ['HTML & CSS (SCSS)', 'Tailwind & responsive design', 'Accessibility (a11y)'],
     },
     {
       title: 'Testing',
@@ -15,10 +17,12 @@ const Skills = ({ translation }) => {
     {
       title: 'Product & Collaboration',
       items: [
+        'Agile/Scrum methodologies',
         'Requirement analysis',
         'Client-facing communication',
         'Feature scoping & validation',
-        'UX collaboration',
+        'UX collaboration & UI design',
+        'Problem-solving & debugging',
       ],
     },
     {
@@ -56,16 +60,18 @@ const Skills = ({ translation }) => {
             key={group.title}
             className='rounded-lg border border-gray-200 bg-white/60 p-5 text-left shadow-sm dark:border-gray-800 dark:bg-black/30'
           >
-            <p className='text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500'>
-              {group.title}
-            </p>
-            <ul className='mt-3 space-y-2 text-base text-gray-600 dark:text-gray-200 lg:text-lg'>
-              {group.items.map((item) => (
-                <li key={item} className='leading-snug'>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <Reveal width='100%'>
+              <p className='text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500'>
+                {group.title}
+              </p>
+              <ul className='mt-3 space-y-2 text-base text-gray-600 dark:text-gray-200 lg:text-lg'>
+                {group.items.map((item) => (
+                  <li key={item} className='leading-snug'>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         ))}
       </div>

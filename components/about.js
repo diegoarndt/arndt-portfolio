@@ -15,26 +15,28 @@ const About = ({ translation }) => {
           className='border-t-8-4 pointer-events-none border-black'
         />
       </div>
-      <h2 className='mx-auto mb-4 mt-12 text-2xl font-normal text-gray-600 dark:text-gray-300 lg:mb-6 lg:mt-14 lg:text-3xl'>
-        How I Work
-      </h2>
-      <div className='lg:text-1xl mx-auto space-y-5 text-justify text-xl text-gray-600 dark:text-gray-100'>
-        <p>
-          <strong className='font-semibold text-gray-700 dark:text-gray-100'>
-            Frontend Engineer with 5+ years of experience
-          </strong>
-          , focused on Angular, TypeScript, and RxJS — building product-focused, user-centered web
-          applications.
-        </p>
-        <p>
-          I partner with product and stakeholders, and collaborate with backend and infrastructure
-          teams to translate requirements into clear frontend solutions.
-        </p>
-        <p>
-          Experienced with REST APIs, CI/CD, and AWS in production (Cloud Practitioner certified),
-          with a focus on clean code, accessibility, and pragmatic testing.
-        </p>
-      </div>
+      <Reveal width='100%'>
+        <h2 className='mx-auto mb-4 mt-12 text-2xl font-normal text-gray-600 dark:text-gray-300 lg:mb-6 lg:mt-14 lg:text-3xl'>
+          How I Work
+        </h2>
+        <div className='lg:text-1xl mx-auto space-y-5 text-justify text-xl text-gray-600 dark:text-gray-100'>
+          <p>
+            <strong className='font-semibold text-gray-700 dark:text-gray-100'>
+              Frontend Engineer with 5+ years of experience
+            </strong>
+            , focused on Angular, TypeScript, and RxJS — building product-focused, user-centered web
+            applications.
+          </p>
+          <p>
+            I partner with product and stakeholders, and collaborate with backend and infrastructure
+            teams to translate requirements into clear frontend solutions.
+          </p>
+          <p>
+            Experienced with REST APIs, CI/CD, and AWS in production (Cloud Practitioner certified),
+            with a focus on clean code, accessibility, and pragmatic testing.
+          </p>
+        </div>
+      </Reveal>
     </div>
   );
 };
