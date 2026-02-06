@@ -36,6 +36,8 @@ const customLabels = {
 
 function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
   const { locale, asPath, push } = useRouter();
+  const enableAnalytics =
+    process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === 'true' && process.env.NODE_ENV === 'production';
   pageProps = {
     ...pageProps,
     countryCodes,
@@ -53,7 +55,7 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
       <Component {...pageProps} initialLanguage={initialLanguage} />
-      {process.env.NODE_ENV === 'production' && <Analytics />}
+      {enableAnalytics && <Analytics />}
     </>
   );
 }

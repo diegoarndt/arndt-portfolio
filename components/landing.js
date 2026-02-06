@@ -3,9 +3,12 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 const Landing = ({ translation }) => {
   const [mainSection, setMainSection] = useState(null);
-  const prefersReducedMotion = useReducedMotion();
+  const [hasMounted, setHasMounted] = useState(false);
+  const systemReducedMotion = useReducedMotion();
+  const prefersReducedMotion = hasMounted ? systemReducedMotion : false;
 
   useEffect(() => {
+    setHasMounted(true);
     setMainSection(document.getElementsByClassName('main-section')[0]);
   }, []);
 

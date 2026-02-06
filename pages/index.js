@@ -15,6 +15,7 @@ export default function Home(props) {
   const [darkMode, setDarkMode] = useState(false);
   const [isMenuOpened, setMenuOpen] = useState(false);
   const [isLgScreen, setIsLgScreen] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const { width } = useWindowSize();
 
   const translation = props.translation[props.locale];
@@ -72,10 +73,12 @@ export default function Home(props) {
 
   useEffect(() => setDarkMode(false), []);
   useEffect(() => setMenuOpen(false), []);
+  useEffect(() => setHasMounted(true), []);
   useEffect(() => {
+    if (!hasMounted) return;
     setIsLgScreen(width >= 1024);
     setMenuOpen(false);
-  }, [width]);
+  }, [width, hasMounted]);
 
   useEffect(() => {
     if (typeof window === 'undefined') {

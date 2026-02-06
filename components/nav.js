@@ -36,6 +36,7 @@ const Nav = ({
             fill
             style={{ objectFit: 'cover' }}
             className='h-12 w-12'
+            priority
           />
         </ScrollLink>
 

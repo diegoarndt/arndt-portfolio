@@ -15,11 +15,23 @@ export default function Document() {
         <link rel='alternate' hrefLang='de' href='https://diegoarndt.com/de' />
         <link rel='alternate' hrefLang='fr' href='https://diegoarndt.com/fr' />
         <link rel='alternate' hrefLang='x-default' href='https://diegoarndt.com/' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' />
+
+        {/* Font loading: preconnect + preload for non-blocking fonts */}
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
+        <link
+          rel='preload'
+          as='style'
+          href='https://fonts.googleapis.com/css2?family=League+Spartan&family=Titillium+Web:wght@900&display=swap'
+        />
         <link
           href='https://fonts.googleapis.com/css2?family=League+Spartan&family=Titillium+Web:wght@900&display=swap'
           rel='stylesheet'
         />
+
+        {/* DNS prefetch for third-party domains */}
+        <link rel='dns-prefetch' href='https://calendly.com' />
+        <link rel='dns-prefetch' href='https://formspree.io' />
       </Head>
       <body className='font-poppins'>
         <Main />

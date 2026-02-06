@@ -88,14 +88,14 @@ describe('Contact', () => {
     expect(button.type).toBe('submit');
   });
 
-  it('renders the Calendly widget', () => {
+  it('renders the Calendly widget', async () => {
     render(<Contact translation={mockTranslation} />);
-    expect(screen.getByTestId('calendly-widget')).toBeInTheDocument();
+    expect(await screen.findByTestId('calendly-widget')).toBeInTheDocument();
   });
 
-  it('renders the Calendly widget with correct URL', () => {
+  it('renders the Calendly widget with correct URL', async () => {
     render(<Contact translation={mockTranslation} />);
-    const widget = screen.getByTestId('calendly-widget');
+    const widget = await screen.findByTestId('calendly-widget');
     expect(widget.dataset.url).toBe('https://calendly.com/diegoarndt');
   });
 

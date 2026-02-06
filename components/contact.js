@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { InlineWidget } from 'react-calendly';
 import Confetti from 'react-confetti';
@@ -9,6 +8,11 @@ import Reveal from '../utils/reveal';
 const Contact = ({ translation }) => {
   const [state, handleSubmit] = useForm('xdovzaap');
   const [showConfetti, setShowConfetti] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   const onSubmitWithConfetti = async (data) => {
     confettiEffect();
@@ -138,10 +142,16 @@ const Contact = ({ translation }) => {
               Schedule a call
             </h3>
             <div className='overflow-hidden rounded-lg'>
-              <InlineWidget
-                url='https://calendly.com/diegoarndt'
-                styles={{ height: '480px', minWidth: '320px' }}
-              />
+              {hasMounted ? (
+                <InlineWidget
+                  url='https://calendly.com/diegoarndt'
+                  styles={{ height: '480px', minWidth: '320px' }}
+                />
+              ) : (
+                <div className='flex h-[480px] min-w-[320px] items-center justify-center rounded-lg bg-gray-100 text-sm text-gray-500 dark:bg-gray-900 dark:text-gray-400'>
+                  Loading scheduler…
+                </div>
+              )}
             </div>
           </div>
         </Reveal>
