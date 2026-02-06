@@ -67,7 +67,7 @@ describe('Nav', () => {
   it('calls setDarkMode when theme toggle is clicked', () => {
     const setDarkMode = vi.fn();
     render(<Nav {...defaultProps} setDarkMode={setDarkMode} darkMode={false} />);
-    const themeToggle = screen.getByTestId('icon-moon').closest('span');
+    const themeToggle = screen.getByTestId('icon-moon').closest('button');
     fireEvent.click(themeToggle);
     expect(setDarkMode).toHaveBeenCalledWith(true);
   });
@@ -75,7 +75,7 @@ describe('Nav', () => {
   it('toggles darkMode to false when already dark', () => {
     const setDarkMode = vi.fn();
     render(<Nav {...defaultProps} setDarkMode={setDarkMode} darkMode={true} />);
-    const themeToggle = screen.getByTestId('icon-sun').closest('span');
+    const themeToggle = screen.getByTestId('icon-sun').closest('button');
     fireEvent.click(themeToggle);
     expect(setDarkMode).toHaveBeenCalledWith(false);
   });

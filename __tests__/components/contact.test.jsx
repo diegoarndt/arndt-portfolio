@@ -125,6 +125,9 @@ describe('Contact', () => {
 
   it('calls form submit handler on form submission', () => {
     render(<Contact translation={mockTranslation} />);
+    fireEvent.change(screen.getByPlaceholderText('Full name'), { target: { value: 'John Doe' } });
+    fireEvent.change(screen.getByPlaceholderText('Email address'), { target: { value: 'john@example.com' } });
+    fireEvent.change(screen.getByPlaceholderText('How can I help?'), { target: { value: 'Hello!' } });
     const submitButton = screen.getByRole('button', { name: 'Send message' });
     fireEvent.click(submitButton);
     expect(mockHandleSubmit).toHaveBeenCalled();

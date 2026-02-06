@@ -74,7 +74,7 @@ describe('Career', () => {
 
   it('renders organization links with correct hrefs', () => {
     render(<Career translation={mockTranslation} isLgScreen={true} />);
-    const links = screen.getAllByLabelText("Organization's website");
+    const links = screen.getAllByRole('link', { name: /^Visit .+ website$/ });
     expect(links.length).toBe(6);
 
     const hrefs = links.map((link) => link.href);
@@ -88,7 +88,7 @@ describe('Career', () => {
 
   it('renders organization links with target _blank', () => {
     render(<Career translation={mockTranslation} isLgScreen={true} />);
-    const links = screen.getAllByLabelText("Organization's website");
+    const links = screen.getAllByRole('link', { name: /^Visit .+ website$/ });
     links.forEach((link) => {
       expect(link.target).toBe('_blank');
       expect(link.rel).toBe('noopener noreferrer');

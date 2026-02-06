@@ -10,14 +10,14 @@ const mockTranslation = {
 describe('About', () => {
   it('renders the profile image', () => {
     render(<About translation={mockTranslation} />);
-    const image = screen.getByAltText('profile-picture');
+    const image = screen.getByAltText('Diego Arndt smiling in a professional photo');
     expect(image).toBeInTheDocument();
   });
 
   it('renders the profile image with correct alt text', () => {
     render(<About translation={mockTranslation} />);
-    const image = screen.getByAltText('profile-picture');
-    expect(image.alt).toBe('profile-picture');
+    const image = screen.getByAltText('Diego Arndt smiling in a professional photo');
+    expect(image.alt).toBe('Diego Arndt smiling in a professional photo');
   });
 
   it('renders the "How I Work" heading', () => {
