@@ -88,11 +88,19 @@ describe('Contact', () => {
     expect(button.type).toBe('submit');
   });
 
-  it('renders the scheduling link with correct URL', () => {
+  it('renders the Calendly widget after loading it', async () => {
     render(<Contact translation={mockTranslation} />);
-    const link = screen.getByRole('link', { name: 'Open scheduling page' });
-    expect(link).toBeInTheDocument();
-    expect(link.href).toBe('https://calendly.com/diegoarndt');
+    const loadButton = screen.getByRole('button', { name: 'Load scheduler' });
+    fireEvent.click(loadButton);
+    expect(await screen.findByTestId('calendly-widget')).toBeInTheDocument();
+  });
+
+  it('renders the Calendly widget with correct URL after loading', async () => {
+    render(<Contact translation={mockTranslation} />);
+    const loadButton = screen.getByRole('button', { name: 'Load scheduler' });
+    fireEvent.click(loadButton);
+    const widget = await screen.findByTestId('calendly-widget');
+    expect(widget.dataset.url).toBe('https://calendly.com/diegoarndt');
   });
 
   it('renders "Schedule a call" heading', () => {

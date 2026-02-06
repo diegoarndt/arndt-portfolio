@@ -66,6 +66,12 @@ vi.mock('framer-motion', () => ({
   useReducedMotion: () => false,
 }));
 
+// ─── Mock react-calendly ────────────────────────────────────────────────────────
+vi.mock('react-calendly', () => ({
+  InlineWidget: ({ url }) =>
+    React.createElement('div', { 'data-testid': 'calendly-widget', 'data-url': url }),
+}));
+
 // ─── Mock typeit-react ──────────────────────────────────────────────────────────
 vi.mock('typeit-react', () => ({
   __esModule: true,

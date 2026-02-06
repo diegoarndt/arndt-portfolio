@@ -3,12 +3,17 @@ import dynamic from 'next/dynamic';
 import { useForm, ValidationError } from '@formspree/react';
 import Reveal from '../utils/reveal';
 
+const InlineWidget = dynamic(() => import('react-calendly').then((module) => module.InlineWidget), {
+  ssr: false,
+});
+
 const Confetti = dynamic(() => import('react-confetti'), { ssr: false });
 
 const Contact = ({ translation }) => {
   const [state, handleSubmit] = useForm('xdovzaap');
   const [showConfetti, setShowConfetti] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const [showScheduler, setShowScheduler] = useState(false);
 
   useEffect(() => {
     setHasMounted(true);
@@ -143,18 +148,28 @@ const Contact = ({ translation }) => {
               Schedule a call
             </h3>
             <div className='overflow-hidden rounded-lg'>
-              <div className='flex h-[240px] min-w-[320px] flex-col items-center justify-center gap-4 rounded-lg bg-gray-100 text-sm text-gray-500 dark:bg-gray-900 dark:text-gray-400'>
-                <p>Calendly opens in a new tab to avoid third-party cookies.</p>
-                <a
-                  href='https://calendly.com/diegoarndt'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='rounded bg-cyan-600 px-4 py-2 text-white hover:bg-cyan-700'
-                  aria-label='Open scheduling page'
-                >
-                  Open scheduling page
-                </a>
-              </div>
+              {!showScheduler ? (
+                <div className='flex h-[480px] min-w-[320px] flex-col items-center justify-center gap-4 rounded-lg bg-gray-100 text-sm text-gray-500 dark:bg-gray-900 dark:text-gray-400'>
+                  <p>Calendly loads after you click.</p>
+                  <button
+                    type='button'
+                    className='rounded bg-cyan-600 px-4 py-2 text-white hover:bg-cyan-700'
+                    onClick={() => setShowScheduler(true)}
+                    aria-label='Load scheduler'
+                  >
+                    Load scheduler
+                  </button>
+                </div>
+              ) : hasMounted ? (
+                <InlineWidget
+                  url='https://calendly.com/diegoarndt'
+                  styles={{ height: '480px', minWidth: '320px' }}
+                />
+              ) : (
+                <div className='flex h-[480px] min-w-[320px] items-center justify-center rounded-lg bg-gray-100 text-sm text-gray-500 dark:bg-gray-900 dark:text-gray-400'>
+                  Loading scheduler…
+                </div>
+              )}
             </div>
           </div>
         </Reveal>
