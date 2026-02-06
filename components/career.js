@@ -32,7 +32,7 @@ const Career = ({ translation, isLgScreen }) => {
       bgImage: work.src,
       bgColor: 'bg-green-600',
       title: 'Veralogica GmbH',
-      subtitle: '(Frontend Engineer (Angular))',
+      subtitle: '(Angular Frontend Engineer)',
       period: `2020 - ${translation.current}`,
       location: `Frankfurt, HE, ${translation.germany}`,
       locationFlag: '🇩🇪',
