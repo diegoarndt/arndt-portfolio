@@ -97,8 +97,7 @@ describe('Career', () => {
 
   it('renders period information with "Current"', () => {
     render(<Career translation={mockTranslation} isLgScreen={true} />);
-    expect(screen.getByText(/2022 - Current/)).toBeInTheDocument();
-    expect(screen.getByText(/2020 - Current/)).toBeInTheDocument();
+    expect(screen.getByText(/2021 - Current/)).toBeInTheDocument();
   });
 
   it('renders location with translated country names', () => {
