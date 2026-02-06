@@ -1,0 +1,21 @@
+{
+  "name": "Diego Arndt — Frontend Engineer",
+  "short_name": "Diego Arndt",
+  "description": "Frontend Engineer specialized in Angular, TypeScript, and RxJS.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e5e7eb",
+  "theme_color": "#e5e7eb",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/da-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

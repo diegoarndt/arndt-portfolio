@@ -16,11 +16,17 @@ export default function Home(props) {
   const [isMenuOpened, setMenuOpen] = useState(false);
   const [isLgScreen, setIsLgScreen] = useState(false);
   const { width } = useWindowSize();
+
+  const translation = props.translation[props.locale];
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://diegoarndt.com';
-  const metaTitle = 'Frontend Engineer (Angular) | Remote US & Canada';
-  const metaDescription =
-    'Frontend Engineer specialized in Angular, TypeScript, and RxJS. Building scalable, product-focused web applications. Open to remote roles in US & Canada.';
+  const localePath = props.locale && props.locale !== 'en' ? `/${props.locale}` : '';
+  const canonicalUrl = `${siteUrl}${localePath}`;
+  const metaTitle = translation.metaTitle;
+  const metaDescription = translation.metaDescription;
   const ogImage = `${siteUrl}/myself.jpg`;
+  const ogLocaleMap = { en: 'en_US', pt: 'pt_BR', es: 'es_ES', de: 'de_DE', fr: 'fr_FR' };
+  const ogLocale = ogLocaleMap[props.locale] || 'en_US';
   const structuredData = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -92,8 +98,6 @@ export default function Home(props) {
     window.scrollTo({ top, behavior: 'auto' });
   }, [width]);
 
-  const translation = props.translation[props.locale];
-
   const menuItems = [
     {
       name: translation.about,
@@ -122,15 +126,27 @@ export default function Home(props) {
           name='keywords'
           content='frontend engineer, angular developer, frontend engineer angular, remote frontend engineer, typescript, rxjs, product-focused frontend, user-centered web applications, remote software engineer, US time zones, Canada time zones'
         />
+        <meta name='author' content='Diego Arndt' />
         <meta property='og:title' content={metaTitle} />
         <meta property='og:description' content={metaDescription} />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content={siteUrl} />
+        <meta property='og:url' content={canonicalUrl} />
         <meta property='og:image' content={ogImage} />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
+        <meta property='og:image:alt' content='Diego Arndt — Frontend Engineer' />
+        <meta property='og:site_name' content='Diego Arndt' />
+        <meta property='og:locale' content={ogLocale} />
+        {Object.entries(ogLocaleMap)
+          .filter(([key]) => key !== props.locale)
+          .map(([key, value]) => (
+            <meta key={key} property='og:locale:alternate' content={value} />
+          ))}
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:title' content={metaTitle} />
         <meta name='twitter:description' content={metaDescription} />
         <meta name='twitter:image' content={ogImage} />
+        <meta name='twitter:image:alt' content='Diego Arndt — Frontend Engineer' />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

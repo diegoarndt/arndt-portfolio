@@ -4,6 +4,10 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
+        <meta name='theme-color' content='#e5e7eb' media='(prefers-color-scheme: light)' />
+        <meta name='theme-color' content='#000000' media='(prefers-color-scheme: dark)' />
+        <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+        <link rel='manifest' href='/manifest.json' />
         <link rel='canonical' href='https://diegoarndt.com/' />
         <link rel='alternate' hrefLang='en' href='https://diegoarndt.com/' />
         <link rel='alternate' hrefLang='pt' href='https://diegoarndt.com/pt' />
