@@ -10,6 +10,8 @@ const About = ({ translation }) => {
           src={myself}
           alt='Diego Arndt smiling in a professional photo'
           fill
+          sizes='(min-width: 1024px) 384px, (min-width: 768px) 384px, 288px'
+          placeholder='blur'
           style={{ objectFit: 'cover' }}
           priority={true}
           className='border-t-8-4 pointer-events-none border-black'

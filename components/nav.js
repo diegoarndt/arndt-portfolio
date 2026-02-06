@@ -34,6 +34,7 @@ const Nav = ({
             src={logo}
             alt='Diego Arndt logo — go to top'
             fill
+            sizes='48px'
             style={{ objectFit: 'cover' }}
             className='h-12 w-12'
             priority

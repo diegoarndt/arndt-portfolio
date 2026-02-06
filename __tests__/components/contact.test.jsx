@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import React from 'react';
 
 // Use a variable to control mock state per test
@@ -88,15 +88,11 @@ describe('Contact', () => {
     expect(button.type).toBe('submit');
   });
 
-  it('renders the Calendly widget', async () => {
+  it('renders the scheduling link with correct URL', () => {
     render(<Contact translation={mockTranslation} />);
-    expect(await screen.findByTestId('calendly-widget')).toBeInTheDocument();
-  });
-
-  it('renders the Calendly widget with correct URL', async () => {
-    render(<Contact translation={mockTranslation} />);
-    const widget = await screen.findByTestId('calendly-widget');
-    expect(widget.dataset.url).toBe('https://calendly.com/diegoarndt');
+    const link = screen.getByRole('link', { name: 'Open scheduling page' });
+    expect(link).toBeInTheDocument();
+    expect(link.href).toBe('https://calendly.com/diegoarndt');
   });
 
   it('renders "Schedule a call" heading', () => {
@@ -123,14 +119,14 @@ describe('Contact', () => {
     expect(screen.getByPlaceholderText('How can I help?')).toBeInTheDocument();
   });
 
-  it('calls form submit handler on form submission', () => {
+  it('calls form submit handler on form submission', async () => {
     render(<Contact translation={mockTranslation} />);
     fireEvent.change(screen.getByPlaceholderText('Full name'), { target: { value: 'John Doe' } });
     fireEvent.change(screen.getByPlaceholderText('Email address'), { target: { value: 'john@example.com' } });
     fireEvent.change(screen.getByPlaceholderText('How can I help?'), { target: { value: 'Hello!' } });
     const submitButton = screen.getByRole('button', { name: 'Send message' });
     fireEvent.click(submitButton);
-    expect(mockHandleSubmit).toHaveBeenCalled();
+    await waitFor(() => expect(mockHandleSubmit).toHaveBeenCalled());
   });
 
   it('renders validation error containers for each field', () => {

@@ -147,6 +147,8 @@ const Career = ({ translation, isLgScreen }) => {
                       alt={title}
                       width={120}
                       height={120}
+                      sizes='48px'
+                      placeholder='blur'
                       loading='lazy'
                     />
                   </a>
@@ -159,6 +161,8 @@ const Career = ({ translation, isLgScreen }) => {
                     src={bgImage}
                     alt={title}
                     fill
+                    sizes='(min-width: 1024px) 40vw, 90vw'
+                    placeholder='blur'
                     loading='lazy'
                   />
                   <div className='relative w-fit'>

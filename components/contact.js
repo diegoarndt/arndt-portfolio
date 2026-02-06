@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { useForm, ValidationError } from '@formspree/react';
-import { InlineWidget } from 'react-calendly';
-import Confetti from 'react-confetti';
-import confetti from 'canvas-confetti';
 import Reveal from '../utils/reveal';
+
+const Confetti = dynamic(() => import('react-confetti'), { ssr: false });
 
 const Contact = ({ translation }) => {
   const [state, handleSubmit] = useForm('xdovzaap');
@@ -15,12 +15,13 @@ const Contact = ({ translation }) => {
   }, []);
 
   const onSubmitWithConfetti = async (data) => {
-    confettiEffect();
+    await confettiEffect();
     handleSubmit(data);
   };
 
-  const confettiEffect = () => {
+  const confettiEffect = async () => {
     setShowConfetti(true);
+    const { default: confetti } = await import('canvas-confetti');
     confetti({
       particleCount: 250,
       startVelocity: 30,
@@ -142,16 +143,18 @@ const Contact = ({ translation }) => {
               Schedule a call
             </h3>
             <div className='overflow-hidden rounded-lg'>
-              {hasMounted ? (
-                <InlineWidget
-                  url='https://calendly.com/diegoarndt'
-                  styles={{ height: '480px', minWidth: '320px' }}
-                />
-              ) : (
-                <div className='flex h-[480px] min-w-[320px] items-center justify-center rounded-lg bg-gray-100 text-sm text-gray-500 dark:bg-gray-900 dark:text-gray-400'>
-                  Loading scheduler…
-                </div>
-              )}
+              <div className='flex h-[240px] min-w-[320px] flex-col items-center justify-center gap-4 rounded-lg bg-gray-100 text-sm text-gray-500 dark:bg-gray-900 dark:text-gray-400'>
+                <p>Calendly opens in a new tab to avoid third-party cookies.</p>
+                <a
+                  href='https://calendly.com/diegoarndt'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='rounded bg-cyan-600 px-4 py-2 text-white hover:bg-cyan-700'
+                  aria-label='Open scheduling page'
+                >
+                  Open scheduling page
+                </a>
+              </div>
             </div>
           </div>
         </Reveal>

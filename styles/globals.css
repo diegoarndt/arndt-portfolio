@@ -29,11 +29,11 @@ body {
 }
 
 h2 {
-  font-family: "Titillium Web", sans-serif;
+  font-family: var(--font-titillium), sans-serif;
 }
 
 h3 {
-  font-family: "League Spartan", sans-serif;
+  font-family: var(--font-league), sans-serif;
 }
 
 a {

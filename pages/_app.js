@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/next';
+import { League_Spartan, Titillium_Web } from 'next/font/google';
 
 import en from '../locales/en.json';
 import es from '../locales/es.json';
@@ -9,6 +10,20 @@ import de from '../locales/de.json';
 import fr from '../locales/fr.json';
 
 import '../styles/globals.css';
+
+const titilliumWeb = Titillium_Web({
+  subsets: ['latin'],
+  weight: ['900'],
+  variable: '--font-titillium',
+  display: 'swap',
+});
+
+const leagueSpartan = League_Spartan({
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  variable: '--font-league',
+  display: 'swap',
+});
 
 const translation = {
   en,
@@ -54,7 +69,9 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
-      <Component {...pageProps} initialLanguage={initialLanguage} />
+      <div className={`${titilliumWeb.variable} ${leagueSpartan.variable}`}>
+        <Component {...pageProps} initialLanguage={initialLanguage} />
+      </div>
       {enableAnalytics && <Analytics />}
     </>
   );

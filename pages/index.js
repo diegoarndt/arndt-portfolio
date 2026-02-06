@@ -1,15 +1,35 @@
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useWindowSize } from 'react-use/';
+import dynamic from 'next/dynamic';
 import ScrollLink from '../utils/scroll';
 import { getScrollOffset } from '../utils/scrollOffsets';
 import Nav from '../components/nav';
 import Landing from '../components/landing';
 import About from '../components/about';
-import Skills from '../components/skills';
-import Career from '../components/career';
-import Contact from '../components/contact';
-import Footer from '../components/footer';
+const Skills = dynamic(() => import('../components/skills'), {
+  ssr: false,
+  loading: () => <div className='mx-auto max-w-screen-md px-10 text-gray-500'>Loading…</div>,
+});
+
+const Career = dynamic(() => import('../components/career'), {
+  ssr: false,
+  loading: () => <div className='mx-auto max-w-screen-md px-10 text-gray-500'>Loading…</div>,
+});
+
+const Contact = dynamic(() => import('../components/contact'), {
+  ssr: false,
+  loading: () => <div className='mx-auto max-w-screen-md px-10 text-gray-500'>Loading…</div>,
+});
+
+const Footer = dynamic(() => import('../components/footer'), {
+  ssr: false,
+  loading: () => (
+    <div className='border-t-2 border-cyan-600 bg-gray-200 py-5 text-center text-gray-600 dark:bg-black dark:text-gray-400 lg:py-10'>
+      Loading…
+    </div>
+  ),
+});
 
 export default function Home(props) {
   const [darkMode, setDarkMode] = useState(false);
