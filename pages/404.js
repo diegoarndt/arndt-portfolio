@@ -19,13 +19,7 @@ export default function Custom404() {
 
         <div className='relative z-10 flex flex-col items-center'>
           <div className='relative h-16 w-16'>
-            <Image
-              src={logo}
-              alt='Diego Arndt logo'
-              fill
-              sizes='64px'
-              priority
-            />
+            <Image src={logo} alt='Diego Arndt logo' fill sizes='64px' priority />
           </div>
           <p className='mt-4 text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400'>
             Diego Arndt

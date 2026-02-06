@@ -20,6 +20,23 @@ export default function Document() {
         <link rel='dns-prefetch' href='https://formspree.io' />
       </Head>
       <body className='font-poppins'>
+        <div
+          aria-hidden='true'
+          dangerouslySetInnerHTML={{
+            __html: `<!--
+              ██╗  ██╗██╗██████╗ ███████╗    ███╗   ███╗███████╗
+              ██║  ██║██║██╔══██╗██╔════╝    ████╗ ████║██╔════╝
+              ███████║██║██████╔╝█████╗      ██╔████╔██║█████╗
+              ██╔══██║██║██╔══██╗██╔══╝      ██║╚██╔╝██║██╔══╝
+              ██║  ██║██║██║  ██║███████╗    ██║ ╚═╝ ██║███████╗
+              ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝     ╚═╝╚══════╝
+
+              Open to new opportunities ☕ Let's build something meaningful together.
+
+              Feel free to reach out: diegoarndt@outlook.com
+            -->`,
+          }}
+        />
         <Main />
         <NextScript />
       </body>

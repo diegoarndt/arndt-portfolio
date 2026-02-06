@@ -36,6 +36,7 @@ export default function Home(props) {
   const [isMenuOpened, setMenuOpen] = useState(false);
   const [isLgScreen, setIsLgScreen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const [showEasterEgg, setShowEasterEgg] = useState(false);
   const { width } = useWindowSize();
 
   const translation = props.translation[props.locale];
@@ -120,6 +121,48 @@ export default function Home(props) {
     const top = target.getBoundingClientRect().top + window.pageYOffset + offset;
     window.scrollTo({ top, behavior: 'auto' });
   }, [width]);
+
+  useEffect(() => {
+    const sequence = [
+      'ArrowUp',
+      'ArrowUp',
+      'ArrowDown',
+      'ArrowDown',
+      'ArrowLeft',
+      'ArrowRight',
+      'ArrowLeft',
+      'ArrowRight',
+      'b',
+      'a',
+    ];
+    let index = 0;
+
+    const handleKeyDown = (event) => {
+      const key = event.key;
+      if (key === sequence[index]) {
+        index += 1;
+        if (index === sequence.length) {
+          setShowEasterEgg(true);
+          index = 0;
+        }
+        return;
+      }
+
+      index = key === sequence[0] ? 1 : 0;
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    // eslint-disable-next-line no-console
+    console.log(
+      '%cEaster egg unlocked! Try the Konami code. ↑ ↑ ↓ ↓ ← → ← → B A',
+      'color:#06b6d4;font-weight:700;'
+    );
+  }, []);
 
   const menuItems = [
     {
@@ -258,6 +301,25 @@ export default function Home(props) {
       </main>
 
       <Footer props={props} translation={translation} />
+      {showEasterEgg && (
+        <div className='fixed inset-0 z-[200] flex items-center justify-center bg-black/70 px-6'>
+          <div className='w-full max-w-md rounded-2xl border border-cyan-500/40 bg-gray-900/90 p-6 text-center text-white shadow-2xl'>
+            <p className='text-sm uppercase tracking-[0.3em] text-cyan-300'>Easter Egg</p>
+            <h2 className='mt-3 text-3xl font-bold text-white'>Konami code unlocked</h2>
+            <p className='mt-3 text-sm text-gray-200'>
+              You found the hidden shortcut. Thanks for exploring.
+            </p>
+            <button
+              type='button'
+              className='mt-6 rounded-md bg-cyan-600 px-5 py-2 text-sm font-semibold text-white hover:bg-cyan-700'
+              onClick={() => setShowEasterEgg(false)}
+              aria-label='Close easter egg'
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
