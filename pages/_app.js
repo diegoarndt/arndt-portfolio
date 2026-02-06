@@ -53,7 +53,7 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
       <Component {...pageProps} initialLanguage={initialLanguage} />
-      <Analytics />
+      {process.env.NODE_ENV === 'production' && <Analytics />}
     </>
   );
 }

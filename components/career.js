@@ -139,7 +139,7 @@ const Career = ({ translation, isLgScreen }) => {
                     target='_blank'
                     rel='noopener noreferrer'
                     className='hover:scale-110'
-                    aria-label="Organization's website"
+                    aria-label={`Visit ${title} website`}
                   >
                     <Image
                       className='rounded-full'

@@ -119,6 +119,12 @@ export default function Home(props) {
 
   return (
     <div className={`flex min-h-screen flex-col ${darkMode ? 'dark' : ''}`}>
+      <a
+        href='#main-content'
+        className='sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-cyan-600 focus:px-4 focus:py-2 focus:text-white focus:outline-none'
+      >
+        Skip to main content
+      </a>
       <Head>
         <title>{metaTitle}</title>
         <meta name='description' content={metaDescription} />
@@ -164,7 +170,9 @@ export default function Home(props) {
         setMenuOpen={setMenuOpen}
       />
 
-      <main
+      <div
+        role='navigation'
+        aria-label='Mobile menu'
         className={`flex flex-grow flex-col justify-center bg-gray-200 px-10 dark:bg-black md:px-20 lg:px-20 ${
           isMenuOpened && !isLgScreen ? '' : 'hidden'
         }`}
@@ -182,9 +190,11 @@ export default function Home(props) {
             </li>
           ))}
         </ul>
-      </main>
+      </div>
 
       <main
+        id='main-content'
+        aria-label='Main content'
         className={`mb-auto bg-gray-200 dark:bg-black ${
           isMenuOpened && !isLgScreen ? 'hidden' : ''
         }`}
@@ -198,25 +208,27 @@ export default function Home(props) {
             minHeight: 'calc(100vh - 7vh)',
           }}
           id='landing'
+          aria-label='Introduction'
         >
           <Landing translation={translation} />
         </section>
 
-        <section className='section-bg py-16 lg:py-24' id='about'>
+        <section className='section-bg py-16 lg:py-24' id='about' aria-label='About'>
           <About translation={translation} />
         </section>
 
-        <section className='section-bg py-16 lg:py-24' id='skills'>
+        <section className='section-bg py-16 lg:py-24' id='skills' aria-label='Skills'>
           <Skills translation={translation} />
         </section>
 
-        <section className='section-bg py-16 lg:py-24' id='career'>
+        <section className='section-bg py-16 lg:py-24' id='career' aria-label='Career'>
           <Career translation={translation} isLgScreen={isLgScreen} />
         </section>
 
         <section
           className='section-bg flex items-center justify-center py-16 lg:py-24'
           id='contact'
+          aria-label='Contact'
         >
           <Contact translation={translation} />
         </section>

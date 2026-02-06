@@ -1,14 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 
 function Reveal({ children, width = 'fit-content' }) {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mq.matches);
+    const handler = (e) => setPrefersReducedMotion(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      mainControls.start('visible');
+      slideControls.start('visible');
+      return;
+    }
     if (isInView) {
       slideControls.start('visible');
       mainControls.start('visible');
@@ -16,7 +30,10 @@ function Reveal({ children, width = 'fit-content' }) {
       slideControls.start('hidden');
       mainControls.start('hidden');
     }
-  }, [isInView, mainControls, slideControls]);
+  }, [isInView, mainControls, slideControls, prefersReducedMotion]);
+
+  const duration = prefersReducedMotion ? 0 : 0.75;
+  const slideDuration = prefersReducedMotion ? 0 : 0.5;
 
   return (
     <div ref={ref} style={{ position: 'relative', width, overflow: 'hidden' }}>
@@ -27,7 +44,7 @@ function Reveal({ children, width = 'fit-content' }) {
         }}
         initial='hidden'
         animate={mainControls}
-        transition={{ duration: 0.75, delay: 0.25 }}
+        transition={{ duration, delay: prefersReducedMotion ? 0 : 0.25 }}
       >
         {children}
       </motion.div>
@@ -38,7 +55,11 @@ function Reveal({ children, width = 'fit-content' }) {
         }}
         initial='hidden'
         animate={slideControls}
-        transition={{ duration: 0.5, delay: 0.25, ease: 'easeIn' }}
+        transition={{
+          duration: slideDuration,
+          delay: prefersReducedMotion ? 0 : 0.25,
+          ease: 'easeIn',
+        }}
         style={{
           position: 'absolute',
           top: 4,

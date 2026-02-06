@@ -60,6 +60,8 @@ const Contact = ({ translation }) => {
                 type='text'
                 placeholder='Full name'
                 autoComplete='off'
+                required
+                aria-required='true'
               ></input>
               <ValidationError prefix='Name' field='name' errors={state.errors} />
             </div>
@@ -79,6 +81,8 @@ const Contact = ({ translation }) => {
                 type='email'
                 placeholder='Email address'
                 autoComplete='off'
+                required
+                aria-required='true'
               ></input>
               <ValidationError prefix='Email' field='email' errors={state.errors} />
             </div>
@@ -97,6 +101,8 @@ const Contact = ({ translation }) => {
                 name='message'
                 rows='8'
                 placeholder='How can I help?'
+                required
+                aria-required='true'
               ></textarea>
               <ValidationError prefix='Message' field='message' errors={state.errors} />
             </div>

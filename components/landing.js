@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const Landing = ({ translation }) => {
   const [mainSection, setMainSection] = useState(null);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     setMainSection(document.getElementsByClassName('main-section')[0]);
@@ -25,12 +26,15 @@ const Landing = ({ translation }) => {
       <motion.h2
         className='group relative mx-auto w-9/12 max-w-lg cursor-default py-3 text-7xl font-bold sm:text-8xl lg:text-9xl'
         variants={{
-          hidden: { opacity: 0, y: -100 },
+          hidden: { opacity: 0, y: prefersReducedMotion ? 0 : -100 },
           visible: { opacity: 1, y: 0 },
         }}
         initial='hidden'
         animate='visible'
-        transition={{ duration: 0.75, delay: 0.25 }}
+        transition={{
+          duration: prefersReducedMotion ? 0 : 0.75,
+          delay: prefersReducedMotion ? 0 : 0.25,
+        }}
       >
         <span className='pointer-events-none relative z-10 text-gray-100'>DIEGO ARNDT</span>
 

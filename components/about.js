@@ -8,7 +8,7 @@ const About = ({ translation }) => {
       <div className='relative mx-auto h-72 w-72 overflow-hidden rounded-full border border-green-400 transition-all hover:border-4 hover:border-blue-500 md:h-96 md:w-96'>
         <Image
           src={myself}
-          alt='profile-picture'
+          alt='Diego Arndt smiling in a professional photo'
           fill
           style={{ objectFit: 'cover' }}
           priority={true}

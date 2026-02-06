@@ -18,7 +18,10 @@ const Nav = ({
   const menuIcon = isMenuOpened ? <BsX size={24} /> : <BsList size={24} />;
 
   return (
-    <nav className='sticky top-0 z-50 flex justify-between bg-gray-200 px-10 py-5 dark:bg-black dark:text-white lg:px-20 lg:py-10'>
+    <nav
+      aria-label='Main navigation'
+      className='sticky top-0 z-50 flex justify-between bg-gray-200 px-10 py-5 dark:bg-black dark:text-white lg:px-20 lg:py-10'
+    >
       <div className='flex items-center py-2 pr-3 lg:hidden lg:pr-4'>
         <button onClick={() => setMenuOpen(!isMenuOpened)} aria-label='Toggle menu'>
           {menuIcon}
@@ -29,7 +32,7 @@ const Nav = ({
         <ScrollLink to='landing'>
           <Image
             src={logo}
-            alt='profile-picture'
+            alt='Diego Arndt logo — go to top'
             fill
             style={{ objectFit: 'cover' }}
             className='h-12 w-12'
@@ -54,12 +57,13 @@ const Nav = ({
       <ul className='flex items-center'>
         <li>
           <div className='transform px-3 py-2 hover:scale-110 lg:px-4'>
-            <span
+            <button
               onClick={() => setDarkMode(!darkMode)}
               className='cursor-pointer text-2xl hover:text-blue-600 dark:hover:text-yellow-400'
+              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               {themeIcon}
-            </span>
+            </button>
           </div>
         </li>
         {/* <li>
