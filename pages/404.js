@@ -1,9 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect } from 'react';
+import { track } from '@vercel/analytics';
 import logo from '../public/da-logo.png';
 
 export default function Custom404() {
+  useEffect(() => {
+    track('404_view', { path: typeof window !== 'undefined' ? window.location.pathname : '' });
+  }, []);
+
   return (
     <div className='flex min-h-screen flex-col bg-gray-200 text-gray-700 dark:bg-black dark:text-gray-200'>
       <Head>
@@ -34,12 +40,16 @@ export default function Custom404() {
             <Link
               href='/'
               className='rounded-md bg-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-700'
+              onClick={() => track('404_home_click')}
             >
               Back to home
             </Link>
             <a
               href='mailto:diegoarndt@outlook.com'
               className='rounded-md border border-cyan-600 px-6 py-3 text-sm font-semibold text-cyan-700 transition hover:bg-cyan-600 hover:text-white dark:text-cyan-300'
+              onClick={() =>
+                track('404_contact_click', { method: 'mailto', email: 'diegoarndt@outlook.com' })
+              }
             >
               Contact me
             </a>
