@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { League_Spartan, Titillium_Web } from 'next/font/google';
 
 import en from '../locales/en.json';
@@ -73,6 +74,7 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
         <Component {...pageProps} initialLanguage={initialLanguage} />
       </div>
       {enableAnalytics && <Analytics />}
+      {enableAnalytics && <SpeedInsights />}
     </>
   );
 }
