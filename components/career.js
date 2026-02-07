@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { track } from '@vercel/analytics';
 import study from '../public/bg-study.jpg';
 import work from '../public/bg-work.jpg';
 import wxp from '../public/bg-wxp.jpg';
@@ -140,6 +141,13 @@ const Career = ({ translation, isLgScreen }) => {
                     rel='noopener noreferrer'
                     className='hover:scale-110'
                     aria-label={`Visit ${title} website`}
+                    onClick={() =>
+                      track('project_link_click', {
+                        project: title,
+                        url: link,
+                        section: 'career',
+                      })
+                    }
                   >
                     <Image
                       className='rounded-full'

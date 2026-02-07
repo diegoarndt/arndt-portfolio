@@ -127,6 +127,10 @@ vi.mock('@vercel/analytics/react', () => ({
   Analytics: () => React.createElement('div', { 'data-testid': 'analytics' }),
 }));
 
+vi.mock('@vercel/analytics', () => ({
+  track: vi.fn(),
+}));
+
 // ─── Mock static image imports ──────────────────────────────────────────────────
 vi.mock('../public/myself.jpg', () => ({ default: { src: '/myself.jpg' } }));
 vi.mock('../public/da-logo.png', () => ({ default: { src: '/da-logo.png' } }));

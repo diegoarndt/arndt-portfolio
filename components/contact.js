@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useForm, ValidationError } from '@formspree/react';
+import { track } from '@vercel/analytics';
 import Reveal from '../utils/reveal';
 
 const InlineWidget = dynamic(() => import('react-calendly').then((module) => module.InlineWidget), {
@@ -14,12 +15,21 @@ const Contact = ({ translation }) => {
   const [showConfetti, setShowConfetti] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
   const [showScheduler, setShowScheduler] = useState(false);
+  const hasTrackedSuccess = useRef(false);
 
   useEffect(() => {
     setHasMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (state.succeeded && !hasTrackedSuccess.current) {
+      track('contact_form_success', { form: 'contact' });
+      hasTrackedSuccess.current = true;
+    }
+  }, [state.succeeded]);
+
   const onSubmitWithConfetti = async (data) => {
+    track('contact_form_submit', { form: 'contact' });
     await confettiEffect();
     handleSubmit(data);
   };
@@ -154,7 +164,10 @@ const Contact = ({ translation }) => {
                   <button
                     type='button'
                     className='rounded bg-cyan-600 px-4 py-2 text-white hover:bg-cyan-700'
-                    onClick={() => setShowScheduler(true)}
+                    onClick={() => {
+                      track('calendly_load_click', { section: 'contact' });
+                      setShowScheduler(true);
+                    }}
                     aria-label='Load scheduler'
                   >
                     Load scheduler
@@ -167,6 +180,12 @@ const Contact = ({ translation }) => {
                 />
               ) : (
                 <div className='flex h-[480px] min-w-[320px] items-center justify-center rounded-lg bg-gray-100 text-sm text-gray-500 dark:bg-gray-900 dark:text-gray-400'>
+                  onClick={() =>
+                    track('contact_email_click', {
+                      method: 'mailto',
+                      email: 'diegoarndt@outlook.com',
+                    })
+                  }
                   Loading scheduler…
                 </div>
               )}

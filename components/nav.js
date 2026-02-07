@@ -3,6 +3,7 @@ import logo from '../public/da-logo.png';
 import HandleDownload from '../utils/handleDownload';
 import ScrollLink from '../utils/scroll';
 import { BsFillMoonStarsFill, BsFillSunFill, BsList, BsX } from 'react-icons/bs';
+import { track } from '@vercel/analytics';
 
 const Nav = ({
   props,
@@ -17,19 +18,32 @@ const Nav = ({
   const themeIcon = darkMode ? <BsFillSunFill /> : <BsFillMoonStarsFill />;
   const menuIcon = isMenuOpened ? <BsX size={24} /> : <BsList size={24} />;
 
+  const handleMenuToggle = () => {
+    track('mobile_menu_toggle', { state: isMenuOpened ? 'close' : 'open' });
+    setMenuOpen(!isMenuOpened);
+  };
+
+  const handleThemeToggle = () => {
+    track('theme_toggle', { theme: darkMode ? 'light' : 'dark' });
+    setDarkMode(!darkMode);
+  };
+
   return (
     <nav
       aria-label='Main navigation'
       className='sticky top-0 z-50 flex justify-between bg-gray-200 px-10 py-5 dark:bg-black dark:text-white lg:px-20 lg:py-10'
     >
       <div className='flex items-center py-2 pr-3 lg:hidden lg:pr-4'>
-        <button onClick={() => setMenuOpen(!isMenuOpened)} aria-label='Toggle menu'>
+        <button onClick={handleMenuToggle} aria-label='Toggle menu'>
           {menuIcon}
         </button>
       </div>
 
       <div className={`da-logo ${isLgScreen ? 'lg:contents' : 'hidden'}`}>
-        <ScrollLink to='landing'>
+        <ScrollLink
+          to='landing'
+          onTrack={() => track('nav_logo_click', { location: 'header', target: 'landing' })}
+        >
           <Image
             src={logo}
             alt='Diego Arndt logo — go to top'
@@ -47,7 +61,13 @@ const Nav = ({
               className='menu-item relative mx-4 cursor-pointer text-lg text-gray-500 hover:text-gray-700 hover:dark:text-gray-300'
               key={id}
             >
-              <ScrollLink to={id} isLgScreen={isLgScreen}>
+              <ScrollLink
+                to={id}
+                isLgScreen={isLgScreen}
+                onTrack={() =>
+                  track('nav_link_click', { section: id, label: name, location: 'header' })
+                }
+              >
                 {name}
               </ScrollLink>
               <div className='absolute bottom-0 left-0 w-full'></div>
@@ -60,7 +80,7 @@ const Nav = ({
         <li>
           <div className='transform px-3 py-2 hover:scale-110 lg:px-4'>
             <button
-              onClick={() => setDarkMode(!darkMode)}
+              onClick={handleThemeToggle}
               className='cursor-pointer text-2xl hover:text-blue-600 dark:hover:text-yellow-400'
               aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >

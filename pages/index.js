@@ -4,6 +4,7 @@ import { useWindowSize } from 'react-use/';
 import dynamic from 'next/dynamic';
 import ScrollLink from '../utils/scroll';
 import { getScrollOffset } from '../utils/scrollOffsets';
+import { track } from '@vercel/analytics';
 import Nav from '../components/nav';
 import Landing from '../components/landing';
 import About from '../components/about';
@@ -142,6 +143,7 @@ export default function Home(props) {
       if (key === sequence[index]) {
         index += 1;
         if (index === sequence.length) {
+          track('easter_egg_unlock', { method: 'konami' });
           setShowEasterEgg(true);
           index = 0;
         }
@@ -188,6 +190,7 @@ export default function Home(props) {
       <a
         href='#main-content'
         className='sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-cyan-600 focus:px-4 focus:py-2 focus:text-white focus:outline-none'
+        onClick={() => track('skip_link_click', { target: 'main-content' })}
       >
         Skip to main content
       </a>
@@ -250,6 +253,9 @@ export default function Home(props) {
                 to={id}
                 isLgScreen={isLgScreen}
                 onClickCallback={() => setMenuOpen(false)}
+                onTrack={() =>
+                  track('nav_link_click', { section: id, label: name, location: 'mobile' })
+                }
               >
                 {name}
               </ScrollLink>
@@ -312,7 +318,10 @@ export default function Home(props) {
             <button
               type='button'
               className='mt-6 rounded-md bg-cyan-600 px-5 py-2 text-sm font-semibold text-white hover:bg-cyan-700'
-              onClick={() => setShowEasterEgg(false)}
+              onClick={() => {
+                track('easter_egg_close', { method: 'button' });
+                setShowEasterEgg(false);
+              }}
               aria-label='Close easter egg'
             >
               Close

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import TypeIt from 'typeit-react';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+import { track } from '@vercel/analytics';
 import YearInWords from '../utils/yearInWords';
 
 const Footer = ({ props, translation }) => {
@@ -47,6 +48,13 @@ const Footer = ({ props, translation }) => {
           rel='noopener noreferrer'
           className='hover:scale-110 hover:text-purple-600'
           aria-label='Github profile'
+          onClick={() =>
+            track('social_link_click', {
+              platform: 'github',
+              url: 'https://github.com/diegoarndt',
+              location: 'footer',
+            })
+          }
         >
           <AiFillGithub />
         </a>
@@ -56,6 +64,13 @@ const Footer = ({ props, translation }) => {
           rel='noopener noreferrer'
           className='hover:scale-110 hover:text-blue-600'
           aria-label='LinkedIn profile'
+          onClick={() =>
+            track('social_link_click', {
+              platform: 'linkedin',
+              url: 'https://www.linkedin.com/in/diegoarndt',
+              location: 'footer',
+            })
+          }
         >
           <AiFillLinkedin />
         </a>

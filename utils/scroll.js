@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { getScrollOffset } from './scrollOffsets';
 
-export default function ScrollLink({ to, isLgScreen, onClickCallback, children }) {
+export default function ScrollLink({ to, isLgScreen, onClickCallback, onTrack, children }) {
   const [isActive, setIsActive] = useState(false);
   const isLanding = to === 'landing';
 
   const handleClick = (event) => {
     event.preventDefault();
+    if (onTrack) {
+      onTrack();
+    }
     const currentPath = window.location.pathname;
     window.history.replaceState(null, '', isLanding ? currentPath : `${currentPath}#${to}`);
 
