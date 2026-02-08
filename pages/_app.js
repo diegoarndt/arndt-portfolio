@@ -52,8 +52,6 @@ const customLabels = {
 
 function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
   const { locale, asPath, push } = useRouter();
-  const enableAnalytics =
-    process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === 'true' && process.env.NODE_ENV === 'production';
   pageProps = {
     ...pageProps,
     countryCodes,
@@ -73,8 +71,8 @@ function ArndtPortfolio({ Component, pageProps, initialLanguage }) {
       <div className={`${titilliumWeb.variable} ${leagueSpartan.variable}`}>
         <Component {...pageProps} initialLanguage={initialLanguage} />
       </div>
-      {enableAnalytics && <Analytics />}
-      {enableAnalytics && <SpeedInsights />}
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 }
