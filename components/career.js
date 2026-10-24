@@ -4,28 +4,44 @@ import { track } from '@vercel/analytics';
 import study from '../public/bg-study.jpg';
 import work from '../public/bg-work.jpg';
 import wxp from '../public/bg-wxp.jpg';
+import nomad from '../public/bg-nomad.jpg';
 import senai from '../public/senai-logo.jpeg';
 import telekom from '../public/telekom-logo.jpeg';
 import furb from '../public/furb-logo.jpeg';
 import vail from '../public/vail-logo.jpeg';
 import veralogica from '../public/veralogica-logo.jpeg';
 import humber from '../public/humber-logo.jpeg';
+import arndt from '../public/da-logo.png';
 import Reveal from '../utils/reveal';
 
 const Career = ({ translation, isLgScreen }) => {
   const careerTimeline = [
+    {
+      link: 'https://diegoarndt.com/',
+      logo: arndt,
+      logoBackground: 'bg-gray-400',
+      bgImage: nomad,
+      bgColor: 'bg-cyan-700',
+      title: 'Arndt IT Consulting',
+      subtitle: `(${translation.arndtTitle})`,
+      period: `2021 - ${translation.current}`,
+      location: `São Paulo, SP, ${translation.brazil}`,
+      locationFlag: '🇧🇷',
+      description: `${translation.arndtDescription}`,
+      timelineDirection: 'flex-row-reverse',
+    },
     {
       link: 'https://www.veralogica.com/',
       logo: veralogica,
       bgImage: work,
       bgColor: 'bg-green-600',
       title: 'Veralogica GmbH',
-      subtitle: '(Angular Frontend Engineer)',
+      subtitle: `(${translation.veralogicaTitle})`,
       period: `2021 - ${translation.current}`,
       location: `Frankfurt, HE, ${translation.germany}`,
       locationFlag: '🇩🇪',
       description: `${translation.veralogicaDescription}`,
-      timelineDirection: 'flex-row-reverse',
+      timelineDirection: '',
     },
     {
       link: 'https://www.humber.ca/',
@@ -38,7 +54,7 @@ const Career = ({ translation, isLgScreen }) => {
       location: `Toronto, ON, ${translation.canada}`,
       locationFlag: '🇨🇦',
       description: `${translation.humberDescription}`,
-      timelineDirection: '',
+      timelineDirection: 'flex-row-reverse',
     },
     {
       link: 'https://www.vailresorts.com/',
@@ -51,7 +67,7 @@ const Career = ({ translation, isLgScreen }) => {
       location: `South Lake Tahoe, CA, ${translation.usa}`,
       locationFlag: '🇺🇸',
       description: `${translation.vailDescription}`,
-      timelineDirection: 'flex-row-reverse',
+      timelineDirection: '',
     },
     {
       link: 'https://www.furb.br/',
@@ -64,7 +80,7 @@ const Career = ({ translation, isLgScreen }) => {
       location: `Blumenau, SC, ${translation.brazil}`,
       locationFlag: '🇧🇷',
       description: `${translation.furbDescription}`,
-      timelineDirection: '',
+      timelineDirection: 'flex-row-reverse',
     },
     {
       link: 'https://www.t-systems.com/',
@@ -73,11 +89,11 @@ const Career = ({ translation, isLgScreen }) => {
       bgColor: 'bg-pink-700',
       title: 'T-Systems',
       subtitle: `(${translation.telekomTitle})`,
-      period: '2014 - 2020',
+      period: '2014 - 2021',
       location: `Blumenau, SC, ${translation.brazil}`,
       locationFlag: '🇧🇷',
       description: `${translation.telekomDescription}`,
-      timelineDirection: 'flex-row-reverse',
+      timelineDirection: '',
     },
     {
       link: 'https://www.sc.senai.br/',
@@ -90,7 +106,7 @@ const Career = ({ translation, isLgScreen }) => {
       location: `Blumenau, SC, ${translation.brazil}`,
       locationFlag: '🇧🇷',
       description: `${translation.senaiDescription}`,
-      timelineDirection: '',
+      timelineDirection: 'flex-row-reverse',
     },
   ];
 
@@ -114,6 +130,7 @@ const Career = ({ translation, isLgScreen }) => {
             {
               link,
               logo,
+              logoBackground,
               bgImage,
               bgColor,
               title,
@@ -139,7 +156,11 @@ const Career = ({ translation, isLgScreen }) => {
                     href={link}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='hover:scale-110'
+                    className={`hover:scale-110 ${
+                      logoBackground
+                        ? `flex h-12 w-12 items-center justify-center rounded-full p-2 ${logoBackground}`
+                        : ''
+                    }`}
                     aria-label={`Visit ${title} website`}
                     onClick={() =>
                       track('project_link_click', {
@@ -150,7 +171,7 @@ const Career = ({ translation, isLgScreen }) => {
                     }
                   >
                     <Image
-                      className='rounded-full'
+                      className={logoBackground ? '' : 'rounded-full'}
                       src={logo}
                       alt={title}
                       width={120}
@@ -162,10 +183,10 @@ const Career = ({ translation, isLgScreen }) => {
                   </a>
                 </div>
                 <div
-                  className={`relative order-1 w-10/12 rounded-lg px-6 py-4 shadow-xl lg:w-5/12 ${bgColor}`}
+                  className={`group relative order-1 w-10/12 rounded-lg px-6 py-4 shadow-xl lg:w-5/12 ${bgColor}`}
                 >
                   <Image
-                    className='absolute inset-0 h-full w-full object-cover opacity-10 hover:opacity-30'
+                    className='absolute inset-0 h-full w-full object-cover opacity-10 group-hover:opacity-30'
                     src={bgImage}
                     alt={title}
                     fill

@@ -13,7 +13,7 @@ export default function Custom404() {
   return (
     <div className='flex min-h-screen flex-col bg-gray-200 text-gray-700 dark:bg-black dark:text-gray-200'>
       <Head>
-        <title>404 — Page not found</title>
+        <title>404 | Page not found</title>
         <meta name='robots' content='noindex, follow' />
       </Head>
 

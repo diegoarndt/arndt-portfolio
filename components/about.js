@@ -26,16 +26,24 @@ const About = ({ translation }) => {
             <strong className='font-semibold text-gray-700 dark:text-gray-100'>
               Frontend Engineer with 5+ years of experience
             </strong>
-            , focused on Angular, TypeScript, and RxJS — building product-focused, user-centered web
+            , focused on Angular, TypeScript, and RxJS, building product-focused, user-centered web
             applications.
           </p>
           <p>
-            I partner with product and stakeholders, and collaborate with backend and infrastructure
-            teams to translate requirements into clear frontend solutions.
+            I provide my services through my own company,{' '}
+            <strong className='font-semibold text-gray-700 dark:text-gray-100'>
+              Arndt IT Consulting
+            </strong>
+            , under B2B contracts. I work fully remote as a digital nomad, with no fixed location.
           </p>
           <p>
-            Experienced with REST APIs, CI/CD, and AWS in production (Cloud Practitioner certified),
-            with a focus on clean code, accessibility, and pragmatic testing.
+            I work closely with product, stakeholders, backend, and infrastructure teams to
+            translate requirements into clear frontend solutions.
+          </p>
+          <p>
+            Experienced with REST APIs, CI/CD, and AWS in production (Cloud Practitioner certified).
+            I use AI throughout my workflow to deliver faster, with every change reviewed by me and
+            held to clean code, accessibility, and pragmatic testing.
           </p>
         </div>
       </Reveal>

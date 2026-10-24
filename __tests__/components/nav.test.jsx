@@ -10,10 +10,7 @@ vi.mock('../../utils/scroll', () => ({
     React.createElement('button', { 'data-testid': `scroll-${to}` }, children),
 }));
 
-const mockTranslation = {
-  resume: 'Résumé',
-  resumeTitle: 'Download Diego Arndt Résumé',
-};
+const mockTranslation = {};
 
 const mockMenuItems = [
   { name: 'About', id: 'about' },

@@ -7,9 +7,9 @@ import YearInWords from '../utils/yearInWords';
 const Footer = ({ props, translation }) => {
   const [hasMounted, setHasMounted] = useState(false);
   const quotes = [
-    '“Code is like humor. When you have to explain it, it’s bad.” — Cory House',
-    '“Make it work, make it right, make it fast.” — Kent Beck',
-    '“The best code is no code at all — but only when it solves the problem.”',
+    '“Code is like humor. When you have to explain it, it’s bad.” - Cory House',
+    '“Make it work, make it right, make it fast.” - Kent Beck',
+    '“The best code is no code at all, but only when it solves the problem.”',
     '“Good software is built for people first, computers second.”',
     '“Simplicity is the ultimate sophistication.”',
     '“If you care about the user, the code will follow.”',
@@ -81,6 +81,10 @@ const Footer = ({ props, translation }) => {
           <YearInWords language={props.locale} />
         </span>
         &nbsp;·&nbsp;{translation.handcrafted}
+      </p>
+      <p className='mt-2 px-6 text-xs text-gray-500'>
+        Arndt IT Consulting · Diego Arndt Consultoria em Tecnologia da Informação LTDA · CNPJ
+        40.316.068/0001-07
       </p>
     </footer>
   );

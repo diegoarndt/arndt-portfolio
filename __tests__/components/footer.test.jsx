@@ -52,6 +52,14 @@ describe('Footer', () => {
     expect(screen.getByText(/Handcrafted by Diego Arndt/)).toBeInTheDocument();
   });
 
+  it('renders the company legal details', () => {
+    render(<Footer props={mockProps} translation={mockTranslation} />);
+    expect(
+      screen.getByText(/Diego Arndt Consultoria em Tecnologia da Informação LTDA/)
+    ).toBeInTheDocument();
+    expect(screen.getByText(/CNPJ 40\.316\.068\/0001-07/)).toBeInTheDocument();
+  });
+
   it('renders the TypeIt quote component', () => {
     render(<Footer props={mockProps} translation={mockTranslation} />);
     expect(screen.getByTestId('typeit')).toBeInTheDocument();
@@ -64,18 +72,13 @@ describe('Footer', () => {
 
   it('renders with different translation', () => {
     render(
-      <Footer
-        props={mockProps}
-        translation={{ handcrafted: 'Feito à mão por Diego Arndt' }}
-      />
+      <Footer props={mockProps} translation={{ handcrafted: 'Feito à mão por Diego Arndt' }} />
     );
     expect(screen.getByText(/Feito à mão por Diego Arndt/)).toBeInTheDocument();
   });
 
   it('passes locale to YearInWords component', () => {
-    const { container } = render(
-      <Footer props={{ locale: 'pt' }} translation={mockTranslation} />
-    );
+    const { container } = render(<Footer props={{ locale: 'pt' }} translation={mockTranslation} />);
     // For non-English locale, YearInWords renders numeric year
     expect(container.textContent).toMatch(/\d{4}/);
   });

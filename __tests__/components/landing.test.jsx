@@ -37,9 +37,12 @@ describe('Landing', () => {
 
   it('renders the availability status text', () => {
     render(<Landing translation={mockTranslation} />);
-    expect(
-      screen.getByText(/Open to remote frontend engineer roles/)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/Open to new contracts/)).toBeInTheDocument();
+  });
+
+  it('does not mention time zones in the availability status', () => {
+    render(<Landing translation={mockTranslation} />);
+    expect(screen.queryByText(/time zone/i)).not.toBeInTheDocument();
   });
 
   it('renders the green availability indicator dots', () => {
@@ -52,9 +55,9 @@ describe('Landing', () => {
     render(<Landing translation={mockTranslation} />);
 
     // Wait for useEffect to run and find the main-section
-    const gradientSpan = screen.getByText('DIEGO ARNDT').parentElement.querySelector(
-      'span:last-child'
-    );
+    const gradientSpan = screen
+      .getByText('DIEGO ARNDT')
+      .parentElement.querySelector('span:last-child');
 
     fireEvent.mouseEnter(gradientSpan);
 
@@ -65,9 +68,9 @@ describe('Landing', () => {
   it('removes landing-section class from main-section on mouse leave', () => {
     render(<Landing translation={mockTranslation} />);
 
-    const gradientSpan = screen.getByText('DIEGO ARNDT').parentElement.querySelector(
-      'span:last-child'
-    );
+    const gradientSpan = screen
+      .getByText('DIEGO ARNDT')
+      .parentElement.querySelector('span:last-child');
 
     fireEvent.mouseEnter(gradientSpan);
     fireEvent.mouseLeave(gradientSpan);

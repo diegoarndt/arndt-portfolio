@@ -33,28 +33,33 @@ describe('About', () => {
 
   it('renders the bio text about Frontend Engineer experience', () => {
     render(<About translation={mockTranslation} />);
-    expect(
-      screen.getByText(/Frontend Engineer with 5\+ years of experience/)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/Frontend Engineer with 5\+ years of experience/)).toBeInTheDocument();
   });
 
-  it('renders text about partnering with product and stakeholders', () => {
+  it('renders text about providing services through own company', () => {
     render(<About translation={mockTranslation} />);
-    expect(
-      screen.getByText(/I partner with product and stakeholders/)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/I provide my services through my own company/)).toBeInTheDocument();
+    expect(screen.getByText('Arndt IT Consulting')).toBeInTheDocument();
+  });
+
+  it('renders text about working with product and stakeholders', () => {
+    render(<About translation={mockTranslation} />);
+    expect(screen.getByText(/I work closely with product, stakeholders/)).toBeInTheDocument();
+  });
+
+  it('renders text about using AI in the workflow', () => {
+    render(<About translation={mockTranslation} />);
+    expect(screen.getByText(/I use AI throughout my workflow/)).toBeInTheDocument();
   });
 
   it('renders text about REST APIs and AWS', () => {
     render(<About translation={mockTranslation} />);
-    expect(
-      screen.getByText(/Experienced with REST APIs, CI\/CD, and AWS/)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/Experienced with REST APIs, CI\/CD, and AWS/)).toBeInTheDocument();
   });
 
-  it('renders three bio paragraphs', () => {
+  it('renders four bio paragraphs', () => {
     const { container } = render(<About translation={mockTranslation} />);
     const paragraphs = container.querySelectorAll('.space-y-5 p');
-    expect(paragraphs.length).toBe(3);
+    expect(paragraphs.length).toBe(4);
   });
 });

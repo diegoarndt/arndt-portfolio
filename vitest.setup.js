@@ -137,6 +137,7 @@ vi.mock('../public/da-logo.png', () => ({ default: { src: '/da-logo.png' } }));
 vi.mock('../public/bg-study.jpg', () => ({ default: { src: '/bg-study.jpg' } }));
 vi.mock('../public/bg-work.jpg', () => ({ default: { src: '/bg-work.jpg' } }));
 vi.mock('../public/bg-wxp.jpg', () => ({ default: { src: '/bg-wxp.jpg' } }));
+vi.mock('../public/bg-nomad.jpg', () => ({ default: { src: '/bg-nomad.jpg' } }));
 vi.mock('../public/senai-logo.jpeg', () => ({ default: { src: '/senai-logo.jpeg' } }));
 vi.mock('../public/telekom-logo.jpeg', () => ({ default: { src: '/telekom-logo.jpeg' } }));
 vi.mock('../public/furb-logo.jpeg', () => ({ default: { src: '/furb-logo.jpeg' } }));

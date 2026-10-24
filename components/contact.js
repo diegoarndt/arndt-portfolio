@@ -63,7 +63,7 @@ const Contact = ({ translation }) => {
             Let’s talk
           </h2>
           <p className='mb-10 text-center text-base text-gray-500 dark:text-gray-300 lg:text-lg'>
-            Open to frontend roles, remote opportunities, and collaborations.
+            Open to new contracts, partnerships, and collaborations.
           </p>
           <div className='mb-6 flex w-full flex-wrap'>
             <div className='w-full px-3'>

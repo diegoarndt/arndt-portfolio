@@ -57,7 +57,7 @@ const Landing = ({ translation }) => {
           <span className='relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500'></span>
         </span>
         <span className='text-center'>
-          Open to remote frontend engineer roles aligned with US & Canada time zones.
+          Open to new contracts. Let’s partner on your next frontend project.
         </span>
       </p>
     </div>

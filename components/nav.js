@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import logo from '../public/da-logo.png';
-import HandleDownload from '../utils/handleDownload';
 import ScrollLink from '../utils/scroll';
 import { BsFillMoonStarsFill, BsFillSunFill, BsList, BsX } from 'react-icons/bs';
 import { track } from '@vercel/analytics';
@@ -46,7 +45,7 @@ const Nav = ({
         >
           <Image
             src={logo}
-            alt='Diego Arndt logo — go to top'
+            alt='Diego Arndt logo, go to top'
             fill
             sizes='48px'
             style={{ objectFit: 'cover' }}
@@ -88,18 +87,6 @@ const Nav = ({
             </button>
           </div>
         </li>
-        {/* <li>
-          <div className='pl-3 lg:pl-4 py-2'>
-            <button
-              className='cursor-pointer bg-gradient-to-r from-blue-500 to-blue-900 dark:from-cyan-600 dark:to-green-600 hover:to-blue-500 hover:dark:to-blue-500 text-white px-4 py-1 border-none rounded-md'
-              onClick={HandleDownload}
-              aria-label='Download resume'
-              title={translation.resumeTitle}
-            >
-              {translation.resume}
-            </button>
-          </div>
-        </li> */}
       </ul>
     </nav>
   );

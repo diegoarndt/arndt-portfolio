@@ -80,14 +80,19 @@ export default function Home(props) {
           credentialCategory: 'certification',
           name: 'AWS Certified Cloud Practitioner',
         },
+        worksFor: {
+          '@type': 'Organization',
+          name: 'Arndt IT Consulting',
+          foundingDate: '2021-01',
+        },
         workLocation: {
           '@type': 'VirtualLocation',
-          description: 'Remote - US & Canada Time Zones',
+          description: 'Remote',
         },
       },
       {
         '@type': 'WebSite',
-        name: 'Diego Arndt — Frontend Engineer (Angular)',
+        name: 'Diego Arndt | Frontend Engineer (Angular)',
         url: siteUrl,
       },
     ],
@@ -199,7 +204,7 @@ export default function Home(props) {
         <meta name='description' content={metaDescription} />
         <meta
           name='keywords'
-          content='frontend engineer, angular developer, frontend engineer angular, remote frontend engineer, typescript, rxjs, product-focused frontend, user-centered web applications, remote software engineer, US time zones, Canada time zones'
+          content='frontend engineer, angular developer, frontend engineer angular, remote frontend engineer, typescript, rxjs, product-focused frontend, user-centered web applications, remote software engineer, frontend contractor, B2B frontend services, Arndt IT Consulting'
         />
         <meta name='author' content='Diego Arndt' />
         <meta property='og:title' content={metaTitle} />
@@ -209,7 +214,7 @@ export default function Home(props) {
         <meta property='og:image' content={ogImage} />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='630' />
-        <meta property='og:image:alt' content='Diego Arndt — Frontend Engineer' />
+        <meta property='og:image:alt' content='Diego Arndt | Frontend Engineer' />
         <meta property='og:site_name' content='Diego Arndt' />
         <meta property='og:locale' content={ogLocale} />
         {Object.entries(ogLocaleMap)
@@ -221,7 +226,7 @@ export default function Home(props) {
         <meta name='twitter:title' content={metaTitle} />
         <meta name='twitter:description' content={metaDescription} />
         <meta name='twitter:image' content={ogImage} />
-        <meta name='twitter:image:alt' content='Diego Arndt — Frontend Engineer' />
+        <meta name='twitter:image:alt' content='Diego Arndt | Frontend Engineer' />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
